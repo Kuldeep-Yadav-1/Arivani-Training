@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice page</title>
+    <style>
+      #parah1 {
+        border: 1px solid #210f37;
+        background-color: #4f1c51;
+        color: aliceblue;
+      }
+
+      #span1 {
+        background-color: #a55b4b;
+        color: #fff;
+      }
+
+      #span2 {
+        background-color: #dca06d;
+        color: #1d0836;
+      }
+
+      #div1 {
+        background-color: #e6e696;
+        border: 1px solid black;
+      }
+
+      .block_element {
+        background-color: #006a71;
+        margin: 4px;
+        border: #1d0836;
+      }
+
+      .child_div {
+        background-color: #9acbd0;
+        margin: 2px;
+      }
+
+      #nested_child_div1 {
+        margin: 2px;
+        background-color: #f2efe7;
+      }
+      #nested_child_div2 {
+        margin: 2px;
+        background-color: #8d8981;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Heading-1</h1>
+    <h2>Heading-2</h2>
+    <h3 style="color: blueviolet">Heading-3</h3>
+    <h4>Heading-4</h4>
+    <h5>Heading-5</h5>
+    <h6>Heading-6</h6>
+    <hr />
+    <p>
+      this is a paragraph tag which takes whole width & started from new lines.
+      <del>here we use del tag for delete kuldeep</del>
+    </p>
+    <p>
+      this is also paragraph tag which takes whole width
+      <mark>Here i use mark tag for highlighting purpose</mark>
+    </p>
+    <span>here we use span which takes width according to content length.</span>
+    <span style="color: yellowgreen"
+      >here we use new span which takes width according to content length and
+      not started from new lines</span
+    >
+    <hr />
+    <a href="index.html">Click Me 1!</a>
+    <br />
+    <a href="https://www.w3schools.com/html/default.asp" target="_blank"
+      >Redirect to Html w3schools</a
+    >
+    <hr />
+    <img
+      src="others/bgContact.jpg "
+      style="border-radius: 100%"
+      alt="nature img bg"
+      width="250px"
+      height="250px"
+    />
+
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX8AAACDCAMAAABSveuDAAABLFBMVEX///8Zbu8TaOoWa+wUaesdce/aRTH/tAD/uQMbcO8JpGD/twLbSDTcTTrbRjLdUD3POykAm1gAkkwqdOj/vAkAl1MDnlv/vxU3f+4Gau+Hr/YAYuneVUIAjkT1+P53vJft+PPk7v2k2cAAqWUicOit2sMrdej++Pd7pvIAX+b5/P///PL44d7u9f7h7P30y8b87+3RNR2nxfj/+ObfXk3/8tX/z1u3z/nO3/vY5vzwuLHhaFj43NjlfnH/wydQjfJun/P/6LLtqaHoj4T/7shfl/O/1vqYu/b/4Jj/24n/1GzroZj/13nxv7nicWJFhvH/46f/xUyI0rBpxJre8ulHuIOU1LaQtvb/yD/pl4zmhXn/673TMBT/zmD/vSgyo2rA4tJZsoQknF8AVuYrwD2gAAAWIklEQVR4nO1dC1siR7oGGlBWLmY0kQbiDi4DiHJrUe4Dog3eEN3sCcpMJmd3//9/ONXX+qq7qimQ9kwY3jx5Epvqpur9rlX1deHx8KJYagylUaIvyz0EuZ+fjuqNZrrA/YANlkaxkehPsgGvqEEw/hvKxHv5Uenw/7t/74aPNLj7lcXGVM6obHspUEWR7Y8aRXd78V3g4z//QcE/XfzG4jAfD4gijXlSCIFJfrj2IvjtbxS4SH9zGsdqr2h6UgfFHNCVeKLhXl++A1Dp/92tbys0EgGTZFEMxXv9xKheHw6HdWma6PfiIatdCGJIHq5tLPj4vvSX8hmDXjHp7Y2Glih7WBpKcihpMQMkgfp6ZkQff/v5F4R3cj6lvqnciFKJ5dkLw3zWKoFkvL6ONvCvo09HR0efPhFW8D8ufVk9brLv7Tm7lFJizyoBr9x0qV/fAY4A/b+4432w8ouiPD+kFpEELLE4NF3bXAjy/7dPbnzDECs/pysp9QPWbGiSdqNr3wFc53/kNehPyiXem+oB0gT80/WMwq7zf9g3iBQCiQXiaEmGAhCmK+/Y9wJ3+S9i+r3SYncmkqYPEhPrqv2If5CC/rJq/ksT0/VnFp7LSlldAIHRirv1PcFN/osydj6Lab+Kuna3uM70u8n/oZw0PUh9ifvTCv/CGvt+BUT+v1L+D/M4hC7Focq/V1pf36/g6BeAlfI/xdovL7WCoPC/3s7H4yL/9YCZPWa4834CaVEQ1p1+1/x/MYu9zxKxV0FaFNd22mXCJf7xvMsr9pd8RlpcUnB/JRyBNegV8i+B2euyu1jp0dprP+n/f1oZ/+mQ31T//KoeupZwhf8CTj2FwHpv4r4VrvDfxOvHoryiZ64pXOEfB18htFF/R7jBfwOof28dN29XCBf4L4C1+7Wfv74VLvAPvL8grvHW+UrgAv8Jc+HH64+v5IlrDMj/zyvhvzgB7meT/M/B0U+r5n8YwsUL772CUOmUW4PB/f1gMC6f5pZ9ytn55dPNLcLN0+X52RIPKDbr0miaYCKPaVmQ/9wpGuA9GmBr3KnQmySw+r/n5KvSac3aqRhGqtYdlBl9ZOLk/Onu5eDgYF/HwcHnl9svC8igUKrnJxnjzQY6kj28ILwA/7nOoFuLxSI6Yqn2VcuuZAXgfvzx9yrb6dw/piKIcwKxSKo7OF3gKec3FwcK5yT2D15uz/kecFiXtRLvkANEyAo3/5VBF43QMr5I+6psadcE5YNLbrwsily5G9W7pmk+6GI4/Morgeu7fTv5ugj2LzgkUJSySUX59Ld5GEIQe3A7hJP/yiAVjmkDjEA9i0WCsw7RUsLZzzuF33I3FdPVvfbY7XYfa4SiRNoDHi90fXewr6v755fni4uXF8IU9j/fzfNCw57mdLNyQpJG+V7GWkapwG8p5ePiP9d6VEeERtjuzmbdNhxgrDYATghOvrzJd9g771yFIyrNsW5LD0kV5ChhB8M1q5HacPagkb2//3Lz5exEuYRCwR8HhARunJ5Q6vsVhRcnksFvaRoXgd7H+yrypEvm4b/TVXVfGaHm73MdXSD6+LpYwYoTP+Df9fQn19JUIZa6IkIRcklQAqlX52To8kXX/YvrE3j9/I5wQ3+wTaARFxSShQSsFC7mA9gJZSRPAcFyHwf/rZoylFik2wGDyI1r5gBj4UfTBzUzoHQ2OXQc9duRe9XYD7fLVoKRx4wAE7hy8kE3uvJ/vjmxfHLy9BmaADMKDDX6vQnyckEKmQLwBmhsHP2EQee/FY4oQS1s9aKKVRiItI0Ph17Iv8urD0YXIvc09e48RnA2Cm3UgrMLnf4LmnqfPRM+iC6AukYzpVCyEQcCoLiDufy/qkOMUFxo7gqPLzzThyfBoCMuV/jAi9O2QT/j8xoQQOSRIQBEv8rt9p1V+cnPNQG8XFOaNLIqyd445TWFYcD0QF7KYvwc/nP32hDDtAhWARYQHmjXpgT/rqb/Bv1hBv3IAtpAAFG6BZxcGK6fTr/VAg7sRlKcqM4nRHUwHgknot6JTSHn8D8IasozoPasgscXiWkhIP9u/BvSD1+xY2snAi3gitLi5EGn/5kdW89fiBhglVMhoRHspe91oIwQ5/62hNyZ/3Iq4jjEVhQ4WLWN/F7+J/cYtoQeagcB/7Fgy97gQZtz7e/T/IqBa7WR2g61fLB8Wtf5Ze11NHEICHmtJnL0swP/un5HUqwpZC6FDSCouqge5N/N+KtbZixMIRV0cIZdJApiHevnl8ZCj5VUErf7EE/EZ4c9b0BBiFloI4kBA96eJUQ48n8VVFd6wq/MjqHJj4HwTLlA8u/e8lsnpX+to/qjdriDqIuPlk/PPhvrbE7qD9qp+Ey4qnogpPG/x3ytNh4yBWCtBHfiv2ystbGnj60oHl1NsRKSf9fmX7m2zmuQHpkwBlAAVg90t61TejHnKV8g/9uEsejqj1SbWS4mhUwBeGWylQP/xhjDbXaAGwP+VSpI/l1bfxgE9S+Nzltdq7SBAMJkEmp6n/3LOU9BWRI0ADALKHlDdGYB0hOT/1CW9MmQ/w8k/2V9jNEZu1/3QXNowYiiXGT8dWv97bSmkxquzW1rikrVkTH8yPQqlKTSgi/bUADAAEzn7u2zyyWnOAKESJ/A5j83C9KNFqAcCRvkd1uqavVFAUNkq8TbYIo9SMspSZymCAMAtnxpcvrMyv0xiAiA5VXoezn4b2L+BXKJgs1/x+h3kOH+c+WZ2iQcjdaujLWhBMH/xJ331iuG+jvpholXaABhbAAnFwb/287Zj4obIgLcGpexa3HwPzhIKM2ID9j8Y7u1ZW0KTgftYDCsqH6wO8ZedQT5F/bcSUDHYcP9RMfzW5fDwACAwZwf2Olk45wwANNghgGTf3b8VerBTf8zIZqx+TddbMwe4iqdq5RCfiQarF0RS491gn/BnQXQq2DYwNyVfWSntTBAytSVW9P9bD853a8BW4sKI1+FxDps9jUyZrM4H/+nVbPHVv4rrceowkA0WH1sWT4chiD9oisJUCVmshmj2qYFgyDgv2pKDCs0D/9kBDYtZmTyH8g4rLYUTTdl4/9nOv8tBv+VcjcS1Nhv39tH38wQ/Pc4BrYwymbXwike/jtQ/6vGat05YHNe+qngZB8IYPtFvzrF/Du9aFKQ2fybIPi/N5QmCv1PpdWOBqMK+cEadVu1GIcOyO91IwBj9xPl4r/SBgYQ7OpXb7YX498DHdD2vn4xgfl3LHbKG+1CpEqy+EfZpzHGsDHGXPkqXEXsI7+TemU43oJMBIDFd8AOnaCqTu4R88/lf2C8CAeNBYu7Rfm/IRyQnoFC/Xea7UwFM00lrrP4r5iDjOr5J/L6YU31wzavD78oSTigBLMhHaM4G9m8yv9pDfNPz82swL4U8V/T+n7yAvjn8f/kGsSOHoBHAubfKdseGTMAy/v8TP5riqKr/1SVHK88M1Q/zFJ9DQ2S/wVnACO/6GfBKBvrRKIm/zz5D7oD8G+YzNnnRfk//wwdkG4ydby0FnI6Y8SYJodC5AIci//TlKlk1XtV9dHf6N/2vIKyYsAPA4B/IQc0EuDNJJJG4Uw5GDXBmhuSqFTxHYbIzve3MRwrSwwgi8HY0W9pZgPYAByM3eQ/S+6JMPmPmKMM1mrVYBBF3Gp0xlFQaQkAC2RAhUTSgf6+kd6NIf8c81+EFLglqvMPyOSZ/yL8QeH/UMYBIBBgZ6Ajv+5++uT1ow90/jth3OWgyn5QX+GZhxHpQQL8U+BpkgDxHBHvbbequGtV5t4vgTYcjMb/NeT/juspDxT+PQk/pt8hAzKa2db/GfyfImcDUA12bRU2DDQyBP/8EbiUt1Rp+/BTfGDZtgX1v+vwQIwr7ICCYQr/L/PX3xBudij8N/DSWsDbYxqALOjqb1mkYPIfA+xHHxcoIy70CAfk21t2Ez7t8wPvg68j/ceYv/6s4B7coqdMBP/z158VXEL+jZBdmGAHFPKyXndLa628tgUxFv+VFBjkbKEy+lGSdNzLrkGkQTRIgtx6TFgml1VCken5D+H/t523H3VcA/63zCmD5Mc1nt4MI90b6gVaNi6Y/LfBGB8XepWkSWRAgm/ZlwDSQI6Q/zLhGLkSoDHgv6Yp0xnMf3Y4FkBJke2YW2BpvfpHLzChL8LJahuxbxMPi/9cF45ykZcYPIV+cskIQCINHgP570DXyBeAocnoyoTyf8DmM89TCJPBEUMSQX0J/cQirUSFNhli8Y9CFhjkvE1uEs2AD/LvO15uFTqd9FH5R1NDgC6PbQKTqeobACcXwJtsf+MJAGcwYoDrCT8QQIhy1F1Trc4VZYpzgvz/CvkfwCi3mAPyyKQBJJc8f4yh/7lHyD+zNgkC8m/o0gPkf/sLx1MA/zuwYCIdByFAyNpmwQUZfc44Q5nJfxnyzzfNNNEgDcC/XAhm8U+qRpVjBwz6n6qxYgSzGb4AAPknViyahAAClnOLGj3kfbz+PDU0M/mvEIO0Fi45o5AnDcAnLLMPyeS/Q3TNoTrDBIi/NcOUTw5gOskzA8D+f2efrENvEAIQ+sAE0tM9P0UoBpj+39MlRsm1zmii5LMYgLXsjgdM/nNEAEhxJMc4/6ziWr5nwgA43q/D+eeOtWCi1MPHJXsF0Z+vq79kVmxM1R+UEJnnzzL1n8jZ+LQMYGoVgENxBgus+EtOp4JBDgf0at4AFkyfdgC2OBzQ5ZbZ2rZgd5jY80MJCHuTXq+XDalvg/rjzJVRNv+ntV0wSL6FXtwdOekjkFz8IJQ0eATJPzkD4FAN05ahIz37BgXA4YBuTf73KY0bfT+a+JsSEBS10f4WMuwEkM0/kYEGd9vzRwmRzvgsAli4FpTNv+eRMID5GZA5YyCmaw9bUADz98D+MNozjKWUUH7EyZh8gjJMB907+mAK4IOF//JXQs3YRdBUSBb+fZlFz4B24J9YAprfMzOX2CWqpa8J/l+Yt+s4eTbVnxUs0sNpf5JVa01gHYjDAgDi34SF/1xtF2JBD+RJWDzQwhbgwH+OMIC5m5BjQ5MsyeoFFMDWPAO43uaLFYXDIkLPXIRxPALPgX/PmOB/l1KH5YTDvFUACx7k78A/OTupzisCNTypNY0+/wYEsDWvCPRGb7zFM1kuBkztd6xCduIfaRnkv8p6g5DVhZ7NAhY6UdWJf88MCGB3TnZ8mtIyCbsJ3xAeaM4u8GeDf57d4mHy7fx7OqQBLCqAtF0A8gJroY78E9lZlf1yrwIjXa3aNitPnqEB7DvqtZF9bnFtVkqA/4lDO0f+Uc9JAbQXc0EUAUz41+Ic+UfZwS4wAKcQfBreZSaq1/tQAH84eKCzF63l1gvXXg0sw3F6DcuZ/1zbKoDFgnCxf2wVQDLBOxV25h/NqUDHvrInYblZ1cF6n7YgHFT7Vm+yzXcUENyEEtnbknP493QipAva/TpwWAqt2MzjsG+1AF+yx5mIzuE/dwUFkGIqRktXHUap4i3knx0Crnd0+rlK5ZD/OQb5p9hnLgAf/erIv2dctQhgt8sKdpXBjOKepIzNBx33uH7UdA7/pmJr9LLS43FwTuwiBMCKrdffdPq5Nio9yhsvxPILcwGC4P83SoOWlf9qdUYphciVr6o16hAbE7sJ+Hocv0QI+T+m5RCEAHZjVBdk0s+MXCekBVBze4P+b7z0K8ewwU1YcY9h9L8D/j/89C9Ki5bNAqq7j60KcdrO6aC9+5UVnNMJn10Cycmo4WwEaWke/54ckR8E7a4xd6/T75gg3ewQMcAeX5+2tY+oh28wIInELrgoTGka9/FPQP+HX//834/2NoOwXQLVSPe+Ve6cnp52xq3XNrpQbbOT8IacpEjAN0lYf4VZw2GxWU/0iAUkOv/K2UTQBz2OCQlUWlr6UI20nPfvDPXWlfyJkMDJl2fDNLiqhHQU+mQZiN/Xs5/G8PHfUP2RAD78589///33T6QYOm2bABQRoIuRiPp/yt+OBxwVpMl/bRJAgSCZ6eWn9UYzrVSWF4rpUmMoTfNyXEAfQVEd/5c1hzntVqugT6BGrzNoqx9VvzIjlomzByIIvNyYSc75zbMhFp4tSoAiWQelFLDacm8L/aoIFPxJOqLK7CtFAoQw5miYpzCa2G1AoTZ5jODL7GX3MoL6/8dJoqEqpITDjzaP24QEdtuvg1brflbTriK75Nmg9Fw/ExLY+nZ38/R0e2caxjfb0VhzUDgcBizVrKKl+NCq/dgN2eJAmWYCeNQzju2xdL3nO6aIwBQExUUlk6Eew0lhKG4GeiENhjT4ilaRm7l82WLi2w3nAaAIhXSzPsr35d4k5LfAR9THIfrp+A8lDFdatSpdBIqGcZZHNEdOIiCpV33TqME3WSvft6vW7qG/HykvqDng/PaZSv4Dr+cplIZTOevXbFikvMngS4If4f30dwZoWZAyyKsaZZA12wmsTjhsJCYZ3zFTCIo/QoaQictz1Z5EpfP6WItg5Y/VuvedxapmPMqZk7fP32A29O354ZrT8RRKkrwnKFasUY0giqLPJoBF+wRQKc/aKWDhqfZsvNiSnNLPZh0piXBMgy8Q7/Wn0mLU4+51yuPWYIDcf/kNp2+fnH+5fLpBeLr8cs7t9NMj2atxrxrvcVIMZbLxeHwvSUrA53vbL1LklCPG1UGOy53K0oM8RE4SZTr9voygnEqamEr1YbNUtB2Q+VfA4VDOJDWifUkhi/xmvVFKF9VXBqU9iwCSy/wW7AYOaMqCQf5xFvlNS/lVnDQB397mJ4lWiVLemN4nM/khxXyLCUuMi/8Vbfx7xTBusO/Ls6r8LGuQxz/A71q+Ewp5Y9qS7Dm4lSaxBpl06VieHw+HZpFH0v5qBUSarEdz+1zsHwV5TP8cn05Ug8C32TZYGgVe7VcbjwQsgOwmAq8AQ1OlQzxlHQm8F75UPf4GJNJxU/355rR4L9z9H6b4ATAy6czynXPdXFRgGzigaG7QcYfT+vGG/5XBJNN3zM2mOVfb8P9WFHBGz/9+7XTD/6pQypqravzHvA8FbZ3Ot1kDfSvwO7Y+fv6bGY3/Tf75ZtT56mtJlOI+5QbfZgX0zZB8mH/ubL4UV0sifH33+vWjQMKnnvi4j9lv7ql3bdbf3g7kfwz+/dxvlw8Dyk0C9SSIDRZCI4MNwOH9XhJTn6r+7/CzpGsPeOyS4PSGI4T2K5GBzfbL21Ho45NvA5z5/NCnNn5LCdAGBhpCxkRgj8cDlSYh1FZgvwyzwQIoyCEsgFCcY0bVV24IcC6WbjAPwwxAaDJ3EjZSDCaw8DEMGzBQyAMPhPRacvQrxYTWbrPytjKkewHCBGSHINDoad5qs/G1QpR6GRIy/bXCQjO/p34e30x8V4rGJETwH8jI04ZVBMVhPq4aisA+BmuD5VCUSQNAai4o743Uh40mQmMoJXoZQfskO9oknitHUUKU7xHQBJFVfzFF/UO71t8ovytoIN++NwcoMmw8v1soNPITJxFk9noJW1DYYJVI1/NxzQ1lMTTFR+TXN+tt7qPYmPZ7cY10Te+z8Ymcl0qbrcb3QqFYagzr0mg6nY4kaai81v/eXfg/RMXvD1a9QqIAAAAASUVORK5CYII="
+    />
+    <hr />
+    <audio
+      src="others/bollywood-song-313044.mp3"
+      controls
+      autoplay
+      loop
+      muted
+    ></audio>
+
+    <!-- comment section here -->
+    <audio controls>
+      <source src="others/bollywood-song-313044.mp3" />
+    </audio>
+
+    <hr />
+    <video src="others/video.mp4" controls width="400" height="350"></video>
+    <!-- <video width="320" height="240" controls loop autoplay>
+      <source src="others/video.mp4" type="video/mp4" />
+      <source src="others/video.ogg" type="video/ogg" />
+      Your browser does not support the video tag.
+    </video> -->
+
+    <video controls width="400" height="350" autoplay loop muted>
+      <source
+        src="https://www.boat-lifestyle.com/cdn/shop/files/quinn_Bejc8URjU1NSXdhabLCmD.mp4"
+      />
+    </video>
+
+    <hr />
+
+    <h2>List start here</h2>
+    <h4>unordered List</h4>
+    <p>circle list</p>
+    <ul style="list-style-type: circle">
+      <li>Html</li>
+      <li>Css</li>
+      <li>java script</li>
+    </ul>
+    <p>square list</p>
+    <ul style="list-style-type: square">
+      <li>Html 1</li>
+      <li>Css 1</li>
+      <li>java script 1</li>
+    </ul>
+    <h4>Ordered List start here</h4>
+    <ol type="1">
+      <li>js</li>
+      <li>Es6</li>
+      <li>Dom</li>
+    </ol>
+    <ol type="I">
+      <li>js</li>
+      <li>Es6</li>
+      <li>Dom</li>
+    </ol>
+
+    <h4>Description List</h4>
+    <dl>
+      <dt>JavaScript-</dt>
+      <dd>in js es6 ,dom ,oops are used</dd>
+      <dt>Bootstrap-</dt>
+      <dd>its a framework which made by Twitter</dd>
+      <dt>React-</dt>
+      <dd>its a UI which is used for single page application</dd>
+    </dl>
+    <hr />
+    <i>simple italic with i tag</i>
+    <br />
+    <em>italic with em tag use for SEOs purpose</em>
+    <hr />
+    <b>simple bold</b>
+    <br />
+    <strong>strong tag used for bold it also provide SEOs purpose</strong>
+
+    <!-- 
+    <div style="display: grid;grid-template-columns: 25% 75%;">
+      <div style="">
+        <img alt="kuldeep_cv_image" src="others/kuldeep.jpg" width="200" height="200" style="border-radius: 100%;border: 2px solid darkblue;">
+        <h1>Kuldeep Yadav</h1>
+      </div>
+    </div> -->
+
+    <hr />
+
+
+
+
+    <p id="parah1">
+      this is a paragraph and its a block element and always started from new
+      line
+    </p>
+    <span id="span1"
+      >its a span tag and inline element so its takes only its content
+      width</span
+    >
+    <span id="span2"
+      >its also span tag and just started the inline content of before element
+      ended</span
+    >
+    <div id="div1" class="block_element">
+      div is a block element takes full width
+    </div>
+    <div class="block_element" id="block_element1">
+      parent div
+      <div class="child_div">
+        child div
+        <div id="nested_child_div1">nested div1 of child div</div>
+        <div id="nested_child_div1">nested div2 of child div</div>
+      </div>
+    </div>
+
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" size="50" /><br />
+      <label for="pin">PIN:</label><br />
+      <input type="text" id="pin" name="pin" size="4" /><br /><br />
+      <label for="number">House no:</label><br />
+      <input type="number" id="number" /><br /><br />
+      <label for="phone">Phone No:</label><br />
+      <input type="tel" id="phone" /><br /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" /><br /><br />
+      <!-- <label for="email">Email:</label><br>
+        <input type="time"  ><br><br> -->
+      <label for="color">Color Picker:</label><br />
+      <input type="color" id="color" /><br /><br />
+      <label for="time">Time:</label><br />
+      <input type="time" id="time" /><br /><br />
+      <label for="date">Date:</label><br />
+      <input type="date" id="date" /><br /><br />
+      <label for="week">Week:</label><br />
+      <input type="week" id="week" /><br /><br />
+      <label for="month">Month:</label><br />
+      <input type="month" id="month" /><br /><br />
+      <label for="date-time">Date-Time-Local:</label><br />
+      <input type="datetime-local" id="date-time" /><br /><br />
+      <label for="reset">Reset:</label><br />
+      <input type="reset" /><br /><br />
+      <label for="search">Search:</label><br />
+      <input type="search" /><br /><br />
+      <label for="url">URL:</label><br />
+      <input type="url" id="url" /><br /><br />
+      <label for="file">Select CV:</label><br />
+      <input type="file" id="file" /><br /><br />
+      <label for="hidden">Hidden:</label><br />
+      <input type="hidden" id="hidden" /><br /><br />
+      <label for="image">image:</label><br />
+      <input
+        type="image"
+        id="image"
+        src="./media/section9rightimg.png"
+        width="20px"
+        style="background-color: #1d0836"
+      /><br /><br />
+
+      <!-- some attribute of input -->
+      <label for="email">Email Readonly:</label><br />
+      <input
+        type="email"
+        id="email"
+        placeholder="kuldeep@gmail.com"
+        readonly
+      /><br /><br />
+      <label for="email">Email Disabled:</label><br />
+      <input
+        type="email"
+        id="email"
+        placeholder="kuldeep@gmail.com"
+        disabled
+      /><br /><br />
+    </form>
+
+    <!-- <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" ><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" autofocus><br><br>
+        <input type="submit" value="Submit">
+      </form>
+
+      <form action="/action_page.php">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="image" src="./media/bgContact.jpg" alt="Submit" width="48" height="48">
+      </form> -->
+  </body>
+</html>

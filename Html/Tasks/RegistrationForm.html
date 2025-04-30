@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body style="background-image: url(../media/regtBg.jpg); background-size: cover; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    
+                <!-- <tr style="padding-left: 60px;"> -->
+        <table style="width: 40%; border: 1px solid black; border-radius: 5px; background-color:aquamarine ;  margin-inline:auto ;margin-top: 100px; " >
+            <form action="" method="get" >
+                <tr>
+                    <th style="text-align: center;" colspan="2">
+                        <h2><u>Registration Form</u></h2>
+                    </th>
+                </tr>
+    
+                    <td style="padding-inline: 70px;">
+                        <label for="firstName">First Name :</label><br>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter Student First Name" required>
+                    </td>
+                    <td >
+                        <label for="lastName">Last Name :</label><br>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter Student Last Name">
+                    </td>
+                </tr>
+    
+                <tr >
+                    <td  style="padding-inline: 70px;">
+                        <label for="fatherName">Father's Name :</label> <br>
+                        <input type="text" id="fatherName" name="fatherName" placeholder="Enter Father Name">
+                    </td>
+
+                    <td >
+                        <label for="motherName">Mother's Name :</label> <br>
+                        <input type="text" id="motherName" name="motherName" placeholder="Enter Mother Name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td  style="padding-inline: 70px;">
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" / placeholder="man@gmail.com" required>
+                    </td>
+                    <td >
+                        <label for="phone">Phone No :</label><br>
+                        <input type="number" id="phone" / placeholder="Enter Phone No" required>
+                    </td>
+                </tr>
+
+                <tr >
+                    <td style="padding-inline: 70px;">
+                        <label for="dob">DOB :</label> <br>
+                        <input type="date" id="dob" name="dob">
+                    </td>
+                    <td >
+                        <label for="pic">Photo of Student :</label><br>
+                        <input type="file" id="pic" name="pic" required>
+                    </td>
+
+                </tr>
+    
+                
+                <tr>
+                    <td  style="padding-inline: 70px;">
+                        <label for="exampleFormControlInput3" class="form-label" required
+                        >Class :</label
+                      ><br>
+                      <select class="form-select" aria-label="Default select example" >
+                        <option selected>---select---</option>
+                        <option value="0">Nursary</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                        <!-- <label for="className ">Class :</label><br>
+                        <input type="number" id="quantity" name="quantity" min="0" max="12"> -->
+                    </td>
+                    <td >
+                        <label for="previousclassDetails">Previous Class Details :</label><br>
+                        <input type="file" id="previousclassDetails" name="previousclassDetails">
+                    </td>
+                </tr>
+    
+                
+                <tr>
+                    <td  style="padding-inline: 70px;">
+                        <label>Gender:</label><br>
+                        <input type="radio" id="male" name="gender" value="male" style="line-height: 10px;">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </td>
+                    <td >
+                        <label for="dof">Regitration Date :</label><br>
+                        <input type="datetime-local" id="dof" name="dof" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"  style="padding-inline: 70px;">
+                        <div class=" ">
+                            <input id="checkbox" type="checkbox" required />
+                            <label for="checkbox">
+                              I agree to these
+                              <a href="#" class=" ">Terms and Conditions</a>.</label
+                            >
+                        </div>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td colspan="2" style="text-align: center; margin: 5px; padding: 5px;">
+                        <button type="" value="submit" style="width: 20vw;padding: 2px;">Register</button>
+                    </td>
+                </tr>
+
+            </form>
+
+        </table>
+
+    
+</body>
+</html

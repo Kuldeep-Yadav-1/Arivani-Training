@@ -1,0 +1,31 @@
+body{
+    /* background-color: red; */
+    background-image: url("https://images6.alphacoders.com/114/1142152.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .bg-body{
+    background-image: url('https://images.wallpapersden.com/image/download/4k-a-different-world_bWVqaG6UmZqaraWkpJRmbmdlrWZlbWU.jpg');
+} */
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-container{
+    display: none;
+    position: absolute;
+    bottom: 10;
+    padding: 10px;
+    background-color: white;
+    min-width: 160px;
+    z-index: 999;
+
+}
+
+.dropdown:hover .dropdown-container {
+    display: block;
+}
+
