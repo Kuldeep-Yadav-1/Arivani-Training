@@ -1200,25 +1200,9 @@
         overflow-y: controls vertical overflow.
       </p>
       <h3>overflow:overflow-x</h3>
-      <p class="overflow-5 overflow">
-        The overflow CSS property controls what happens when content overflows
-        an element's box—i.e., when the content is too large to fit in the area
-        defined by the element's width and height. It's especially important for
-        managing layout and ensuring user-friendly interfaces. There are four
-        main values for the overflow property: visible (default): The overflowed
-        content is not clipped and is rendered outside the element's box. This
-        can lead to layout issues if the content spills over other elements.
-        hidden: The overflowed content is clipped and not visible outside the
-        element's box. No scrollbars are provided. This is useful when you want
-        to strictly limit the display area. scroll: The overflowed content is
-        clipped, but scrollbars are always visible, even if they’re not needed.
-        This ensures users can scroll when necessary, but may look odd if no
-        overflow exists. auto: Scrollbars appear only when necessary—i.e., when
-        content actually overflows. This is typically the most user-friendly
-        option. The overflow property can be applied to both the horizontal and
-        vertical axes using: overflow-x: controls horizontal overflow.
-        overflow-y: controls vertical overflow.
-      </p>
+      <div class="overflow-5 overflow">
+        The overflow CSS property controls what happens when content overflow an element's box—i.e., when the content is too large to fit in the areadefined by the element's width and height. It's especially important for managing layout and ensuring user-friendly interfaces. There are four main values for the overflow property: visible (default): The overflowedcontent is not clipped and is rendered outside the element's box. This can lead to layout issues if the content spills over other elements hidden: The overflowed content is clipped and not visible outside theelement's box. No scrollbars are provided. This is useful when you want to strictly limit the display area. scroll: The overflowed content is clipped, but scrollbars are always visible, even if they’re not neededThis ensures users can scroll when necessary, but may look odd if nooverflow exists. auto: Scrollbars appear only when necessary—i.e., when content actually overflows. This is typically the most user-friendlyoption. The overflow property can be applied to both the horizontal andvertical axes using: overflow-x: controls horizontal overflow. overflow-y: controls vertical overflow.
+      </div>
       <h3>overflow:overflow-y</h3>
       <p class="overflow-6 overflow">
         The overflow CSS property controls what happens when content overflows
@@ -1496,6 +1480,289 @@
           <input type="submit" value="Submit" />
         </form>
       </div>
+
+      <div class="decoration">
+        <h2
+          style="
+            text-align: center;
+            text-shadow: 3px 3px 3px #000000;
+            color: #fff;
+          "
+        >
+          Flex Box
+        </h2>
+        <div class="container-1">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex Direction :row</h3>
+        <div class="container-1 flex-direction-row">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex Direction :row-reverse</h3>
+        <div class="container-1 flex-direction-row-reverse">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex Direction :column</h3>
+        <div class="container-1 flex-direction-column">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+
+        <h3>Flex Wrap : no wrap( By default)</h3>
+        <div class="container-1 nowrap">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex Wrap : no wrap( By default)</h3>
+        <div class="container-1 nowrap">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex Wrap : wrap</h3>
+        <div class="container-1 wrap">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex Wrap : wrap-reverse</h3>
+        <div class="container-1 wrap-reverse">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex : justify-content flex-start (By Default)</h3>
+        <div class="container-1 flex-start">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content flex-end</h3>
+        <div class="container-1 flex-end">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content center</h3>
+        <div class="container-1 center">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content space-around</h3>
+        <div class="container-1 space-around">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content space-between</h3>
+        <div class="container-1 space-between">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content space-evenly</h3>
+        <div class="container-1 space-evenly">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+
+        <h3>Flex : justify-content flex-start (By Default) flex-direction-column</h3>
+        <div class="container-1 flex-start flex-direction-column">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content flex-end flex-direction-column</h3>
+        <div class="container-1 flex-end flex-direction-column">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content center flex-direction-column</h3>
+        <div class="container-1 center flex-direction-column">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content space-around flex-direction-column</h3>
+        <div class="container-1 space-around flex-direction-column">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content space-between flex-direction-column</h3>
+        <div class="container-1 space-between flex-direction-column">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : justify-content space-evenly flex-direction-column</h3>
+        <div class="container-1 space-evenly flex-direction-column">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+
+        <!-- center
+        flex-start
+        flex-end
+        stretch
+        baseline
+        normal -->
+        <h3>Flex : align-item-flex-start</h3>
+        <div class="container-1 align-flex-start">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : align-item-end</h3>
+        <div class="container-1 align-flex-end">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : align-item-center</h3>
+        <div class="container-1 align-center">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : align-item-stretch</h3>
+        <div class="container-1 align-stretch">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : align-item-baseline</h3>
+        <div class="container-1 align-baseline">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+        <h3>Flex : align-item-normal</h3>
+        <div class="container-1 align-normal">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+        </div>
+
+        <h3>Flex : align-content-flex-start</h3>
+        <div class="container-1 align-content-flex-start">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex : align-content-end</h3>
+        <div class="container-1 align-content-flex-end">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex : align-content-center</h3>
+        <div class="container-1 align-content-center">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex : align-content-stretch</h3>
+        <div class="container-1 align-content-stretch">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex : align-content-space-between</h3>
+        <div class="container-1 align-content-space-between">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex : align-content-space-evenly</h3>
+        <div class="container-1 align-content-space-evenly">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+        <h3>Flex : align-content-space-around</h3>
+        <div class="container-1 align-content-space-around">
+          <div class="child">child-1</div>
+          <div class="child">child-2</div>
+          <div class="child">child-3</div>
+          <div class="child">child-4</div>
+          <div class="child">child-5</div>
+          <div class="child">child-6</div>
+          <div class="child">child-7</div>
+          <div class="child">child-8</div>
+          <div class="child">child-9</div>
+        </div>
+
+        
+
+      </div>
+
     </div>
   </body>
 </html>
