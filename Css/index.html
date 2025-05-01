@@ -5,30 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-    <style>
+    <!-- <style>
       .main-heading{
         color: blue
       }
       #heading{
         color: aqua
       }
-    </style>
+    </style> -->
+    <!-- <style>
+      .background--custom {
+        background: linear-gradient(90deg, #a4baf5, #c8e74d, #f5a2a1);
+        background-size: 300% 300%;
+        animation: gradient 4s alternate infinite;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
+      </style> -->
+      <style>
+        path {
+          transform-origin: 50% 0%;
+        }
+        .background--custom {
+          background-color: #FFFFFF;
+          position: absolute;
+          width: 100vw;
+          height: 100vh;
+          z-index: -1;
+          top: 0;
+          left: 0;
+        }
+        @keyframes path0 {
+          0% {
+            transform: rotate(-10deg);
+          }
+          100% {
+            transform: rotate(10deg);
+          }
+        }
+        @keyframes path1 {
+          0% {
+            transform: rotate(-30deg);
+          }
+          100% {
+            transform: rotate(30deg);
+          }
+        }
+        @keyframes path2 {
+          0% {
+            transform: rotate(40deg);
+          }
+          100% {
+            transform: rotate(-40deg);
+          }
+        }
+      </style>
   </head>
   <body>
-    <div class="bg-body">
-      <h1 class="heading">Hello World</h1>
-      <h1 class="heading">Hello World</h1>
-      <h1 class="heading">Hello World</h1>
-      <h1 class="heading">Hello World</h1>
-
-
-      <div class="dropdown">
-        <button style="background-color: crimson; padding: 10px;color: white; border: none; border-radius: 10px;">Hover me!</button>
-        <div class="dropdown-container">
-          This is a dropdown content
-        </div>
-      </div>
-
-    </div>
+    <!-- <div class="background--custom">
+      <h1>Amaan</h1>
+    </div> -->
+    <svg class="background--custom" id="demo" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path fill="#FFFF00" fill-opacity="0.6" d="M-100 -100L200 -100L200 70L-100 70Z" style="animation: path0 3.125s linear infinite alternate;" /><path fill="#00FFFF" fill-opacity="0.3" d="M-100 -100L200 -100L200 50L-100 50Z" style="animation: path1 4.9504950495049505s linear infinite alternate;" /><path fill="#FF00FF" fill-opacity="0.5" d="M-100 -100L200 -100L200 20L-100 20Z" style="animation: path2 3.787878787878788s linear infinite alternate;" />
+    </svg>
+    <h1>Amaan</h1>
   </body>
 </html>
