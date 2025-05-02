@@ -19,7 +19,7 @@
 }
 
 .hero{
-    height: 100vh;
+    height: 110vh;
     /* background-color: #759b1d; */
     padding: 5px;
 }
@@ -49,4 +49,39 @@
     border-radius:6px;
     cursor: pointer;
 }
+
+.skills-tech{
+    /* background-color: yellow; */
+    margin-inline: auto;
+    margin-top: 200px;
+    min-height: 100vh;
+    max-width: 80vw;
+}
+
+.icons{
+    height: 150px;
+    width: 150px;
+    margin: 35px;
+    padding-inline: 23px;
+    padding-block: 10px ;
+    /* background-color: #759b1d; */
+    border: 1px solid white;
+}
+
+.icons .icon{
+    height: 100px;
+    width: 100px;
+}
+
+.about-me{
+    margin-inline: auto;
+    min-height: 80vh;
+    max-width: 80vw;
+    background-color: #759b1d;
+    border: 2px solid white;
+}
+
+
+
+
 
