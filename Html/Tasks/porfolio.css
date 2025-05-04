@@ -56,19 +56,22 @@
     margin-top: 200px;
     min-height: 100vh;
     max-width: 80vw;
+    /* border: 2px solid white; */
 }
 
 .icons{
-    height: 150px;
-    width: 150px;
+    height: 170px;
+    width: 170px;
     margin: 35px;
-    padding-inline: 23px;
-    padding-block: 10px ;
+
     /* background-color: #759b1d; */
     border: 1px solid white;
 }
 
+
 .icons .icon{
+    margin-inline: 34px;
+    margin-block: 15px ;
     height: 100px;
     width: 100px;
 }
@@ -77,8 +80,35 @@
     margin-inline: auto;
     min-height: 80vh;
     max-width: 80vw;
-    background-color: #759b1d;
-    border: 2px solid white;
+    /* background-color: #759b1d;
+    border: 2px solid white; */
+}
+
+.education-box{
+    /* background-color: #466882;
+    border: 2px solid white; */
+
+    padding: 10px;
+}
+
+.icon-education{
+    width: 65px;
+    height: 65px;
+    background-color: cyan;
+    border: 1px solid black;
+    border-radius: 100%;
+    padding: 7px;
+    margin-block: 10px;
+    margin-right: 10px;
+}
+
+.education img:hover{
+    background-color: rgb(97, 104, 149);
+    cursor: pointer;
+}
+
+.college{
+    margin-top: 15px;
 }
 
 
