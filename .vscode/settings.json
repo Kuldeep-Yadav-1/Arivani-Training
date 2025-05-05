@@ -1,0 +1,13 @@
+{
+    "window.density.editorTabHeight": "compact",
+    "zenMode.fullScreen": false,
+    "zenMode.centerLayout": false,
+    "zenMode.hideActivityBar": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.restore": false,
+    "workbench.editor.enablePreview": true,
+    "screencastMode.keyboardOptions": {
+        "showCommandGroups": true
+    }
+}
