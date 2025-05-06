@@ -3,19 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kuldeep Portfolio Project</title>
+    <title>Kuldeep Portfolio Project with tailwind</title>
     <link rel="icon" type="image/x-icon" href="../media/kuldeep.jpg" />
     <!-- <link rel="stylesheet" href="porfolio.css" /> -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+      path {
+        transform-origin: 50% 0%;
+      }
+      .background--custom {
+        background-color: #ffffff;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        top: 0;
+        left: 0;
+      }
+      @keyframes path0 {
+        0% {
+          transform: rotate(-20deg);
+        }
+        100% {
+          transform: rotate(20deg);
+        }
+      }
+      @keyframes path1 {
+        0% {
+          transform: rotate(-40deg);
+        }
+        100% {
+          transform: rotate(90deg);
+        }
+      }
+      @keyframes path2 {
+        0% {
+          transform: rotate(60deg);
+        }
+        100% {
+          transform: rotate(-90deg);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="text-black-600 bg-white text-lg w-11/12 mx-auto">
+    <svg
+      class="background--custom"
+      id="demo"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+    >
+      <path
+        fill="#FFFF00"
+        fill-opacity="0.7"
+        d="M-100 -100L200 -100L200 50L-100 50Z"
+        style="animation: path0 5s linear infinite alternate"
+      />
+      <path
+        fill="#00FFFF"
+        fill-opacity="0.7"
+        d="M-100 -100L200 -100L200 50L-100 50Z"
+        style="animation: path1 12.5s linear infinite alternate"
+      />
+      <path
+        fill="#FF00FF"
+        fill-opacity="0.2"
+        d="M-100 -100L200 -100L200 20L-100 20Z"
+        style="animation: path2 30s linear infinite alternate"
+      />
+    </svg>
+
+    <ul
+      style="font-family: Poppins;"
+      class="nav-list shadow-lg fixed  font-semibold flex justify-evenly items-center text-blue-900 bg uppercase bg-cyan-100 w-320 h-10 top-0"
+    >
+      <li><a href="#" class="hover:underline underline-offset-3">Home</a></li>
+      <li>
+        <a href="#about-me" class="hover:underline underline-offset-3"
+          >Education</a
+        >
+      </li>
+      <li>
+        <a href="#skills" class="hover:underline underline-offset-3"
+          >Tech & Skills</a
+        >
+      </li>
+      <li>
+        <a href="#project" class="hover:underline underline-offset-3"
+          >Trainning & Projects</a
+        >
+      </li>
+      <li>
+        <a href="#contact" class="hover:underline underline-offset-3"
+          >Contact Us</a
+        >
+      </li>
+    </ul>
+
+    <div class="text-black-600 text-lg mx-24 font-mono" style="font-family: Poppins;">
       <!-- hero section start -->
-      <div class="hero grid grid-cols-2 ">
-        <div class=" w-78 d-block m-auto">
-          <img src="../media/kuldeep.jpg" alt="" class="rounded-full shadow-2xl" />
+      <div
+        class="hero grid grid-cols-2 mt-17 h-120 bg-green-100 shadow-2xl rounded"
+        id="home"
+      >
+        <div class="w-78 d-block m-auto">
+          <img
+            src="../media/kuldeep.jpg"
+            alt=""
+            class="rounded-full shadow-2xl"
+          />
         </div>
-        <div class="hero-left w-120  flex flex-col justify-center">
+        <div class="hero-left w-120 flex flex-col justify-center">
           <p class="intro text-2xl leading-none">
             Hi! I Am
             <span class="text-blue-900 font-semibold">Kuldeep Yadav</span>
@@ -29,13 +130,16 @@
             services.
           </p>
           <div class="btn-container leading-8 flex justify-start">
-            <a href="./resume.html" class="text-2xl text-white bg-blue-900 mr-2.5 px-4 py-2 rounded "
-              ><button class=" cursor-pointer">Resume</button></a
+            <a
+              href="./resume.html"
+              class="text-2xl text-white bg-blue-900 mr-2.5 px-2.5 py-1.5 rounded"
+              target="_blank"
+              ><button class="cursor-pointer">Resume</button></a
             >
-            <a href="#" class="text-2xl text-white bg-blue-900 mr-2.5 px-4 py-2 rounded"
-              ><button class=" cursor-pointer">
-                View Project
-              </button></a
+            <a
+              href="#project"
+              class="text-2xl text-white bg-blue-900 mr-2.5 px-2.5 py-1.5 rounded"
+              ><button class="cursor-pointer">Project</button></a
             >
           </div>
         </div>
@@ -44,306 +148,410 @@
       <!-- home section end -->
 
       <!-- About Me section start-->
-         <div class="about-me mx-32 py-2.5 my-1">
-          <h2
-          class="text-center text-4xl font-medium leading-18 my-2.5"
-          >
+      <div class="about-me py-5 my-5" id="about-me">
+        <h2 class="text-center text-4xl font-medium leading-18 my-2.5">
           About <span class="text-blue-900">Me</span>
-          </h2>
-          <p class="skills-detail text-center text-xl">
-          I have a strong foundation in <span class="text-blue-900 font-medium text-2xl">front-end development</span>, with experience in
-          building responsive and user-friendly interfaces using HTML, CSS,
-          JavaScript, and modern frameworks like React. Currently, I’m actively
-           <span class="text-blue-900 font-medium text-2xl">upskilling in back-end technologies</span> to become a proficient <span class="text-blue-900 font-medium text-2xl">full stack
-            developer.</span>
-          </p>
-         </div>
+        </h2>
+        <p class="skills-detail text-center text-xl">
+          I have a strong foundation in
+          <span class="text-blue-900 font-medium text-2xl"
+            >front-end development</span
+          >, with experience in building responsive and user-friendly interfaces
+          using HTML, CSS, JavaScript, and modern frameworks like React.
+          Currently, I’m actively
+          <span class="text-blue-900 font-medium text-2xl"
+            >upskilling in back-end technologies</span
+          >
+          to become a proficient
+          <span class="text-blue-900 font-medium text-2xl"
+            >full stack developer.</span
+          >
+        </p>
+      </div>
       <!-- About Me section End-->
 
-
       <!-- Education section  start-->
-      <div class="education mx-32 py-2.5 my-1">
-          <div class="education-box box flex flex-col">
-            <h2 class="text-2xl font-semibold leading-12 text-blue-900">Education</h2>
-            <div class="education flex flex-row">
-              <img
-                src="../media/icons/education.svg"
-                alt="degree"
-                class="icon-education w-15 h-15 me-2 p-3 rounded-full border cursor-pointer hover:shadow-2xl"
-              />
-              <div class="college">
-                <h4 class="text-xl font-medium text-blue-900">Bachelors in Technology (Computer Science & Engineering)</h4>
-                <h6 class="">Feroze Gandhi engg. institute & technology ,Raebareli</h6>
-              </div>
+      <div class="education py-2.5 my-5" id="education">
+        <div class="education-box box flex flex-col">
+          <h2 class="text-2xl font-semibold leading-12 text-blue-900">
+            Education
+          </h2>
+          <div class="education flex flex-row">
+            <img
+              src="../media/icons/education.svg"
+              alt="degree"
+              class="icon-education w-15 h-15 me-3 p-3 rounded-full border cursor-pointer hover:shadow-2xl"
+            />
+            <div class="college">
+              <h4 class="text-xl font-medium text-blue-900">
+                Bachelors in Technology (Computer Science & Engineering)
+              </h4>
+              <h6 class="">
+                Feroze Gandhi engg. institute & technology ,Raebareli
+              </h6>
             </div>
           </div>
-          <div class="education-box box  flex flex-col">
-            <h2 class="text-2xl font-semibold leading-12 text-blue-900 mt-4">Work Experience</h2>
-            <div class="education flex">
-              <img
-                src="../media/icons/internship.svg"
-                alt="degree"
-                class="icon-education w-15 h-15 me-2 p-3 rounded-full border"
-              />
-              <div class="college">
-                <h4 class="text-xl font-medium text-blue-900">Frontend Developer - Intern</h4>
-                <h6 class="">Odin School ,Hyderabad</h6>
-              </div>
-            </div>
-            <div class="education flex my-1">
-              <img
-                src="../media/icons/working.svg"
-                alt="trainning"
-                class="icon-education w-15 h-15 me-2 p-3 rounded-full border"
-              />
-              <div class="college">
-                <h4 class="text-xl font-medium text-blue-900">MERN Developer (Trainning & Placement)</h4>
-                <h6 class="">Arivani Technologies Pvt. Ltd. ,Lucknow</h6>
-              </div>
+        </div>
+        <div class="education-box box flex flex-col">
+          <h2 class="text-2xl font-semibold leading-12 text-blue-900 mt-4">
+            Work Experience
+          </h2>
+          <div class="education flex ">
+            <img
+              src="../media/icons/internship.svg"
+              alt="degree"
+              class="icon-education w-15 h-15 me-3  p-3 rounded-full border cursor-pointer hover:shadow-2xl"
+            />
+            <div class="college">
+              <h4 class="text-xl font-medium text-blue-900">
+                Frontend Developer - Intern
+              </h4>
+              <h6 class="">Odin School ,Hyderabad</h6>
             </div>
           </div>
+          <div class="education flex my-2">
+            <img
+              src="../media/icons/working.svg"
+              alt="trainning"
+              class="icon-education w-15 h-15 me-3 p-3 rounded-full border cursor-pointer hover:shadow-2xl"
+            />
+            <div class="college">
+              <h4 class="text-xl font-medium text-blue-900">
+                MERN Developer (Trainning & Placement)
+              </h4>
+              <h6 class="">Arivani Technologies Pvt. Ltd. ,Lucknow</h6>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Education section  End-->
 
       <!-- skills section start -->
-       <div class="skills-tech flex flex-col mx-25 py-2.5 my-1">
-         <h2
-           class="text-center text-4xl font-medium my-2.5 text-center"
-         >
-           Skills <span class="text-blue-900">& Tech</span>
-         </h2>
-         <div
-           class="all-icons flex justify-evenly align-evenly flex-wrap"
-         >
-           <div class="icons cursor-pointer w-65  m-5 rounded py-4 shadow-2xl">
-             <img
-               src="../media/icons/file-type-html.svg"
-               alt="html"
-               class="icon w-32.5 h-32.5 mx-auto "
-             />
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               Html
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 rounded py-4 shadow-2xl">
-             <img src="../media/icons/file-type-css.svg" alt="css" class="icon w-32.5 h-32.5 mx-auto" />
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               CSS
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 rounded py-4 shadow-2xl">
-             <img
-               src="../media/icons/javascript-js.svg"
-               alt="javascript"
-               class="icon w-32.5 h-32.5 mx-auto"
-             />
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               JavaScript
-             </h6>
-           </div>
-           <div class="icons cursor-pointer w-65 m-5 rounded py-4 shadow-2xl">
-             <img
-               src="../media/icons/bootstrap-brands.svg"
-               alt="bootsrap"
-               class="icon w-32.5 h-32.5 mx-auto"
-             />
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               Bootstrap
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 rounded py-4 shadow-2xl">
-             <img
-               src="../media/icons/tailwind-css.svg"
-               alt="tailwind"
-               class="icon w-32.5 h-32.5 mx-auto"
-             />
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               tailwind
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 rounded py-4 shadow-2xl">
-             <img src="../media/icons/React.svg" alt="react" class="icon w-32.5 h-32.5 mx-auto" />
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               React
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 rounded py-4 shadow-2xl">
-             <img src="../media/icons/node-js.svg" alt="nodejs" class="icon w-32.5 h-32.5 mx-auto"/>
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               Node JS
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 shadow-2xl rounded py-4">
-             <img src="../media/icons/mongoDb.svg" alt="mongoDb" class="icon w-32.5 h-32.5 mx-auto"/>
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               Mongo DB
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 shadow-2xl rounded py-4"">
-             <img
-               src="../media/icons/express-original.svg"
-               alt="expressjs"
-               class="icon w-32.5 h-32.5 mx-auto"
-             />
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               Express JS
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 shadow-2xl rounded py-4">
-             <img src="../media/icons/git-icon.svg" alt="git" class="icon w-32.5 h-32.5 mx-auto"/>
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               Git Hub
-             </h6>
-           </div>
-           <div class="icons cursor-pointer  w-65 m-5 shadow-2xl rounded py-4">
-             <img src="../media/icons/gitlab.svg" alt="git" class="icon w-32.5 h-32.5 mx-auto" />
-             <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-               Git-lab
-             </h6>
-           </div>
-         </div>
-       </div>
+      <div class="skills-tech flex flex-col py-10 my-5" id="skills">
+        <h2 class="text-center text-4xl font-medium my-2.5 text-center">
+          Skills <span class="text-blue-900">& Tech</span>
+        </h2>
+        <div class="all-icons flex justify-between align-evenly flex-wrap">
+          <div
+            class="icons cursor-pointer w-75 m-4 rounded py-4 shadow-2xl hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/file-type-html.svg"
+              alt="html"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Html
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 rounded py-4 shadow-2xl hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/file-type-css.svg"
+              alt="css"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              CSS
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 rounded py-4 shadow-2xl hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/javascript-js.svg"
+              alt="javascript"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              JavaScript
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 rounded py-4 shadow-2xl hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/bootstrap-brands.svg"
+              alt="bootsrap"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Bootstrap
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 rounded py-4 shadow-2xl hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/tailwind-css.svg"
+              alt="tailwind"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              tailwind
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 rounded py-4 shadow-2xl hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/React.svg"
+              alt="react"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              React
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 rounded py-4 shadow-2xl hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/node-js.svg"
+              alt="nodejs"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Node JS
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/mongoDb.svg"
+              alt="mongoDb"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Mongo DB
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/express-original.svg"
+              alt="expressjs"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Express JS
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/git-icon.svg"
+              alt="git"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Git Hub
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/gitlab.svg"
+              alt="git"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Git-lab
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/problem-solving-icon.svg"
+              alt="git"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Problem Solving
+            </h6>
+          </div>
+        </div>
+      </div>
       <!-- skills section End -->
 
       <!-- Project portfolio section start -->
-      <div class="skills-tech flex flex-col mx-25 py-2.5 my-1">
-          <h2
-            class="text-center text-4xl font-medium my-2.5 text-center"
-          >
-            Project <span class="text-blue-900">Portfolio</span>
-          </h2>
+      <div class="skills-tech flex flex-col py-10 my-5" id="project">
+        <h2 class="text-center text-4xl font-medium my-2.5 text-center">
+          Project <span class="text-blue-900">Portfolio</span>
+        </h2>
+        <div class="all-icons flex justify-between align-evenly flex-wrap">
           <div
-            class="all-icons flex justify-evenly align-evenly flex-wrap"
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
           >
-            <div class="icons cursor-pointer w-65 m-5 shadow-2xl rounded py-4">
-              <img
-                src="../media/icons/netflix.svg"
-                alt="netflix"
-                class="icon w-32.5 h-32.5 mx-auto" 
-              />
-              <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-                Netflix
-              </h6>
-            </div>
-            <div class="icons cursor-pointer w-65 m-5 shadow-2xl rounded py-4">
-              <img src="../media/icons/amazon.svg" alt="css" class="icon w-32.5 h-32.5 mx-auto" />
-              <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-                Amazon
-              </h6>
-            </div>
-            <div class="icons cursor-pointer w-65 m-5 shadow-2xl rounded py-4">
-              <img
-                src="../media/icons/weather-rain-cloud.svg"
-                alt="javascript"
-                class="icon w-32.5 h-32.5 mx-auto" 
-              />
-              <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-                Weather App
-              </h6>
-            </div>
-            <div class="icons cursor-pointer w-65 m-5 shadow-2xl rounded py-4">
-              <img
-                src="../media/icons/bank-payment.svg"
-                alt="bootsrap"
-                class="icon w-32.5 h-32.5 mx-auto" 
-              />
-              <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-                Banking Payment
-              </h6>
-            </div>
-            <div class="icons cursor-pointer w-65 m-5 shadow-2xl rounded py-4">
-              <img
-                src="../media/icons/e-commerce.svg"
-                alt="tailwind"
-                class="icon w-32.5 h-32.5 mx-auto" 
-              />
-              <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-                E-commerce App
-              </h6>
-            </div>
-            <div class="icons cursor-pointer w-65 m-5 shadow-2xl rounded py-4">
-              <img
-                src="../media/icons/portfolio (1).svg"
-                alt="tailwind"
-                class="icon w-32.5 h-32.5 mx-auto" 
-              />
-              <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-                Portfolio Project
-              </h6>
-            </div>
+            <img
+              src="../media/icons/netflix.svg"
+              alt="netflix"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Netflix
+            </h6>
           </div>
-    </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/amazon.svg"
+              alt="css"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Amazon
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/weather-rain-cloud.svg"
+              alt="javascript"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Weather App
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/bank-payment.svg"
+              alt="bootsrap"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Banking Payment
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/e-commerce.svg"
+              alt="tailwind"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              E-commerce App
+            </h6>
+          </div>
+          <div
+            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
+          >
+            <img
+              src="../media/icons/portfolio (1).svg"
+              alt="tailwind"
+              class="icon w-32.5 h-32.5 mx-auto"
+            />
+            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+              Portfolio Project
+            </h6>
+          </div>
+        </div>
+      </div>
       <!-- Project portfolio section End -->
 
       <!-- Contact section start -->
-      <div class="contact-us flex flex-col mx-25 pt-2 mt-1">
-          <h2
-            class="text-center text-4xl font-medium mt-2.5 mb-1 text-center"
-          >
-            Contact <span class="text-blue-900">Us</span>
-          </h2>
-         
+      <div class="contact-us flex flex-col pt-10 mt-5" id="contact">
+        <h2 class="text-center text-4xl font-medium mt-2.5 mb-1 text-center">
+          Contact <span class="text-blue-900">Us</span>
+        </h2>
+
+        <div class="flex justify-between">
+          <form class="max-w-md mt-5">
+            <div class="relative z-0 w-100 mb-5 group flex flex-start pt-5">
+              <input
+                type="email"
+                name="floating_email"
+                id="floating_email"
+                class="block py-1 px-0 w-full text-sm text-blue-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-blue-900 dark:border-gray-600 dark:focus:border-blue-900 focus:outline-none focus:ring-0 focus:border-blue-900 peer"
+                placeholder="Enter Your Email"
+                required
+              />
+              <input
+                type="image"
+                src="../media/section9rightimg.png"
+                alt="Submit"
+                class="border ml-5 rounded bg-black h-7 w-7"
+              />
+            </div>
+          </form>
+
           <div
-            class="all-icons contact-icons flex justify-center align-center flex-wrap"
+            class="all-icons contact-icons flex justify-center align-center flex-wrap mt-5"
           >
-              <a href="" class="w-15 h-15 rounded m-1">              
-                <img id=" "
+            <a href="" class="w-15 h-15 rounded m-1"  target="_blank">
+              <img
+                id=" "
                 src="../media/icons/square-phone-solid.svg"
                 alt="phone"
                 title="+91 8299176972"
-                class=" p-4"
-                 />
-              </a>
+                class="p-4 cursor-pointer delay-75 transition-all duration-100 ease-linear"
+               
+              />
+            </a>
 
-              <a href="https://www.gmail.com" class="w-15 h-15 m-1">              
-                <img
+            <a href="https://www.gmail.com" class="w-15 h-15 m-1"  target="_blank">
+              <img
                 src="../media/icons/square-envelope-solid.svg"
                 alt="email"
                 title="kulyad123@gmail.com"
-                class="p-4"
-                 />
-              </a>
-           
-              <a href="https://www.linkedin.com/in" class="w-15 h-15 m-1">              
-                <img
+                class="p-4 hover:shadow-2xl cursor-pointer"
+              />
+            </a>
+
+            <a href="https://www.linkedin.com/in" class="w-15 h-15 m-1"target="_blank">
+              <img
                 src="../media/icons/linkedin-brands.svg"
                 alt="linkedin-original"
-                class="p-4"
-                 />
-              </a>
-              <a href="" class="w-15 h-15 m-1">              
-                <img id="whatsapp"
+                class="p-4 hover:shadow-2xl cursor-pointer"
+              />
+            </a>
+            <a href="" class="w-15 h-15 m-1" target="_blank">
+              <img
+                id="whatsapp"
                 src="../media/icons/square-whatsapp-brands.svg"
                 alt="whatsapp"
-                class="p-4"
+                class="p-4 hover:shadow-2xl cursor-pointer"
                 title="+91 8299176972"
-                 />
-              </a>
+              />
+            </a>
 
-
-              <a href="https://github.com/Kuldeep-Yadav-1" class="w-15 h-15 m-1">              
-                <img id="git-lab"
+            <a href="https://github.com/Kuldeep-Yadav-1" class="w-15 h-15 m-1" target="_blank">
+              <img
+                id="git-lab"
                 src="../media/icons/square-github-brands.svg"
                 alt="git"
-                class="p-4"
+                class="p-4 hover:shadow-2xl cursor-pointer"
                 title="Kuldeep-Yadav-1"
-                 />
-              </a>
+              />
+            </a>
           </div>
+        </div>
       </div>
       <!-- Contact section End-->
-
-      <!-- Footer section start-->
-      <div class="footer  flex justify-between items-center mx-25 pb-5">
-      <h4>Kuldeep's Portfolio</h4>
-      <p>All copyrights © 2024-25</p>
-      <div class="foot-links w-100  flex justify-between">
-        <a href="#" class="hover:underline underline-offset-3">Privacy Policy</a>
-        <a href="#" class="hover:underline underline-offset-3">Legal stuff</a>
-        <a href="#" class="hover:underline underline-offset-3">Security</a>
-      </div>
     </div>
-      <!-- Footer section end-->
+    <!-- Footer section start-->
+    <hr />
+    <div class="bg-cyan-100 p-2">
+      <p
+       style="font-family: Poppins;"
+        class="footer font-semibold text-xl font-serif flex justify-center items-center p-5 text-blue-900 mb-5"
+      >
+        All copyrights © 2024-25
+      </p>
     </div>
+    <!-- Footer section end-->
   </body>
 </html>
