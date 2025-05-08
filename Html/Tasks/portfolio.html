@@ -114,435 +114,445 @@
     </ul> -->
 
     <div
-      class="text-black-600 text-lg mx-24 font-mono"
+      class="text-black-600 lg:mx-24 sm:mx-20 font-mono"
       style="font-family: Poppins"
     >
       <!-- hero section start -->
-      <!-- <div
-        class="hero grid grid-cols-2 mt-17 h-120 bg-white/50  rounded"
+      <div
+        class="grid lg:grid-cols-2 grid-cols-1 mt-10 bg-white rounded"
         id="home"
       >
-        <div class="w-78 d-block m-auto">
+        <div class="flex justify-center">
           <img
             src="../media/kuldeep.jpg"
             alt=""
-            class="rounded-full shadow-2xl"
+            class="rounded-full shadow-2xl lg:w-[65%] md:w-[50%] w-[60%]"
           />
         </div>
-        <div class="hero-left w-120 flex flex-col justify-center">
-          <p class="intro text-2xl leading-none">
+        <div class="my-auto lg:mt-auto md:mt-10 mt-5 text-center p-4">
+          <p class="lg:text-2xl md:text-xl text-lg leading-snug">
             Hi! I Am
             <span class="text-blue-900 font-semibold">Kuldeep Yadav</span>
           </p>
-          <h1 class="text-5xl font-bold text-blue-900 leading-16">
+          <h1
+            class="lg:text-5xl md:text-4xl text-2xl font-bold text-blue-900 leading-relaxed"
+          >
             Web Developer.
           </h1>
-          <p class="detail leading-6 mb-2">
+          <p class="lg:text-base text-sm text-gray-600">
             A Front-End Developer with entry-level experience specializing in
             web development & user interface, also upskilling in nodeJS back-end
             services.
           </p>
-          <div class="btn-container leading-8 flex justify-start">
+          <div class="mt-8">
             <a
               href="./resume.html"
-              class="text-2xl text-white bg-blue-900 mr-2.5 px-2.5 py-1.5 rounded"
+              class="lg:text-lg md:text-base text-sm text-white bg-blue-900 mr-2.5 px-2.5 py-1.5 rounded"
               target="_blank"
               ><button class="cursor-pointer">Resume</button></a
             >
             <a
               href="#project"
-              class="text-2xl text-white bg-blue-900 mr-2.5 px-2.5 py-1.5 rounded"
+              class="lg:text-lg md:text-base text-sm text-white bg-blue-900 px-2.5 py-1.5 rounded"
               ><button class="cursor-pointer">Project</button></a
             >
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- hero section end -->
       <!-- home section end -->
 
       <!-- About Me section start-->
-      <!-- <div class="about-me py-5 my-5" id="about-me">
-        <h2 class="text-center text-4xl font-medium leading-18 my-2.5">
+      <div class="p-4 lg:my-10 md:my-7" id="about-me">
+        <h2
+          class="text-center lg:font-semibold lg:leading-8 my-2.5 leading-8 lg:text-4xl md:text-3xl text-2xl font-bold"
+        >
           About <span class="text-blue-900">Me</span>
         </h2>
-        <p class="skills-detail text-center text-xl">
+        <p class="text-center lg:text-base text-sm text-gray-600">
           I have a strong foundation in
-          <span class="text-blue-900 font-medium text-2xl"
-            >front-end development</span
+          <span class="text-blue-900 font-semibold">front-end development</span
           >, with experience in building responsive and user-friendly interfaces
           using HTML, CSS, JavaScript, and modern frameworks like React.
           Currently, I’m actively
-          <span class="text-blue-900 font-medium text-2xl"
+          <span class="text-blue-900 font-semibold"
             >upskilling in back-end technologies</span
           >
           to become a proficient
-          <span class="text-blue-900 font-medium text-2xl"
-            >full stack developer.</span
-          >
+          <span class="text-blue-900 font-semibold">full stack developer.</span>
         </p>
-      </div> -->
+      </div>
       <!-- About Me section End-->
 
       <!-- Education section  start-->
-      <!-- <div class="education py-2.5 my-5" id="education">
-        <div class="education-box box flex flex-col">
-          <h2 class="text-2xl font-semibold leading-12 text-blue-900">
-            Education
-          </h2>
-          <div class="education flex flex-row">
-            <img
-              src="../media/icons/education.svg"
-              alt="degree"
-              class="icon-education w-15 h-15 me-3 p-3 rounded-full border cursor-pointer hover:shadow-2xl"
-            />
-            <div class="college">
-              <h4 class="text-xl font-medium text-blue-900">
-                Bachelors in Technology (Computer Science & Engineering)
-              </h4>
-              <h6 class="">
-                Feroze Gandhi engg. institute & technology ,Raebareli
-              </h6>
-            </div>
+      <div class="p-4 my-5" id="education">
+        <h2 class="text-xl font-semibold text-blue-900">Education</h2>
+        <div class="flex">
+          <img
+            src="../media/icons/education.svg"
+            alt="degree"
+            class="w-12 h-12 me-3 p-2 rounded-full border my-auto cursor-pointer hover:shadow-2xl"
+          />
+          <div class="lg:text-base text-sm text-gray-600 my-auto">
+            <h4 class="text-blue-900 font-semibold">
+              Bachelors in Technology (Computer Science & Engineering)
+            </h4>
+            <h6 class="">
+              Feroze Gandhi engg. institute & technology ,Raebareli
+            </h6>
           </div>
         </div>
-        <div class="education-box box flex flex-col">
-          <h2 class="text-2xl font-semibold leading-12 text-blue-900 mt-4">
-            Work Experience
-          </h2>
-          <div class="education flex ">
+
+        <div class="grid grid-col-2 mt-4">
+          <h2 class="text-xl font-semibold text-blue-900">Work Experience</h2>
+          <div class="flex">
             <img
               src="../media/icons/internship.svg"
               alt="degree"
-              class="icon-education w-15 h-15 me-3  p-3 rounded-full border cursor-pointer hover:shadow-2xl"
+              class="w-12 h-12 me-3 p-2 my-auto rounded-full border cursor-pointer hover:shadow-2xl"
             />
-            <div class="college">
-              <h4 class="text-xl font-medium text-blue-900">
+            <div class="lg:text-base text-sm text-gray-600 my-auto">
+              <h4 class="text-blue-900 font-semibold">
                 Frontend Developer - Intern
               </h4>
               <h6 class="">Odin School ,Hyderabad</h6>
             </div>
           </div>
-          <div class="education flex my-2">
+          <div class="flex my-2">
             <img
               src="../media/icons/working.svg"
               alt="trainning"
-              class="icon-education w-15 h-15 me-3 p-3 rounded-full border cursor-pointer hover:shadow-2xl"
+              class="w-12 h-12 me-3 p-2 my-auto rounded-full border cursor-pointer hover:shadow-2xl"
             />
-            <div class="college">
-              <h4 class="text-xl font-medium text-blue-900">
+            <div class="lg:text-base text-sm text-gray-600 my-auto">
+              <h4 class="text-blue-900 font-semibold">
                 MERN Developer (Trainning & Placement)
               </h4>
               <h6 class="">Arivani Technologies Pvt. Ltd. ,Lucknow</h6>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- Education section  End-->
 
       <!-- skills section start -->
-      <!-- <div class="skills-tech flex flex-col py-10 my-5" id="skills">
-        <h2 class="text-center text-4xl font-medium my-2.5 text-center">
-          Skills <span class="text-blue-900">& Tech</span>
+      <div class="p-4 my-5" id="skills">
+        <h2
+          class="text-center lg:font-semibold lg:leading-8 my-2.5 leading-8 lg:text-4xl md:text-3xl text-2xl font-bold"
+        >
+          Tech <span class="text-blue-900">& Skills</span>
         </h2>
-        <div class="grid lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-8 sm:grid-cols-2 sm:gap-14">
-          <div
-            class="icons cursor-pointer rounded shadow-2xl hover:animate-pulse"
-          >
+        <div
+          class="grid lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-14 gap-8 grid-cols-2 lg:p-4 md:p-4 p-1"
+        >
+          <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
               src="../media/icons/file-type-html.svg"
               alt="html"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Html
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer rounded shadow-2xl hover:animate-pulse"
-          >
+          <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
               src="../media/icons/file-type-css.svg"
               alt="css"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               CSS
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer rounded shadow-2xl hover:animate-pulse"
-          >
+          <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
               src="../media/icons/javascript-js.svg"
               alt="javascript"
-              class="icon w-30 h-30 mx-auto my-4.5"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               JavaScript
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer rounded shadow-2xl hover:animate-pulse"
-          >
+
+          <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
               src="../media/icons/bootstrap-brands.svg"
               alt="bootsrap"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Bootstrap
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer rounded shadow-2xl hover:animate-pulse"
-          >
+          <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
               src="../media/icons/tailwind-css.svg"
               alt="tailwind"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               tailwind
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer rounded shadow-2xl hover:animate-pulse"
-          >
+          <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
               src="../media/icons/React.svg"
               alt="react"
-              class="icon w-35 h-32 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               React
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer rounded shadow-2xl hover:animate-pulse"
-          >
+          <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
               src="../media/icons/node-js.svg"
               alt="nodejs"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900  mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Node JS
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer shadow-2xl rounded hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/mongoDb.svg"
               alt="mongoDb"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Mongo DB
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer shadow-2xl rounded hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/express-original.svg"
               alt="expressjs"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Express JS
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer shadow-2xl rounded hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/git-icon.svg"
               alt="git"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Git Hub
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer shadow-2xl rounded hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/gitlab.svg"
               alt="git"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Git-lab
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer shadow-2xl rounded hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/problem-solving-icon.svg"
               alt="git"
-              class="icon w-32.5 h-32.5 mx-auto my-3"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900 mb-2">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Problem Solving
             </h6>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- skills section End -->
 
       <!-- Project portfolio section start -->
-      <!-- <div class="skills-tech flex flex-col py-10 my-5" id="project">
-        <h2 class="text-center text-4xl font-medium my-2.5 text-center">
+      <div class="p-4 my-5" id="project">
+        <h2
+          class="text-center lg:font-semibold lg:leading-8 my-2.5 leading-8 lg:text-4xl md:text-3xl text-2xl font-bold"
+        >
           Project <span class="text-blue-900">Portfolio</span>
         </h2>
-        <div class="all-icons flex justify-between align-evenly flex-wrap">
-          <div
-            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
-          >
+        <div
+          class="grid lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-14 gap-8 grid-cols-2 lg:p-4 md:p-4 p-1"
+        >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/netflix.svg"
               alt="netflix"
-              class="icon w-32.5 h-32.5 mx-auto"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Netflix
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/amazon.svg"
-              alt="css"
-              class="icon w-32.5 h-32.5 mx-auto"
+              alt="amazon"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Amazon
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/weather-rain-cloud.svg"
-              alt="javascript"
-              class="icon w-32.5 h-32.5 mx-auto"
+              alt="weather"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Weather App
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/bank-payment.svg"
-              alt="bootsrap"
-              class="icon w-32.5 h-32.5 mx-auto"
+              alt="Banking app"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-              Banking Payment
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
+              Banking Pay
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/e-commerce.svg"
-              alt="tailwind"
-              class="icon w-32.5 h-32.5 mx-auto"
+              alt="E-commerce"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
-              E-commerce App
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
+              E-commerce
             </h6>
           </div>
-          <div
-            class="icons cursor-pointer w-75 m-4 shadow-2xl rounded py-4 hover:animate-pulse"
-          >
+          <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/portfolio (1).svg"
-              alt="tailwind"
-              class="icon w-32.5 h-32.5 mx-auto"
+              alt="portfolio"
+              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
             />
-            <h6 class="text-center text-3xl font-medium hover:text-blue-900">
+            <h6
+              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+            >
               Portfolio Project
             </h6>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- Project portfolio section End -->
 
       <!-- Contact section start -->
-      <!-- <div class="contact-us flex flex-col pt-10 mt-5" id="contact">
-        <h2 class="text-center text-4xl font-medium mt-2.5 mb-1 text-center">
+      <div class="p-4 my-5" id="contact">
+        <h2
+          class="text-center lg:font-semibold lg:leading-8 my-2.5 leading-8 lg:text-4xl md:text-3xl text-2xl font-bold"
+        >
           Contact <span class="text-blue-900">Us</span>
         </h2>
 
-        <div class="grid lg:grid-cols-2 sm:grid-cols-1 lg:gap-50  mx-auto">
-          <form class="max-w-md mt-5">
-            <div class="relative z-0 w-100 mb-5 group flex flex-col pt-5">
-              <div class="flex flex-start">
-                <input
-                  type="email"
-                  name="floating_email"
-                  id="floating_email"
-                  class="block py-1 px-0 w-full text-sm text-blue-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-blue-900 dark:border-gray-600 dark:focus:border-blue-900 focus:outline-none focus:ring-0 focus:border-blue-900 peer"
-                  placeholder="Enter Your Email"
-                  required
-                />
-                <input
-                  type="image"
-                  src="../media/section9rightimg.png"
-                  alt="Submit"
-                  class="border ml-4 rounded bg-black h-5 w-5 mt-3"
-                />
-              </div>
+        <div
+          class="grid lg:grid-cols-2 md:grid-cols-2 grid-col-1 lg:gap-45 md:gap-20 gap-1"
+        >
+          <form class="m3-4 pt-5">
+            <div class="grid grid-cols-1 gap-2 px-2">
+              <input
+                type="email"
+                id="email"
+                class="bg-cyan-100 border border-gray-100 text-blue-900 text-sm rounded-lg block w-full p-2"
+                placeholder="Enter Your Email"
+              />
 
               <textarea
-                placeholder="Enter Your Message"
                 id="message"
                 rows="3"
-                class="block py-1 px-0 w-full text-sm text-blue-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-blue-900 dark:border-gray-600 dark:focus:border-blue-900 focus:outline-none focus:ring-0 focus:border-blue-900 peer"
+                class="block p-2 w-full text-sm text-blue-900 bg-cyan-100 rounded-lg border border-gray-300 text-blue-900"
+                placeholder="Write Your Message"
               ></textarea>
+
+              <button
+                type="submit"
+                class="text-center lg:text-lg md:text-base text-sm text-white bg-blue-900 mx-auto p-2 rounded"
+              >
+                Send Message
+              </button>
             </div>
           </form>
-    
-          <p class="max-w-md mt-5 relative z-0 w-100 mb-5 group pt-5 text-center">
+
+          <p
+            class="text-center p-5 text-center lg:text-lg md:text-sm text-sm text-gray-600"
+          >
             Let's
             <span class="text-blue-900 font-semibold"
               >connect and create something amazing together </span
             >-,I'm just a message away and always open to exciting
-            <span class="text-blue-900 font-semibold">opportunities & collaborations.</span>
+            <span class="text-blue-900 font-semibold"
+              >opportunities & collaborations.</span
+            >
           </p>
         </div>
-      </div> -->
+      </div>
       <!-- Contact section End-->
     </div>
 
     <!-- Footer section start-->
     <hr />
-    <!-- <div class="bg-cyan-100 grid grid-col-1 p-2">
+    <div class="bg-cyan-100 grid grid-col-1 p-2">
       <div class="inline-flex mx-auto">
         <a href="" class="rounded m-2" target="_blank">
           <i
-            class="fa-solid fa-square-phone text-xl text-blue-900 cursor-pointer"
+            class="fa-solid fa-square-phone text-xl text-gray-500 hover:text-gray-700 cursor-pointer"
             title="+91 8299176972"
           ></i>
         </a>
 
         <a href="https://www.gmail.com" class="m-2" target="_blank">
           <i
-            class="fa-solid fa-square-envelope text-xl text-blue-900 cursor-pointer"
+            class="fa-solid fa-square-envelope text-xl text-gray-500 hover:text-gray-700 cursor-pointer"
             title="Kulyad123@gmail.com"
           ></i>
         </a>
 
         <a href="https://www.linkedin.com/in" class="m-2" target="_blank">
           <i
-            class="fa-brands fa-linkedin text-blue-900 text-xl cursor-pointer"
+            class="fa-brands fa-linkedin text-gray-500 hover:text-gray-700 text-xl cursor-pointer"
           ></i>
         </a>
 
@@ -552,7 +562,7 @@
           target="_blank"
         >
           <i
-            class="fa-brands fa-square-github text-xl text-blue-900 cursor-pointer"
+            class="fa-brands fa-square-github text-xl text-gray-500 hover:text-gray-700 cursor-pointer"
             title="Kuldeep-Yadav-1"
           ></i>
         </a>
@@ -564,7 +574,7 @@
       >
         All copyrights © 2024-25
       </p>
-    </div> -->
+    </div>
     <!-- Footer section end-->
   </body>
 </html>
