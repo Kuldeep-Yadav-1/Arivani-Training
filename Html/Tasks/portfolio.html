@@ -21,71 +21,18 @@
       rel="stylesheet"
     />
     <style>
-      path {
-        transform-origin: 50% 0%;
-      }
-      .background--custom {
-        background-color: #ffffff;
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-        top: 0;
-        left: 0;
-      }
-      @keyframes path0 {
-        0% {
-          transform: rotate(-20deg);
-        }
-        100% {
-          transform: rotate(20deg);
-        }
-      }
-      @keyframes path1 {
-        0% {
-          transform: rotate(-40deg);
-        }
-        100% {
-          transform: rotate(90deg);
-        }
-      }
-      @keyframes path2 {
-        0% {
-          transform: rotate(60deg);
-        }
-        100% {
-          transform: rotate(-90deg);
-        }
+      .home-gradient {
+        background: #020024;
+        background: linear-gradient(
+          323deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
       }
     </style>
   </head>
   <body>
-    <!-- <svg
-      class="background--custom"
-      id="demo"
-      viewBox="0 0 100 100"
-      preserveAspectRatio="none"
-    >
-      <path
-        fill="#FFFF00"
-        fill-opacity="0.7"
-        d="M-100 -100L200 -100L200 50L-100 50Z"
-        style="animation: path0 5s linear infinite alternate"
-      />
-      <path
-        fill="#00FFFF"
-        fill-opacity="0.7"
-        d="M-100 -100L200 -100L200 50L-100 50Z"
-        style="animation: path1 12.5s linear infinite alternate"
-      />
-      <path
-        fill="#FF00FF"
-        fill-opacity="0.2"
-        d="M-100 -100L200 -100L200 20L-100 20Z"
-        style="animation: path2 30s linear infinite alternate"
-      />
-    </svg> -->
-
     <!-- <ul
       style="font-family: Poppins"
       class="nav-list shadow-lg fixed font-semibold flex justify-evenly items-center text-blue-900 bg uppercase bg-cyan-100 w-320 h-10 top-0"
@@ -113,13 +60,10 @@
       </li>
     </ul> -->
 
-    <div
-      class="text-black-600 lg:mx-24 sm:mx-20 font-mono"
-      style="font-family: Poppins"
-    >
-      <!-- hero section start -->
+    <!-- hero section start -->
+    <div class="home-gradient">
       <div
-        class="grid lg:grid-cols-2 grid-cols-1 mt-10 bg-white rounded"
+        class="grid lg:grid-cols-2 grid-cols-1 py-10 rounded lg:mx-24 sm:mx-20"
         id="home"
       >
         <div class="flex justify-center">
@@ -129,17 +73,19 @@
             class="rounded-full shadow-2xl lg:w-[65%] md:w-[50%] w-[60%]"
           />
         </div>
-        <div class="my-auto lg:mt-auto md:mt-10 mt-5 text-center p-4">
+        <div
+          class="my-auto lg:mt-auto md:mt-10 mt-5 text-center p-4 text-blue-200"
+        >
           <p class="lg:text-2xl md:text-xl text-lg leading-snug">
             Hi! I Am
-            <span class="text-blue-900 font-semibold">Kuldeep Yadav</span>
+            <span class="text-white font-semibold">Kuldeep Yadav</span>
           </p>
           <h1
-            class="lg:text-5xl md:text-4xl text-2xl font-bold text-blue-900 leading-relaxed"
+            class="lg:text-5xl md:text-4xl text-2xl font-bold text-white leading-relaxed"
           >
             Web Developer.
           </h1>
-          <p class="lg:text-base text-sm text-gray-600">
+          <p class="lg:text-base text-sm">
             A Front-End Developer with entry-level experience specializing in
             web development & user interface, also upskilling in nodeJS back-end
             services.
@@ -159,9 +105,14 @@
           </div>
         </div>
       </div>
-      <!-- hero section end -->
-      <!-- home section end -->
+    </div>
+    <!-- hero section end -->
 
+    <div
+      class="text-black-600 lg:mx-24 sm:mx-20 font-mono"
+      style="font-family: Poppins"
+    >
+      
       <!-- About Me section start-->
       <div class="p-4 lg:my-10 md:my-7" id="about-me">
         <h2
@@ -243,16 +194,16 @@
           Tech <span class="text-blue-900">& Skills</span>
         </h2>
         <div
-          class="grid lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-14 gap-8 grid-cols-2 lg:p-4 md:p-4 p-1"
+          class="grid lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-14 gap-12 grid-cols-1 lg:p-4 md:p-4 p-4"
         >
           <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
               src="../media/icons/file-type-html.svg"
               alt="html"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               Html
             </h6>
@@ -261,10 +212,10 @@
             <img
               src="../media/icons/file-type-css.svg"
               alt="css"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               CSS
             </h6>
@@ -273,10 +224,10 @@
             <img
               src="../media/icons/javascript-js.svg"
               alt="javascript"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-30 h-30 mx-auto mt-3 mb-4"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               JavaScript
             </h6>
@@ -286,10 +237,10 @@
             <img
               src="../media/icons/bootstrap-brands.svg"
               alt="bootsrap"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               Bootstrap
             </h6>
@@ -298,22 +249,22 @@
             <img
               src="../media/icons/tailwind-css.svg"
               alt="tailwind"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               tailwind
             </h6>
           </div>
           <div class="cursor-pointer rounded shadow-2xl hover:animate-pulse">
             <img
-              src="../media/icons/React.svg"
+              src="../media/icons/react-brands.svg"
               alt="react"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               React
             </h6>
@@ -322,10 +273,10 @@
             <img
               src="../media/icons/node-js.svg"
               alt="nodejs"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               Node JS
             </h6>
@@ -334,10 +285,10 @@
             <img
               src="../media/icons/mongoDb.svg"
               alt="mongoDb"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               Mongo DB
             </h6>
@@ -346,22 +297,22 @@
             <img
               src="../media/icons/express-original.svg"
               alt="expressjs"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               Express JS
             </h6>
           </div>
           <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
-              src="../media/icons/git-icon.svg"
+              src="../media/icons/github-brands.svg"
               alt="git"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               Git Hub
             </h6>
@@ -370,10 +321,10 @@
             <img
               src="../media/icons/gitlab.svg"
               alt="git"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               Git-lab
             </h6>
@@ -382,10 +333,10 @@
             <img
               src="../media/icons/problem-solving-icon.svg"
               alt="git"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
-              class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
+              class="text-center lg:text-2xl md:text-2xl text-xl font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
             >
               Problem Solving
             </h6>
@@ -395,20 +346,20 @@
       <!-- skills section End -->
 
       <!-- Project portfolio section start -->
-      <div class="p-4 my-5" id="project">
+      <!-- <div class="p-4 my-5" id="project">
         <h2
           class="text-center lg:font-semibold lg:leading-8 my-2.5 leading-8 lg:text-4xl md:text-3xl text-2xl font-bold"
         >
           Project <span class="text-blue-900">Portfolio</span>
         </h2>
         <div
-          class="grid lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-14 gap-8 grid-cols-2 lg:p-4 md:p-4 p-1"
+          class="grid lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-14 gap-12 grid-cols-1 lg:p-4 md:p-4 p-4"
         >
           <div class="cursor-pointer shadow-2xl rounded hover:animate-pulse">
             <img
               src="../media/icons/netflix.svg"
               alt="netflix"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
               class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
@@ -420,7 +371,7 @@
             <img
               src="../media/icons/amazon.svg"
               alt="amazon"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
               class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
@@ -432,7 +383,7 @@
             <img
               src="../media/icons/weather-rain-cloud.svg"
               alt="weather"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
               class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
@@ -444,7 +395,7 @@
             <img
               src="../media/icons/bank-payment.svg"
               alt="Banking app"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
               class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
@@ -456,7 +407,7 @@
             <img
               src="../media/icons/e-commerce.svg"
               alt="E-commerce"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
               class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
@@ -468,7 +419,7 @@
             <img
               src="../media/icons/portfolio (1).svg"
               alt="portfolio"
-              class="lg:w-32 md:w-24 w-16 lg:h-32 md:h-24 h-16 mx-auto lg:my-3 md:my-3 my-2"
+              class="w-32 h-32 mx-auto my-3"
             />
             <h6
               class="text-center lg:text-2xl md:text-2xl text-lg font-semibold text-gray-600 my-auto font-semibold hover:text-blue-900"
@@ -477,7 +428,7 @@
             </h6>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Project portfolio section End -->
 
       <!-- Contact section start -->
@@ -489,44 +440,68 @@
         </h2>
 
         <div
-          class="grid lg:grid-cols-2 md:grid-cols-2 grid-col-1 lg:gap-45 md:gap-20 gap-1"
+          class="grid lg:grid-cols-2 md:grid-cols-2 grid-col-1 lg:gap-5 md:gap-5 gap-1 my-8"
         >
-          <form class="m3-4 pt-5">
-            <div class="grid grid-cols-1 gap-2 px-2">
+          <div class="bg-white shadow-2xl border border-gray-300 rounded-lg">
+            <form class="p-5">
+              <input
+                type="text"
+                id="name"
+                class="bg-gray-200 border border-gray-100 text-blue-900 text-sm rounded-lg block w-full p-2"
+                placeholder="Enter Your name"
+                required
+              />
+
               <input
                 type="email"
                 id="email"
-                class="bg-cyan-100 border border-gray-100 text-blue-900 text-sm rounded-lg block w-full p-2"
+                class="bg-gray-200 border border-gray-100 text-blue-900 text-sm rounded-lg block w-full p-2 mt-3"
                 placeholder="Enter Your Email"
+                required
               />
 
               <textarea
                 id="message"
                 rows="3"
-                class="block p-2 w-full text-sm text-blue-900 bg-cyan-100 rounded-lg border border-gray-300 text-blue-900"
+                class="block p-2 w-full text-sm text-blue-900 bg-gray-200 rounded-lg border border-gray-300 text-blue-900 mt-3"
                 placeholder="Write Your Message"
               ></textarea>
 
               <button
                 type="submit"
-                class="text-center lg:text-lg md:text-base text-sm text-white bg-blue-900 mx-auto p-2 rounded"
+                class="cursor-pointer text-center lg:text-base md:text-sm text-xs text-white bg-blue-900 rounded py-2 mt-2 w-full"
               >
                 Send Message
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
 
-          <p
-            class="text-center p-5 text-center lg:text-lg md:text-sm text-sm text-gray-600"
-          >
-            Let's
-            <span class="text-blue-900 font-semibold"
-              >connect and create something amazing together </span
-            >-,I'm just a message away and always open to exciting
-            <span class="text-blue-900 font-semibold"
-              >opportunities & collaborations.</span
+          <div class="">
+            <p
+              class="text-center p-5 text-center lg:text-lg md:text-sm text-sm text-gray-600"
             >
-          </p>
+              Let’s
+              <span class="text-blue-900 font-semibold">connect & create</span>
+              something
+              <span class="text-blue-900 font-semibold">amazing together!</span>
+              I’m always excited to explore
+              <span class="text-blue-900 font-semibold"
+                >new opportunities & collaborations</span
+              >
+              that inspire
+              <span class="text-blue-900 font-semibold"
+                >innovation & creativity.</span
+              >
+              Whether you have a project idea or simply want to start a
+              conversation, don’t hesitate to reach out.
+              <span class="text-blue-900 font-semibold"
+                >"Great things happen when passionate minds come together"</span
+              >—let’s build something
+              <span class="text-blue-900 font-semibold"
+                >meaningful and impactful!</span
+              >
+            </p>
+          </div>
         </div>
       </div>
       <!-- Contact section End-->
@@ -538,21 +513,21 @@
       <div class="inline-flex mx-auto">
         <a href="" class="rounded m-2" target="_blank">
           <i
-            class="fa-solid fa-square-phone text-xl text-gray-500 hover:text-gray-700 cursor-pointer"
+            class="fa-solid fa-square-phone lg:text-2xl md:text-2xl text-xl text-gray-600 hover:text-gray-800 cursor-pointer"
             title="+91 8299176972"
           ></i>
         </a>
 
         <a href="https://www.gmail.com" class="m-2" target="_blank">
           <i
-            class="fa-solid fa-square-envelope text-xl text-gray-500 hover:text-gray-700 cursor-pointer"
+            class="fa-solid fa-square-envelope lg:text-2xl md:text-2xl text-xl text-gray-600 hover:text-gray-800 cursor-pointer"
             title="Kulyad123@gmail.com"
           ></i>
         </a>
 
         <a href="https://www.linkedin.com/in" class="m-2" target="_blank">
           <i
-            class="fa-brands fa-linkedin text-gray-500 hover:text-gray-700 text-xl cursor-pointer"
+            class="fa-brands fa-linkedin lg:text-2xl md:text-2xl text-xl text-gray-600 hover:text-gray-800 text-xl cursor-pointer"
           ></i>
         </a>
 
@@ -562,7 +537,7 @@
           target="_blank"
         >
           <i
-            class="fa-brands fa-square-github text-xl text-gray-500 hover:text-gray-700 cursor-pointer"
+            class="fa-brands fa-square-github lg:text-2xl md:text-2xl text-xl text-gray-600 hover:text-gray-800 cursor-pointer"
             title="Kuldeep-Yadav-1"
           ></i>
         </a>

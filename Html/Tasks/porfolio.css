@@ -7,8 +7,6 @@
     box-sizing: border-box;
 } */
 
-
-
 /* .nav-list {
     position: fixed;
     width: 100vw;
@@ -148,14 +146,11 @@
     border-radius: 100%;
 } */
 
-
-
 /* .contact-icons a img:hover{
     background-color: rgb(97, 104, 149);
     cursor: pointer;
     border: 1px solid  rgb(97, 104, 149);;
 } */
-
 
 /* .footer{
     margin-block: 15px;
@@ -163,6 +158,18 @@
     margin-inline: auto;
 } */
 
+.primary-gradient {
+  background: #020024;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
 
-
+.home-gradient{
+    background: #05045B;
+background: radial-gradient(circle,rgba(5, 4, 91, 1) 31%, rgba(9, 9, 121, 1) 63%, rgba(0, 212, 255, 1) 90%);
+}
 
