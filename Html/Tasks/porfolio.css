@@ -158,7 +158,7 @@
     margin-inline: auto;
 } */
 
-.primary-gradient {
+/* .primary-gradient {
   background: #020024;
   background: linear-gradient(
     90deg,
@@ -171,5 +171,5 @@
 .home-gradient{
     background: #05045B;
 background: radial-gradient(circle,rgba(5, 4, 91, 1) 31%, rgba(9, 9, 121, 1) 63%, rgba(0, 212, 255, 1) 90%);
-}
+} */
 
