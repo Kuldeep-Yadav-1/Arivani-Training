@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>this is my practice page</h2>
+    <h2>Date display</h2>
+    <p id="date">Display Date</p>
+    <br>
+    <hr>
+     <h2>inner html used for text change purpose & as well as html change (tag)</h2>
+    <p id="change-1">javascript changes to</p>
+    <button onclick="document.getElementById('change-1').innerHTML= '<h2>javascript inside h2 tag</h2>'">click me</button>
+    <hr>
+    <h2>inner Text used for only text change purpose</h2>
+    <p id="change-9">javascript changes to</p>
+    <button onclick="document.getElementById('change-9').innerText= 'Hello javascript'">click me</button>
+    <hr>
+    <h2>style font size</h2>
+    <p id="change-2">javascript font size increase</p>
+    <button onclick="document.getElementById('change-2').style.fontSize= '35px'">font size increase</button>
+    <hr>
+    <h2>display none</h2>
+    <p id="change-3">display none</p>
+    <button onclick="document.getElementById('change-3').style.display= 'none'">display None</button>
+    <hr>
+    <h2>display block</h2>
+    <p id="change-4" style="display: none;">Hide element display</p>
+    <button onclick="document.getElementById('change-4').style.display= 'block'">display block</button>
+
+    <hr>
+    <h2>select id from external script file with inner Html</h2>
+    <p id="change-5" >Hello world to change</p>
+    <p id="change-6" >Hello world to change -6</p>
+    <p id="change-7" >Hello world document write</p>
+
+    <hr>
+    <h2>used of window.print method</h2>
+    <button onclick="window.print()">click Me  for printing</button>
+    <script>
+    document.getElementById("change-6").innerText = "5+6";
+    // document.getElementById("change-7").innerText = document.write(5+6);
+    window.alert(5+6) ;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
