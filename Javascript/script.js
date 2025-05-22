@@ -312,6 +312,35 @@ console.log("text3 <= text4 :",text3 <= text4);
 console.log("!(text3 <= text4) :",!(text3 <= text4));
 
 
+console.log("<--------Logical Assignment operator---------->")
+x = true ;
+y = false ;
+console.log("x &&= y :",x &&= y);
+// console.log(x && (x = y)) ;
+x = true ;
+y = false ;
+console.log("x ||= y :",x ||= y);
+
+x = true ;
+y = false ;
+// console.log("x ??= y :",x ??= y);
+
+console.log("<--------Bitwise operator---------->")
+x = 1 ;
+y = 2 ;
+console.log(" x & y :", x & y);
+console.log(" x | y :", x | y);
+console.log(" ~y :", ~y);
+
+console.log("<--------Bitwise Assignment  operator---------->")
+x = 1 ;
+y = 2 ;
+console.log(" x &= y :", x &= y);
+x = 1 ;
+y = 2 ;
+console.log(" x |= y :", x |= y);
+// console.log(" ~=y :", ~=y);
+
 console.log("<----typeof operator------>");
 console.log("typeof('5') :",typeof('5') ) ;
 console.log("typeof(5) :",typeof(5) ) ;
@@ -344,6 +373,186 @@ console.log("'5' + 5 :",'5' + 5) ;
 console.log("'5' + '5' :",'5' + '5') ;
 console.log("5 + 5 :",5 + 5) ;
 console.log("'hello' + 5 :","hello" + 5) ;
+
+console.log("<--------Data type---------->");
+console.log("<--------Number---------->");
+let num = 10 ;
+let num1 = 10.5 ;
+console.log("num :", num);
+console.log("typeof(num) :", typeof(num));
+console.log("num1 :", num1);
+console.log("typeof(num1) :", typeof(num1));
+
+console.log("<--------String---------->");
+let str = "kuldeep" ;
+console.log("str :", str);
+console.log("typeof(str) :", typeof(str));
+
+let str1 = 'Amaan' ;
+console.log("str1 :", str1);
+console.log("typeof(str1) :", typeof(str1));
+
+
+console.log("<--------Boolean---------->");
+let bool = true ;
+let bool1 = false ;
+console.log("bool :", bool);
+console.log("typeof(bool) :", typeof(bool));
+console.log("bool1 :", bool1);
+console.log("typeof(bool1) :", typeof(bool1));
+
+console.log("<--------Undefined---------->");
+let per ;
+console.log("per :", per);
+console.log("typeof(per) :", typeof(per));
+
+console.log("<--------null---------->");
+let null1 = null ;
+console.log("null1 :", null1);
+console.log("typeof(null1) :", typeof(null1));
+
+
+console.log("<--------Array---------->");
+let arr = [1 ,"Amaan" ,"Alam" ,'Software Developer' ,{id: 101 ,companay_Name: 'arivani pvt ltd'} ];
+let arr1 = [2 ,"kuldeep" ,"yadav" ,'software tranee' ,{id: 102 ,companay_Name: 'arivani pvt ltd'} ];
+console.log("arr :", arr);
+console.log("typeof(arr) :", typeof(arr));
+console.log("arr1 :", arr1);
+console.log("typeof(arr1) :", typeof(arr1));
+
+console.log("<--------Object---------->");
+let person1= {
+    id : 1,
+    firstName: "shubham",
+    lastName: "Bharati",
+    position: 'React Devloper tranee'
+}
+
+let person2= {
+    id : 2,
+    firstName: "kuldeep",
+    lastName: "Yadav",
+    position: 'MERN Devloper tranee'
+}
+
+console.log("person1 :",person1 );
+console.log("typeof(person1) :", typeof(person1));
+console.log("person2 :",person2 );
+console.log("typeof(person2) :", typeof(person2));
+console.table("person2 :",person2 );
+console.log("typeof(person2) :", typeof(person2));
+
+
+console.log("<--------JS sting & Number conversion---------->");
+x= 16 ;
+y=  10 ;
+z = 'Kuldeep' ;
+console.log("x+ y :",x + y);
+console.log("x + y + z :",x + y + z);
+console.log("10 + 20 + 'Amman' :",10 + 20 + 'Amman');
+console.log("'Amman' + 10 + 20 :",'Amman' + 10 + 20);
+
+console.log("<--------Dynamic Datatype---------->");
+let y16= 10 ;
+console.log("y16 :" ,y16);
+console.log("typeof(y16) :", typeof(y16));
+y16 = true ;
+console.log("y16 :" ,y16);
+console.log("typeof(y16) :", typeof(y16));
+y16 = "syam" ;
+console.log("y16 :" ,y16);
+console.log("typeof(y16) :", typeof(y16));
+
+console.log("<--------Array some concept---------->");
+let arr2 = ["volvo","hero" ,"honda"];
+console.log("arr2 :" , arr2);
+arr2=[];
+console.log("arr2 :" , arr2);
+arr2[0] = "suzuki" ;
+arr2[1] = "tata" ;
+arr2[2] = "mahindra" ;
+console.log("arr2 :" , arr2);
+
+console.log("<--------Array with new Array---------->");
+let car1 = new Array("volvo","hero" ,"honda","suzuki","mahindra");
+console.log("car1 :" , car1);
+console.log("typeof(car1) :", typeof(car1));
+
+// let length =car1.length;
+console.log("<--------Array length Property---------->");
+console.log("car1.length :",car1.length);
+console.log("<--------Array sort() method---------->");
+console.log("car1.sort() :",car1.sort());
+car1 = ["volvo","hero" ,"honda","suzuki","mahindra"];
+console.log("car1 :" , car1);
+console.log("<--------Array first Element---------->");
+console.log("car1[0]:",car1[0])
+console.log("<--------Array Last Element---------->");
+console.log("car1.length - 1 :",car1[car1.length - 1])
+console.log("<--------Array Element with the help of function---------->");
+car1 = ["volvo","hero" ,"honda","suzuki","mahindra"];
+car1Length = car1.length;
+for(let i = 0 ; i < car1Length ; i++ ){
+    console.log("car1 :",car1[i]);
+}
+
+
+// console.log("<--------Array forEach---------->");
+// console.log("car1.forEach :",car1.forEach);
+
+console.log("<--------Array Method---------->");
+console.log("<--------Array push Method---------->");
+x = car1.push('scorpio','xuv');
+console.log("x  :" , x);
+console.log("car1 :" , car1);
+
+console.log("<--------Array pop Method---------->");
+poped= car1.pop();
+console.log("poped  :" , poped);
+console.log("car1 :" , car1);
+
+console.log("<--------Array isArray Method---------->");
+x = Array.isArray(car1);
+y1 = true ;
+y = Array.isArray(y1);
+z1 = 1 ;
+z = Array.isArray(z1);
+console.log("Array.isArray(car1) :" , x);
+console.log("Array.isArray(true) :" , y);
+console.log("Array.isArray(z1) :" , z);
+console.log("car1 :" , car1);
+
+console.log("<--------instance of---------->");
+x = car1 instanceof Array ;
+console.log("x :", x);
+y = y1 instanceof Array ;
+console.log("y :", y);
+
+console.log("<----------Nested Object And Nested Array-------->");
+let myobj ={
+    id: 101 ,
+    firstName: "Kuldeep" ,
+    lastName: "yadav" ,
+    skills: {
+        frontEnd :["html" ,"css", "javascript" ],
+        backEnd :["node js" , "express js" ,"mongo db"]
+    }
+}
+console.log("myobj :", myobj);
+
+console.log("<----------Array method start here-------->");
+let fruits = ["banana","apple","mango","grapes","fig"];
+console.log("<----------Array length -------->");
+x = fruits.length ;
+console.log("fruits.length :",fruits.length);
+
+
+
+
+
+
+
+
 
 
 
