@@ -502,14 +502,69 @@ for(let i = 0 ; i < car1Length ; i++ ){
 
 console.log("<--------Array Method---------->");
 console.log("<--------Array push Method---------->");
-x = car1.push('scorpio','xuv');
+console.log("before push car1 :" , car1);
+x = car1.push('scorpio',);
 console.log("x  :" , x);
-console.log("car1 :" , car1);
+console.log("after push car1 :" , car1);
 
 console.log("<--------Array pop Method---------->");
+console.log("before pop car1 :" , car1);
 poped= car1.pop();
 console.log("poped  :" , poped);
-console.log("car1 :" , car1);
+console.log("after pop car1 :" , car1);
+
+console.log("<--------Array Unshift Method---------->");
+console.log("before unshift car1 :" , car1);
+unshifted_x = car1.unshift('xuv');
+console.log("unshifted_x:" , unshifted_x);
+console.log("after unshift car1 :" , car1);
+
+console.log("<--------Array shift Method---------->");
+console.log("before shift car1 :" , car1);
+shifted_x = car1.shift();
+console.log("shifted_x  :" , shifted_x);
+console.log("after shift car1 :" , car1);
+
+console.log("<--------Array delete Method---------->");
+console.log("before delete car1 :" , car1);
+deleted_x = delete car1[0];
+console.log("deleted_x  :" , deleted_x);
+console.log("after deleted car1 :" , car1);
+
+console.log("<--------Array concat Method---------->");
+car1[0]="defender" ;
+console.log("before concat car1 :" , car1);
+let car2=["jaguar" ,"lexus" ,"Bmw"];
+console.log("car2 :" , car2);
+let concat1= car1.concat(car2);
+console.log("concat1  :" , concat1);
+console.log("after concat car1 :" , car1);
+
+console.log("<--------Array slice Method---------->");
+console.log("before slice car1 :" , car1);
+let sliceCar1 = car1.slice(1,3);
+console.log("sliceCar1  :" , sliceCar1);
+console.log("after slice car1 :" , car1);
+
+console.log("<--------Array splice Method---------->");
+console.log("before splice car1 :" , car1);
+let spliceCar1 = car1.splice(0,1,"innova","xuv-700");
+console.log("spliceCar1  :" , spliceCar1);
+console.log("after splice car1 :" , car1);
+
+console.log("<--------Array flat Method---------->");
+let myArr = [[1,2],[3,4],[5,6,7],[8]]
+console.log("before flat myArr :",myArr);
+let flatArr =myArr.flat();
+console.log("flatArr :",flatArr);
+console.log("after flat myArr :",myArr);
+
+console.log("<--------Array flat map Method---------->");
+let myArr1 = [1,2,3,4,5,6,7,8]
+console.log("before flat Map myArr1 :",myArr1);
+let flatMapArr =myArr1.flatMap(x => [x ,x*10]);
+console.log("flatMapArr :",flatMapArr);
+console.log("after flat Map myArr1 :",myArr1);
 
 console.log("<--------Array isArray Method---------->");
 x = Array.isArray(car1);
@@ -528,6 +583,10 @@ console.log("x :", x);
 y = y1 instanceof Array ;
 console.log("y :", y);
 
+z = person1 instanceof Object ;
+console.log("z :", z);
+console.log("<--------instance of used for checking variable is array or object it return boolean value---------->");
+
 console.log("<----------Nested Object And Nested Array-------->");
 let myobj ={
     id: 101 ,
@@ -540,13 +599,198 @@ let myobj ={
 }
 console.log("myobj :", myobj);
 
-console.log("<----------Array method start here-------->");
+// console.log("<----------Array method start here-------->");
 let fruits = ["banana","apple","mango","grapes","fig"];
 console.log("<----------Array length -------->");
 x = fruits.length ;
 console.log("fruits.length :",fruits.length);
 
+fruits[10] = "pineApple";
+x = fruits.length ;
+console.log("fruits.length :",fruits.length);
+console.log("fruits :",fruits);
+fruLength =fruits.length;
+for(let i = 0 ; i < fruLength ; i++ ){
+    console.log("fruits :",[i],fruits[i]);
+    // console.log(`fruit ${i} is ${fruits[i]}`)
+}
 
+console.log("<----------Array convert into string -------->");
+fruitstr = fruits.toString();
+console.log("fruitstr :",fruitstr);
+console.log("fruits :",fruits);
+
+console.log("<----------Array at method -------->");
+fruitsAt2 = fruits.at(2);
+console.log("fruitsAt2 :",fruitsAt2);
+console.log("fruits :",fruits);
+
+console.log("<----------Array join method -------->");
+fruitsJoin = fruits.join("-");
+console.log("fruitsJoin :",fruitsJoin);
+console.log("fruits :",fruits);
+
+console.log("<---------------------ArraySEARCH Method------------------------->");
+console.log("<----------Array indexOf method -------->");
+fruits = ["banana","apple","mango","grapes","fig","orange"];
+console.log("fruits before indexOf :",fruits);
+let indexFromStart = fruits.indexOf("fig");
+console.log("indexFromStart :",indexFromStart);
+console.log("fruits after indexOf :",fruits);
+
+console.log("<----------Array lastindexOf method -------->");
+fruits = ["banana","apple","mango","grapes","fig","orange"];
+console.log("fruits before lastIndexOf :",fruits);
+let lastIndexFromStart = fruits.lastIndexOf("orange");
+console.log("indexFromlast :",lastIndexFromStart);
+console.log("fruits after lastIndexOf :",fruits);
+
+console.log("<----------Array includes method 'it return boolean value' -------->");
+fruits = ["banana","apple","mango","grapes","fig","orange"];
+console.log("fruits before includes :",fruits);
+let includes1 = fruits.includes("orange");
+let includes2 = fruits.includes("pineApple");
+console.log("includes1 :",includes1);
+console.log("includes2 :",includes2);
+console.log("fruits after includes :",fruits);
+
+console.log("<----------Array find method-------->");
+let numbers = [4, 5,9 ,10 ,15 ,20];
+let find1 = numbers.find(x => x > 9) ;
+console.log("find1 :", find1);
+
+console.log("<----------Array findIndex method-------->");
+numbers = [4, 5,9 ,10 ,15 ,20];
+let findIndex1 = numbers.findIndex(x => x > 9) ;
+console.log("findIndex1 :",findIndex1)
+
+console.log("<----------Array findLast method-------->");
+numbers = [4, 5,9 ,10 ,15 ,20];
+let findLast1 = numbers.findLast(x => x > 9) ;
+console.log("findLast1 :",findLast1);
+
+console.log("<----------Array findLastIndex method-------->");
+numbers = [4 ,5 ,9 ,10 ,15 ,20];
+let findLastIndex1 = numbers.findLastIndex(x => x > 9) ;
+console.log("findLastIndex1 :",findLastIndex1);
+
+
+console.log("<----------Array Sort method-------->");
+
+fruits = ["banana","apple","mango","grapes","fig","orange"];
+
+console.log("before sort fruits :",fruits);
+let sort1 = fruits.sort();
+// numbers = [14 ,5 ,9 ,10 ,15 ,20];
+// let sort2 = numbers.sort();
+// console.log("sort2 :",sort2);
+console.log("sort1 :",sort1);
+console.log("after sort fruits :",fruits);
+
+console.log("<----------Array reverse method-------->");
+fruits = ["banana","apple","mango","grapes","fig","orange"];
+console.log("before reverse fruits :",fruits);
+let reverse1 = fruits.reverse();
+console.log("reverse1 :",reverse1);
+console.log("after reverse fruits :",fruits);
+
+console.log("<----------Array tosorted method-------->");
+fruits = ["banana","apple","mango","grapes","fig","orange"];
+console.log("before toSorted fruits :",fruits);
+let toSorted1 = fruits.toSorted();
+console.log("toSorted1 :",toSorted1);
+console.log("after toSorted1 fruits :",toSorted1);
+
+console.log("<----------Array toReversed method-------->");
+fruits = ["banana","apple","mango","grapes","fig","orange"];
+console.log("before toSorted fruits :",fruits);
+let toReversed1 = fruits.toReversed();
+console.log("toReversed1 :",toReversed1);
+console.log("after toSorted1 fruits :",toReversed1);
+
+
+console.log("<----------Array Sort for Numeric method-------->");
+numbers = [14 ,5 ,9 ,10 ,15 ,20];
+console.log("before sort numbers :",numbers);
+let sort2 = numbers.sort((a,b) => a-b);
+console.log("sort2 :",sort2);
+console.log("after sort numbers :",numbers);
+
+// console.log("<----------Array iteration method-------->");
+console.log("<-------------------------------String Start here-------------------------->");
+let str2 = "hello , My World's." 
+console.log("str 2 :",str2);
+console.log("<----------String with the help of template litral--------->");
+str2 =`this is template litral :${numbers}`;
+console.log("str 2 :",str2);
+
+console.log("<----------String use of \' \\--------->");
+str2 = 'hello, My World\'s.' ;
+console.log("str2 :" ,str2);
+str2 ="\"Dream is not that which you see while sleeping, it is something that does not let you sleep.\"";
+console.log("str2 :" ,str2);
+
+str2 =`this 
+is template 
+litral work similier like 
+html pre tag`;
+console.log("str2 :" ,str2);
+
+console.log("<----------String as a Object--------->");
+str2 = 'new string' ;
+str3 = `new string` ;
+let text8 = new String("new string");
+let text7 = new String("new string");
+console.log("str2 :", str2);
+console.log("str3 :", str3);
+console.log("text7 :", text7);
+console.log("text8 :", text8);
+
+console.log("str2 == str3 :", str2 == str3);
+console.log("str2 == text7 :", str2 == text7);
+console.log("text8 == text7 :", text7 == text8);
+
+console.log("str2 === str3 :", str2 === str3);
+console.log("str2 === text7 :", str2 === text7);
+console.log("text8 === text7 :", text7 === text8);
+
+console.log("typeof(str2) :", typeof(str2));
+console.log("typeof(str3) :", typeof(str3));
+console.log("typeof(text7) :", typeof(text7));
+console.log("typeof(text8) :", typeof(text8));
+
+console.log("<----------String Method--------->");
+console.log("<----------String length--------->");
+str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let strLength = str3.length ;
+console.log("str 3 :",str3);
+console.log("strLength :",strLength);
+
+console.log("<----------String charAt--------->");
+str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let strCharAt1 = str3.charAt(25) ;
+let strCharAt2 = str3.charAt(0) ;
+console.log("str 3 :",str3);
+console.log("strCharAt1 :",strCharAt1);
+console.log("strCharAt2 :",strCharAt2);
+console.log("<----------String charCodeAt--------->");
+str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let strCharCodeAt0 = str3.charCodeAt(0) ;
+let strCharCodeAt1 = str3.charCodeAt(1) ;
+let strCharCodeAt25 = str3.charCodeAt(25) ;
+console.log("str 3 :",str3);
+console.log("strCharCodeAt0 :",strCharCodeAt0);
+console.log("strCharCodeAt1 :",strCharCodeAt1);
+console.log("strCharCodeAt25 :",strCharCodeAt25);
+
+console.log("<----------String At method--------->");
+str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let strAt0 = str3.at(0) ;
+let strAt1 = str3.at(1) ;
+console.log("strAt0 :" ,strAt0);
+console.log("strAt1 :" ,strAt1);
+
+console.log("<----------String text method--------->");
 
 
 
