@@ -764,20 +764,26 @@ console.log("<----------String length--------->");
 str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let strLength = str3.length ;
 console.log("str 3 :",str3);
+//length-26
 console.log("strLength :",strLength);
 
 console.log("<----------String charAt--------->");
 str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let strCharAt1 = str3.charAt(25) ;
+//Z
 let strCharAt2 = str3.charAt(0) ;
+//A
 console.log("str 3 :",str3);
 console.log("strCharAt1 :",strCharAt1);
 console.log("strCharAt2 :",strCharAt2);
 console.log("<----------String charCodeAt--------->");
 str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let strCharCodeAt0 = str3.charCodeAt(0) ;
+//65
 let strCharCodeAt1 = str3.charCodeAt(1) ;
+//66
 let strCharCodeAt25 = str3.charCodeAt(25) ;
+//90
 console.log("str 3 :",str3);
 console.log("strCharCodeAt0 :",strCharCodeAt0);
 console.log("strCharCodeAt1 :",strCharCodeAt1);
@@ -786,11 +792,201 @@ console.log("strCharCodeAt25 :",strCharCodeAt25);
 console.log("<----------String At method--------->");
 str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let strAt0 = str3.at(0) ;
+//A
 let strAt1 = str3.at(1) ;
+//B
 console.log("strAt0 :" ,strAt0);
 console.log("strAt1 :" ,strAt1);
 
+str3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let text9 = str3[2];
+console.log("text9 :",text9);
+
 console.log("<----------String text method--------->");
+str3 = "Hello world";
+let text10 = str3[5];
+console.log("text10 :",text10);
+
+console.log("<----------String text method--------->");
+str3 = "Hello world .";
+str3[0] ="h";
+console.log("str3 :",str3);
+// Hello world not hello world does not work properly
+
+console.log("<----------String Extracting method slice ,substring , substr  method--------->");
+console.log("<----------String slice  method--------->");
+str3 = "Hello world. this is my first code.";
+console.log("before slice str3 :",str3);
+let strSlice = str3.slice(13,17);
+console.log("strSlice :",strSlice);
+console.log("before slice str3 :",str3);
+
+console.log("<----------String substring  method--------->");
+str3 = "Hello world. this is my first code.";
+console.log("before substring str3 :",str3);
+let strSubString = str3.substring(13,17);
+console.log("strSubString :",strSubString);
+console.log("before substring str3 :",str3);
+
+console.log("<----------String substr  method--------->");
+str3 = "Hello world. this is my first code.";
+console.log("before substr str3 :",str3);
+let strSubStr = str3.substr(13,4);
+console.log("strSubStr :", strSubStr);
+console.log("before substr str3 :",str3);
+
+console.log("<----------String toUpperCase method--------->");
+str3 = "Hello world. this is my first code.";
+console.log("before toUpperCase str3 :",str3);
+let strToUpperCase = str3.toUpperCase();
+console.log("strToUpperCase :", strToUpperCase);
+console.log("before toUpperCase str3 :",str3);
+
+console.log("<----------String toLowerCase method--------->");
+str3 = "Hello world. this is my first code.";
+console.log("before toLowerCase str3 :",str3);
+let strtoLowerCase = str3.toLowerCase();
+console.log("strtoLowerCase :", strtoLowerCase);
+console.log("before toLowerCase str3 :",str3);
+
+console.log("<----------String concat method--------->");
+str3 = "Hello world. this is my first code.";
+let str4 = " I'm feel too good writing my first Code."
+console.log("before concat str3 :",str3);
+let strConcat = str3.concat(str4);
+console.log("strConcat :",strConcat);
+console.log("after concat str3 :",str3);
+
+console.log("<----------String concat with second method--------->");
+str3 = "Hello world. this is my first code.";
+str4 = " I'm feel too good writing my first Code."
+console.log("before concat str3 :",str3);
+console.log("before concat str4 :",str4);
+console.log("before concat str3 :",str3 +" " + str4);
+
+console.log("<----------String trim method--------->");
+str3 = " Hello world. this is my first code. ";
+str4 = " I'm feel too good writing my first Code."
+console.log("before trim str3 :",str3);
+let strTrim = str3.trim();
+console.log("strTrim :",strTrim);
+console.log("after trim str3 :",str3);
+
+console.log("<----------String repeat method--------->");
+str3 = " Hello world. this is my first code. ";
+console.log("before repeat str3 :",str3);
+let strRepeat = str3.repeat(2);
+console.log("strRepeat :",strRepeat);
+console.log("after repeat str3 :",str3);
+
+console.log("<----------String replace method--------->");
+str3 = "Hello world. this is my first code. this world is beautiful";
+console.log("before replace str3 :",str3);
+let strReplace = str3.replace("world" ,"world-1");
+console.log("strReplace :",strReplace);
+console.log("after replace str3 :",str3);
+
+console.log("<----------String replace method--------->");
+str3 = "Hello world. this is my first code. this world is beautiful";
+console.log("before replace str3 :",str3);
+let strReplaceAll = str3.replaceAll("world" ,"world-1");
+console.log("strReplaceAll :",strReplaceAll);
+console.log("after replace str3 :",str3);
+
+console.log("<----------String split method--------->");
+str3 = "Hello world. this is my first code. this world is beautiful";
+console.log("before split str3 :",str3);
+let strSplit = str3.split(" ");
+let strSplit1 = str3.split(".");
+console.log("strSplit :",strSplit);
+console.log("strSplit1 :",strSplit1);
+console.log("after split str3 :",str3);
+
+console.log("<----------String Search method--------->");
+console.log("<----------String indexOf method--------->");
+str3 = "Hello world. this is my first code. this world is beautiful";
+console.log("before indexOf str3 :",str3);
+let strIndexOf = str3.indexOf("world");
+console.log("strIndexOf :",strIndexOf);
+strIndexOf = str3.indexOf("world" ,9);
+console.log("strIndexOf :",strIndexOf);
+
+console.log("<----------String lastIndexOf method--------->");
+str3 = "Hello world. this is my first code. this world is beautiful";
+console.log("before lastIndexOf str3 :",str3);
+let strLastIndexOf = str3.lastIndexOf("world");
+console.log("strLastIndexOf :",strLastIndexOf);
+let strLastIndexOf1 = str3.lastIndexOf("worlds");
+console.log("strLastIndexOf1 :",strLastIndexOf1);
+
+console.log("<----------String search method--------->");
+console.log("<----------String search method we can use regular expression but in indexOf we can search the position but not pattern checking--------->");
+str3 = "Hello woRld. this is my first code. this world is beautiful";
+console.log("before search str3 :",str3);
+let strSearch = str3.search("world");
+console.log("strSearch :",strSearch);
+console.log("after search str3 :",str3);
+
+console.log("<----------String match method--------->");
+str3 = "Hello worRld. this is my first code. this world is beautiful";
+console.log("before search str3 :",str3);
+let strMatch = str3.match("world");
+console.log("strMatch :",strMatch);
+console.log("after search str3 :",str3);
+
+console.log("<----------String match method with the help of regular expression--------->");
+str3 = "Hello woRld. this is my first code. this world is beautiful. & world is  also best for me.";
+console.log("before search str3 :",str3);
+let strMatch1 = str3.match(/world/gi);
+console.log("strMatch1 :",strMatch1);
+let strMatch2 = str3.matchAll("world");
+console.log("strMatch2 :",strMatch2);
+console.log("after search str3 :",str3);
+
+console.log("<----------String includes expression--------->");
+str3 = "Hello woRld. this is my first code. this world is beautiful. & world is  also best for me.";
+console.log("before includes str3 :",str3);
+let strIncludes = str3.includes("world");
+let strIncludes1 = str3.includes("world1");
+console.log("strIncludes :",strIncludes);
+console.log("strIncludes1 :",strIncludes1);
+console.log("after includes str3 :",str3);
+
+
+console.log("<---------Remaining method of Array--------->");
+console.log("<---------Numeric Sorting method of Array--------->");
+console.log("<---------Assending Sorting method of Array--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before sorting Numbers :" ,numbers);
+let SortedNumbers = numbers.sort((a,b)=> a-b) ;
+console.log("SortedNumbers :" ,SortedNumbers);
+console.log("after sorting Numbers :" ,numbers);
+
+console.log("<---------Decending Sorting method of Array--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before sorting Numbers :" ,numbers);
+let SortedNumbers1 = numbers.sort((a,b)=> b-a) ;
+console.log("SortedNumbers1 :" ,SortedNumbers1);
+console.log("after sorting Numbers :" ,numbers);
+
+console.log("<---------Reverse method of Array--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before reverse Numbers :" ,numbers);
+let ReversedNumbers = numbers.reverse() ;
+console.log("ReversedNumbers :" ,ReversedNumbers);
+console.log("after reverse Numbers :" ,numbers);
+
+console.log("<---------Reverse method of Array--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before reverse Numbers :" ,numbers);
+let ToReversedNumbers = numbers.toReversed() ;
+console.log("ToReversedNumbers :" ,ToReversedNumbers);
+console.log("after reverse Numbers :" ,numbers);
+
+
+console.log("<---------Reverse method of Array--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before reverse Numbers :" ,numbers);
 
 
 
