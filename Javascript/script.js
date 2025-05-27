@@ -989,6 +989,281 @@ numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
 console.log("before reverse Numbers :" ,numbers);
 
 
+console.log("<---------Array iteration method--------->");
+console.log("<---------Array forEach method--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before reverse Numbers :" ,numbers);
+let arrForEach = numbers.forEach((value,index,arr)=>{
+    // console.log("arr :",arr);
+    // console.log("index :",index);
+    console.log(`value of index ${index} is :`,value);
+})
+
+
+
+console.log("<---------Array forEach with call back function method--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before foreach Numbers :" ,numbers);
+let arrForEach1 = numbers.forEach(myForEach);
+
+function myForEach(value,index,arr){
+    // console.log("arr :",arr);
+    // console.log("index :",index);
+    console.log(`value of index ${index} is :`,value);
+}
+
+console.log("<---------Array map with call back function method--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before map Numbers :" ,numbers);
+let arrmap = numbers.map(myMap);
+function myMap(value,index,arr){
+    // console.log("arr :",arr);
+    // console.log("index :",index);
+    // console.log(`value of index ${index} is :`,value);
+    return value * 2 ;
+}
+
+console.log("after map Numbers :" ,numbers);
+console.log("arrmap :" ,arrmap);
+
+console.log("<---------Array Flatmap with call back function method--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before reverse Numbers :" ,numbers);
+let arrFlatMap = numbers.flatMap(x =>[x, 2*x]);
+// function myFlatMap(value,index,arr){
+//     return value * 2 ;
+// }
+
+console.log("after flat map Numbers :" ,numbers);
+console.log("arrFlatMap :" ,arrFlatMap);
+
+
+console.log("<---------Array Filter with call back function method--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,1];
+console.log("before filter Numbers :" ,numbers);
+let arrFilter = numbers.filter(myFilter);
+function myFilter(value,index,arr){
+    // console.log("arr :",arr);
+    // console.log("index :",index);
+    // console.log(`value of index ${index} is :`,value);
+    return value >= 30 ;
+}
+
+console.log("after filter Numbers :" ,numbers);
+console.log("arrFilter :" ,arrFilter);
+
+console.log("<---------Array reduce method--------->");
+numbers = [10 ,20 ,30 ,40 ,50 ,60 ];
+console.log("before reduce Numbers :" ,numbers);
+// let total = 0 ;
+let arrReduce = numbers.reduce(myReduce);
+function myReduce(total, value){
+    return total + value ;
+    // console.log("total :",total + value ) ;
+}
+console.log("arrReduce :" ,arrReduce);
+console.log("after reduce Numbers :" ,numbers);
+
+console.log("<---------Array reduce method--------->");
+numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduce(myFunction);
+console.log(sum);
+function myFunction(total, value, index, array) {
+
+// console.log(total + value);
+  return total + value;
+}
+console.log("numbers :",numbers)
+console.log("sum :",sum)
+
+console.log("<---------Array every method--------->");
+console.log("Array every method used for if every element stiesfy every element condition then result is true else false");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,10];
+console.log("before every Numbers :" ,numbers);
+let arrEvery = numbers.every(x => x > 9);
+console.log("arrEvery :" ,arrEvery) ;
+
+console.log("<---------Array some method--------->");
+console.log("Array some method used for if some element stiesfy condition then result is true.");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,10];
+console.log("before some Numbers :" ,numbers);
+let arrSome = numbers.some(x => x > 80);
+console.log("arrSome :" ,arrSome) ;
+console.log("after some Numbers :" ,numbers);
+
+console.log("<---------Array from method--------->");
+str = "ABCDEFGHIJKLMNOPQRSTUV";
+console.log("before from str :" ,str);
+let arrFrom = Array.from(str);
+console.log(" arrFrom :" , arrFrom) ;
+console.log("after from str :" ,str);
+
+console.log("<---------Array keys method--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,10];
+console.log("before keys Numbers :" ,numbers);
+let arrKeys = numbers.keys();
+console.log("arrKeys :" ,arrKeys);
+let text = " ";
+for(let x of arrKeys){
+    text += x ;
+    // return text ;
+    console.log(`text index no is ${text}`);
+}
+console.log("after keys Numbers :" ,numbers);
+
+console.log("<---------Array keys method--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,10];
+console.log("before entries Numbers :" ,numbers);
+let arrEntries = numbers.entries();
+console.log("arrKeys :" ,arrKeys);
+text = " ";
+for(let y of arrEntries){
+    text += y ;
+    // return text ;
+    console.log(`text index no is : ${text}`);
+}
+console.log("after entries Numbers :" ,numbers);
+
+console.log("<---------Array with method--------->");
+numbers = [100 ,20 ,30 ,60 ,50 ,40 ,80 ,10];
+console.log("before with method Numbers :" ,numbers);
+let arrWith = numbers.with(0,"marks :");
+console.log("arrWith :" ,arrWith);
+console.log("after with method Numbers :" ,numbers);
+
+console.log("<---------Array spread method--------->");
+number1 = [100 ,10];
+number2 = [20 ,40 ,80 ,10];
+number3 = [60 ,50  ,10];
+number4 = [100 ,20 ];
+
+console.log("before spread method Number1 :" ,number1);
+console.log("before spread method Number2 :" ,number2);
+console.log("before spread method Number3 :" ,number3);
+console.log("before spread method Number4 :" ,number4);
+let arrSpread = [...number1,...number2 ,...number3 ,...number4];
+console.log("arrSpread :" ,arrSpread);
+console.log("after with method Numbers :" ,numbers);
+
+
+console.log("<---------object interoduction--------->");
+console.log("<---------object with Object litrals--------->");
+let person3 = {
+    firstName : "Kuldeep",
+    lastName : "Yadav",
+    age :27,
+    eyeColor : "black",
+    fullName : function() {
+        // console.log("fullName is : ",person3.firstName + " " + person3.lastName);
+        return this.firstName + " " + this.lastName ;
+    }
+}
+console.log("person3 :" ,person3) ;
+console.log("person3.firstName :" ,person3.firstName) ;
+console.log("person3.fullName :" ,person3.fullName) ;
+
+console.log("<---------object with using new keyword--------->");
+let person4 = new Object();
+console.log("before adding property person4 :" ,person4) ;
+person4.firstName = "Amman" ;
+person4.lastName = "Alam" ;
+person4.age = 23 ;
+person4.eyeColor = "blue" ;
+person4.fullName = function(){
+        // console.log("fullName is : ",person4.firstName + " " + person4.lastName)
+        return this.firstName + " " + this.lastName ;
+    }
+console.log("after adding property person4 :" ,person4) ;
+
+console.log("person3.firstName :" ,person3.firstName) ;
+console.log("person3.[lastName] :" ,person3["lastName"]) ;
+console.log("person3.fullName() :" ,person3.fullName()) ;
+console.log("person4.fullName() :" ,person4.fullName()) ;
+
+console.log("<---------we can add ,remove ,delete ,replace the object property--------->");
+console.log("<---------add object property--------->");
+person3.nationality = "indian" ;
+console.log("add nationity property in person 3 :", person3);
+
+console.log("<---------delete object property--------->");
+delete person3.age
+console.log("after deleting property in person 3 :", person3);
+
+console.log("<---------Object method--------->");
+let name3 = person3.fullName();
+console.log("name3 :",name3);
+let name3InUpperCase = person3.fullName().toUpperCase();
+console.log("name3InUpperCase :",name3InUpperCase);
+
+let p1 = document.getElementById("p-1").innerHTML= person3 +" "+person3.fullName() ;
+
+
+console.log("<---------Object keys,value--------->");
+person3 = {
+    firstName : "Kuldeep",
+    lastName : "Yadav",
+    age :27,
+    eyeColor : "black",
+    fullName : function() {
+        return this.firstName + " " + this.lastName ;
+    }
+}
+console.log("person3 :" ,person3) ;
+for(let keys in person3){
+    console.log("keys :", keys) ;
+    console.log("value = person3[keys] :",person3[keys]) ;
+}
+
+console.log("<---------Object values--------->");
+person3 = {
+    firstName : "Kuldeep",
+    lastName : "Yadav",
+    age : 27,
+    eyeColor : "black",
+    fullName : function() {
+        return this.firstName + " " + this.lastName ;
+    }
+}
+console.log("person3 :" ,person3) ;
+let valArr = Object.values(person3) ;
+console.log("valArr :", valArr) ;
+
+console.log("<---------Object entries--------->");
+let entriesArr = Object.entries(person3) ;
+console.log("entriesArr :", entriesArr) ;
+
+console.log("<---------JSON Stringify--------->");
+let jsonStr = JSON.stringify(person3) ;
+console.log("jsonStr :", jsonStr) ;
+
+function Person(first ,last ,age ,eye){
+    this.firstName = first ;
+    this.lastName = last ;
+    this.age = age ;
+    this.eyeColor = eye;
+    this.fullName = function(){
+        return "my full name is "+ this.firstName+" "+this.lastName ;
+    }
+}
+
+Person.prototype.nationality = "indian";
+console.log("Person :",Person);
+// console.log("Person() :",Person());
+
+let myFather = new Person("SP" ,"yadav" ,50 ,"black");
+console.log("myFather :",myFather);
+
+let myMother = new Person("Pk" ,"yadav" ,46 ,"black");
+console.log("myMother :",myMother);
+
+let mySelf = new Person("Kuldeep" ,"yadav" ,26 ,"black");
+console.log("mySelf :",mySelf);
+console.log("mySelf nationality :",mySelf.nationality);
+console.log("mySelf fullName() :",mySelf.fullName());
+
+
+
+
 
 
 
