@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import { validateEmail } from "../utils/validateEmail";
 import profile from "./profile.jpg";
 import ShowAlert from "./ShowAlert";
+import { ValidatePassword } from "../utils/ValidatePassword";
+import FirstName from "../utils/FirstName";
 
 function Form() {
   const [inputFirstName, setInputFirstName] = useState("");
@@ -35,19 +37,26 @@ function Form() {
       return;
     }
 
-    if (inputFirstName.length <= 3 || inputFirstName.length >= 30) {
-      setError("First Name character should be b/w 3 & 30.")
+    if (!FirstName(inputFirstName)) {
+      setError("First Name must be Alphabet");
       return;
     }
 
     if (!validateEmail(inputEmail)) {
-      setError("Email is invalid")
+      setError("Email is invalid");
       return;
     }
 
     if (password !== confirmPassword) {
       // alert("password & confirm password is not same");
-      setError("Password doesn't match")
+      setError("Password doesn't match");
+      return;
+    }
+
+    if (!ValidatePassword(password)) {
+      setError(
+        "Password must be at least 7 character & at least one character (Capital,Small,Special,Number) is required"
+      );
       return;
     }
 
@@ -59,7 +68,7 @@ function Form() {
         confirmPassword.trim()
       ) {
         // alert("First And Last name is required");
-        setSuccess("Signup Successfull")
+        setSuccess("Signup Successfull");
       }
       setHandleSubmit(true);
     } catch (error) {
@@ -288,7 +297,12 @@ function Form() {
           </div>
         </div>
       </div>
-      <ShowAlert success={success} error={error} setSuccess={setSuccess} setError={setError} />
+      <ShowAlert
+        success={success}
+        error={error}
+        setSuccess={setSuccess}
+        setError={setError}
+      />
     </>
   );
 }
