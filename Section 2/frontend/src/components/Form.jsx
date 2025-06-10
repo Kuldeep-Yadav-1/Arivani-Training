@@ -25,7 +25,9 @@ function Form() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
+    console.log(typeof inputFirstName, "typeof firstName");
+
     if (
       !inputFirstName.trim() ||
       !inputEmail.trim() ||
@@ -47,16 +49,15 @@ function Form() {
       return;
     }
 
-    if (password !== confirmPassword) {
-      // alert("password & confirm password is not same");
-      setError("Password doesn't match");
-      return;
-    }
-
     if (!ValidatePassword(password)) {
       setError(
         "Password must be at least 7 character & at least one character (Capital,Small,Special,Number) is required"
       );
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Password doesn't match");
       return;
     }
 
@@ -88,7 +89,7 @@ function Form() {
     <>
       <div className="my-5 md:15 lg:my-15 p-5  w-[90%] md:w-[60%] lg:w-[50%] mx-auto rounded shadow-2xl">
         <div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-2 gap-2">
             <div className="col-span-2 grid grid-cols-2">
               <div className="mb-4 pe-2">
                 <img
@@ -110,7 +111,7 @@ function Form() {
                 className="border mt-1 bg-white p-2 mb-5 rounded w-full"
                 type="text"
                 placeholder="Enter your First Name"
-                value={inputFirstName}
+                // value={inputFirstName}
                 onChange={(e) => setInputFirstName(e.target.value)}
               />
             </div>
@@ -143,7 +144,7 @@ function Form() {
               />
             </div>
 
-            <div className="col-span-2 ">
+            <div className="col-span-2">
               <label className="pe-4 mt-1 mb-5 text-base font-medium">
                 Gender
               </label>
@@ -151,7 +152,7 @@ function Form() {
                 type="radio"
                 id="male"
                 name="gender"
-                className="pe-2 mt-1 mb-5"
+                className="pe-2 mt-4 mb-5"
                 value="MALE"
                 checked={selectedGender === "MALE"}
                 onChange={(e) => {
@@ -159,26 +160,26 @@ function Form() {
                   setSelectedGender(e.target.value);
                 }}
               />
-              <label htmlFor="male" className="pe-4 ms-1">
+              <label htmlFor="male" className="pe-4 ms-1 ps-1">
                 Male
               </label>
               <input
                 type="radio"
                 id="female"
                 name="gender"
-                className="pe-2 mt-1 mb-5"
+                className="pe-2 mt-4 mb-5"
                 value="FEMALE"
                 onChange={(e) => {
                   console.log(e.target.value);
                   setSelectedGender(e.target.value);
                 }}
               />
-              <label htmlFor="female" className="ms-1">
+              <label htmlFor="female" className="ms-1 ps-1">
                 Female
               </label>
             </div>
 
-            <div>
+            <div className="">
               <label htmlFor="password" className="text-base font-medium">
                 Password *
               </label>
@@ -212,7 +213,7 @@ function Form() {
               </div>
             </div>
 
-            <div>
+            <div className="">
               <label
                 htmlFor="confirmPassword"
                 className="text-base font-medium"
@@ -234,6 +235,7 @@ function Form() {
                     }}
                   />
                 </div>
+
                 <div
                   className=""
                   style={{
@@ -250,7 +252,7 @@ function Form() {
             </div>
           </div>
 
-          <div className="">
+          <div className="col-span-1">
             <button
               className="bg-blue-600 text-white text-center px-5 py-2 rounded w-full cursor-pointer"
               type="submit"
