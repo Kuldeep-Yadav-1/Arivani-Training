@@ -3,16 +3,12 @@ import laptopData from "./laptopData";
 import SearchIcon from '@mui/icons-material/Search';
 
 const LaptopList = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(laptopData);
   // const [search ,setSearch] = useState("")
 
-  useEffect(() => {
-    setData(laptopData);
-  }, [laptopData]);
-
   const handleSearch = (e) =>{
-    let search = (e.target.value).toLowerCase()
-    let fiteredData = laptopData.filter((item)=> item.model.toLowerCase().includes(search))
+    // let search = (e.target.value).toLowerCase()
+    let fiteredData = laptopData.filter((item)=> item.model.toLowerCase().includes(e.target.value.toLowerCase()))
     setData(fiteredData)
   }
 
