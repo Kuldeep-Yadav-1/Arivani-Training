@@ -1581,3 +1581,6 @@ console.log("<---------Filter array------------>")
 let filteredNumber = numbers.filter(item => item > 30);
 console.log("filteredNumber :" ,filteredNumber);
 
+let shubham = " shubh am "
+console.log(shubham.trim())
+
