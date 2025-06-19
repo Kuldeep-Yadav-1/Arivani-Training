@@ -7,6 +7,7 @@ import Form from "./components/Form";
 import Login from "./components/Login";
 import LaptopList from "./components/LaptopList";
 import Navbar from "./components/Navbar";
+import Todoapp from "./components/Todoapp";
 // import Navbar1 from "./components/Navbar1";
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/practice" element={<Practice />} />
         <Route path="/facebookpost" element={<Card />} />
         <Route path="/form" element={<Form />} />
+        <Route path="/todoapp" element={<Todoapp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/laptop-list" element={<LaptopList />} />
       </Routes>
