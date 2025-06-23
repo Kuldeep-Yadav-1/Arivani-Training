@@ -1,91 +1,87 @@
-import Divider from "@mui/material/Divider";
+import { Divider } from "@mui/material";
 import React, { useState } from "react";
 
 function Todoapp() {
-  const [inputTask, setInputTask] = useState("");
-  const [listTodo, setListTodo] = useState([]);
+  const [inputTask, setInputTask] = useState();
+  const [todoList, setTodoList] = useState([]);
+
   const handleInput = (e) => {
     setInputTask(e.target.value);
   };
 
   const handleAdd = () => {
-    addList(inputTask);
-    setInputTask("");
-  };
-
-  const handleDelete = (index) => {
-    let newList = [...listTodo];
-    newList.splice(index, 1);
-    console.log(newList);
-    setListTodo([...newList]);
-  };
-
-  const addList = (inputTask) => {
-    if (inputTask.trim() != "") {
-      setListTodo([...listTodo, inputTask]);
-    } else {
-      alert("Empty Task");
+    if (inputTask.trim()) {
+      setTodoList([...todoList, inputTask]);
+      setInputTask("");
+    }else{
+      alert("Empty Task...")
     }
   };
 
+  const handleDelete = (index) => {
+    const deleteList = [...todoList];
+    deleteList.splice(index, 1);
+    setTodoList(deleteList);
+  };
   const handleReset = () => {
-   let resetList = [...listTodo]
-   resetList.splice(0,resetList.length)
-    setInputTask("")
-    setListTodo([...resetList])
+    const resetList = [...todoList];
+    resetList.splice(0, resetList.length);
+    setTodoList(resetList);
+    setInputTask("");
   };
 
   return (
-    <>
-      <div className="w-60 mx-auto border rounded my-5 p-4">
-        <div className="flex justify-between ">
+    <div className="w-120 mx-auto my-5 p-5 shadow-2xl border rounded">
+      <div className="flex justify-between m-4">
+        <div>
           <input
+            className="bg-gray-200 px-2 rounded"
+            placeholder="Enter Task"
             type="text"
-            placeholder="Enter ToDo Task"
-            className="me-1 w-40"
             value={inputTask}
             onChange={handleInput}
           />
+        </div>
+        <div>
           <button
-            className="bg-blue-500 text-white rounded full w-10 h-10 cursor-pointer"
-            // value={add}
+            className="bg-blue-500 text-white p-1 h-10 w-10 rounded"
             onClick={handleAdd}
           >
             +
           </button>
         </div>
-        <div className="text-center  my-3">Todo Task</div>
-        <div className="text-center  my-3">
-          <button
-            className="px-5 py-1 rounded bg-gray-300 cursor-pointer"
-            onClick={handleReset}
-          >
-            Reset
-          </button>
-        </div>
-        <div className="w-70">
-          <Divider />
-        </div>
+      </div>
+      <div className="text-center my-2">ToDo App</div>
+      <div className="text-center my-4">
+        <button
+          className="px-5 py-1 bg-gray-200  rounded cursor-pointer"
+          onClick={handleReset}
+        >
+          Reset
+        </button>
+      </div>
+      <Divider />
 
+      <div className="flex justify-between">
         <div>
-          {listTodo.map((task, index) => (
-            <div className="flex justify-between py-1">
-              <div key={index} className="">
-                {task}
-              </div>
-              <div>
-                <button
-                  className="bg-blue-500 text-white rounded w-5 h-5  cursor-pointer text-center"
-                  onClick={() => handleDelete(index)}
-                >
-                  -
-                </button>
-              </div>
-            </div>
-          ))}
+          {todoList.map((item, index) => {
+            return (
+              <>
+                <div className="flex justify-between w-110 py-1" key={index}>
+                  <div>{item}</div>
+                  <button
+                    className="px-5 py-1 bg-blue-500 text-white rounded cursor-pointer"
+                    onClick={() => handleDelete(index)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -26,7 +26,7 @@ function Form() {
   const [error, setError] = useState("");
 
   const handleSubmit = () => {
-    console.log(typeof inputFirstName, "typeof firstName");
+    // console.log(typeof inputFirstName, "typeof firstName");
 
     if (
       !inputFirstName.trim() ||

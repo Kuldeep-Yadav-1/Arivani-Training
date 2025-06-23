@@ -83,7 +83,7 @@ const LaptopList = () => {
   const [data, setData] = useState(laptopData);
   // const [data1 ,setData1] = useState(true)
   const [brand, setBrand] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
   // const [refresh ,setRefresh] = useState(laptopData);
   const [search, setSearch] = useState("");
 
@@ -94,7 +94,7 @@ const LaptopList = () => {
   const handleSearch = (e) => {
     setSearch(e.target.value);
     let fiteredData = laptopData.filter((item) =>
-      item.model.toLowerCase().includes(e.target.value.trim().toLowerCase())
+      item.model.toLowerCase().trim().includes(e.target.value.trim().toLowerCase())
     );
     setData(fiteredData);
     setBrand("");
@@ -135,11 +135,17 @@ const LaptopList = () => {
 
     if (price && brand) {
       let filtered = laptopData.filter(
-        (item) => item.price <= price && item.brand == brand
+        (item) => item.price <= price && item.brand === brand
       );
       setOpen(false);
       setData(filtered);
     }
+
+    if (!price && !brand) {
+      setOpen(false);
+      setData(laptopData);
+    }
+    
     setSearch("");
   };
 
@@ -237,7 +243,7 @@ const LaptopList = () => {
                   onChange={handlePrice}
                   value={price}
                 >
-                  <option value={0}>---Select Price---</option>
+                  <option value="">---Select Price---</option>
                   {priceList.map((item, index) => {
                     return <option value={item.value}>{item.label}</option>;
                   })}
