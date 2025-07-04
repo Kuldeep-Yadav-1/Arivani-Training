@@ -1,12 +1,44 @@
 "use client";
 import Footer from "@/components/Footer";
-import React from "react";
+import React, { useState } from "react";
 
 const page = () => {
+  const [text, setText] = useState("");
+  const [tasks, setTasks] = useState([]);
+
+  // console.log(text, "text -->");
+
+  const handleAddTask = (e) => {
+    if (e.code == "Enter") {
+      setTasks([{ task: text}, ...tasks]);
+      setText("");
+    }
+  };
+
+  console.log(tasks, "--> tasks");
+
   return (
-    <div>
-      <h1 className="text-center text-3xl mt-10">This is a practice page</h1>
-      <Footer />
+    <div className="p-10">
+      <input
+        value={text}
+        type="text"
+        className="border"
+        onChange={(e) => setText(e.target.value)}
+        onKeyDown={handleAddTask}
+      />
+      {tasks.length > 0 ? (
+        <>
+          <ul>
+            {tasks.map((item, index) => {
+              return <li key={index}>
+                {item?.task}
+              </li>;
+            })}
+          </ul>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

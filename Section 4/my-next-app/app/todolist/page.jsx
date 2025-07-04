@@ -11,12 +11,14 @@ function page() {
     setInput(e.target.value);
   };
 
-  const handleAdd = () => {
-    if (!input.trim()) {
-      alert("empty task");
-    } else {
-      setList([...list, { text: input, completed: true }]);
-      setInput("");
+  const handleAdd = (e) => {
+    if (e.code == "Enter") {
+      if (!input.trim()) {
+        alert("empty task");
+      } else {
+        setList([...list, { text: input, completed: true }]);
+        setInput("");
+      }
     }
   };
 
@@ -26,11 +28,11 @@ function page() {
     setList(deleteList);
   };
 
-  const handleReset = () => {
-    const resetList = [...list];
-    resetList.splice(0, resetList.length);
-    setList(resetList);
-  };
+  // const handleReset = () => {
+  //   const resetList = [...list];
+  //   resetList.splice(0, resetList.length);
+  //   setList(resetList);
+  // };
 
   const handleToggleTask = (index) => {
     const updatedList = [...list];
@@ -49,13 +51,9 @@ function page() {
             className="bg-gray-300 px-2 py-1 rounded"
             value={input}
             onChange={handleInput}
+            onKeyDown={handleAdd}
           />
-          <button
-            className="px-3 py-2 rounded text-white bg-blue-500"
-            onClick={handleAdd}
-          >
-            +
-          </button>
+
         </div>
 
         <div className="flex justify-center m-3">
@@ -74,16 +72,16 @@ function page() {
           {list.map((item, index) => {
             return (
               <>
-                <div key={index} className="flex justify-between my-2">
+                <div className="flex justify-between my-2">
                   <div className="flex justify-start">
-                      <div className="flex items-center me-2">
-                        <input
-                          type="checkbox"
-                          checked={!item.completed}
-                          onChange={() => handleTaskToggle(index)}
-                        />
-                      </div>
-                    <div className="mt-1">
+                    {/* <div className="flex items-center me-2"> */}
+                    <input
+                      type="checkbox"
+                      checked={!item.completed}
+                      onChange={() => handleTaskToggle(index)}
+                    />
+                    {/* </div> */}
+                    <div key={index} className="mt-1">
                       {item.completed ? (
                         <div> {item.text}</div>
                       ) : (

@@ -206,7 +206,7 @@ function page() {
               >
                 <option value="">---Select Brand---</option>
                 {brandName.map((item,index) => {
-                  return <option value={item.value} key={index}>{item.label}</option>;
+                  return <option  key={index} value={item.value} >{item.label}</option>;
                 })}
               </select>
               <select
