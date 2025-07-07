@@ -1829,3 +1829,5 @@ let data20 = [
 
 // console.log(JSON.parse(data20))
 
+const os = require('os');
+console.log(os.platform());

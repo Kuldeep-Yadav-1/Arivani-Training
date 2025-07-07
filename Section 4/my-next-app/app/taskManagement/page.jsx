@@ -10,7 +10,7 @@ function page() {
   };
   const handleAdd = (e) => {
     if (e.code == "Enter") {
-      setList([...list, {text:inputTask, completed:false}]);
+      setList([...list, {text:inputTask, completed:true}]);
       setInputTask("");
     }
   };
@@ -19,6 +19,11 @@ function page() {
     const deleteList = [...list];
     deleteList.splice(index,1);
     setList(deleteList);
+  }
+  const handletoggle = (index)=>{
+    const updatedList = [...list];
+    updatedList[index].completed = !updatedList[index].completed;
+    setList(updatedList) ;
   }
 
   return (
@@ -37,11 +42,11 @@ function page() {
           return (
             <div key={index} className="my-2 p-2 bg-white w-full rounded">
               <li className="list-none">
-                <input type="checkbox" name="" id="" className="me-1 mt-2"/>
-                {item.text}
+                <input type="checkbox" name="" id="" className="me-1 mt-2" checked={!item.completed} onChange={()=>handletoggle(index)}/>
+                {item.completed ?<div className=""> {item.text} </div>:<div className="line-through"> {item.text} </div>}
               </li>
               <li className="list-none mt-1">
-                <button className="px-5 py-1 bg-green-600 text-white rounded me-2 cursor-pointer">Mark as Complete</button>
+                <button className="px-5 py-1 bg-green-600 text-white rounded me-2 cursor-pointer" onClick={()=>handletoggle(index)}>{item.completed ? <li>Mark as Complete</li> :<li>InComplete</li>}</button>
                 <button className="px-5 py-1 bg-red-600 text-white rounded cursor-pointer" onClick={()=>handleDelete(index)}>Delete</button>
               </li>
             </div>
