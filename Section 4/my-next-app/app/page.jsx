@@ -14,7 +14,8 @@ export default function Home() {
       <button className="bg-blue-500 px-5 py-2 me-2 rounded-lg text-white cursor-pointer" onClick={() => router.push("/laptopData")}>Click me to visit lap top data</button> 
       <button className="bg-blue-500 px-5 py-2 me-2 rounded-lg text-white cursor-pointer" onClick={() => router.push("/todolist")}>go to ToDo list</button> 
       <button className="bg-blue-500 px-5 py-2 me-2 rounded-lg text-white cursor-pointer" onClick={() => router.push("/taskManagement")}>go to Task Management</button> 
-      <Footer/>
+      <button className="bg-blue-500 px-5 py-2 me-2 rounded-lg text-white cursor-pointer" onClick={() => router.push("/components/Footer")}>go to Task Management</button> 
+      {/* <Footer/> */}
     </div>
   );
 }

@@ -1,6 +1,9 @@
 "use client";
+"use client";
+import React, { useState } from "react";
+import bookstoreData from "../utils/bookstoreData.js";
 
-import React from "react";
+// import React from "react";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 // import Swiper core and required modules
@@ -13,195 +16,301 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { useRouter } from "next/navigation";
 
 function HomeSection() {
+  const router = useRouter();
+  const [data, setData] = useState(bookstoreData);
+  const handleDiscounttwinty = () => {
+    router.push("/products");
+    const filtered = bookstoreData.filter((item) => {
+      return item.discounted_price <= item.price * 0.8;
+    });
+    setData(filtered);
+    console.log(filtered);
+   
+    // console.log(bookstoreData);
+    
+  };
   return (
     <div>
       {/* ----------------hero section-------------- */}
-      <div className="px-20 bg-[#0b7c6b]">
-        <div className="w-full flex justify-around items-center">
-          <div className="">
-            <div className="text-white">
-              <li className="list-none font-semibold text-xl p-2">
+      <div className="px-10 md:px-20 lg:px-20 bg-[#0b7c6b]">
+        <div className="w-full flex flex-col-reverse md:flex-row lg:flex-row justify-between items-center">
+          <div className="text-center md:text-left  py-5   md:py-auto">
+            <div className="text-white md:py-auto">
+              <li className="list-none font-semibol text-lg md:text-lg lg:text-xl p-1 lg:p-2">
                 Special Offer
               </li>
-              <div className="p-2">
-                <li className="list-none font-bold text-4xl">
+              <div className="p-1 lg:p-2">
+                <li className="list-none font-bold text-xl md:text-xl lg:text-3xl">
                   There is nothing
                 </li>
-                <li className="list-none font-bold text-4xl">
+                <li className="list-none font-bold text-xl md:text-xl lg:text-3xl">
                   better than to read.
                 </li>
               </div>
-              <li className="list-none font-semibold p-2">
+              <li className="list-none lg:font-semibold p-1 lg:p-2">
                 Find the perfect gift for Every One list On Your List.
               </li>
             </div>
-            <button className="px-5 py-2 rounded-full bg-white text-[#0b7c6b] font-bold m-2 cursor-pointer">
+            <button
+              className="px-5 py-2 rounded-full bg-white text-[#0b7c6b] font-bold m-2 cursor-pointer"
+              onClick={() => router.push("/products")}
+            >
               Shop Now <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
             </button>
           </div>
-          <img src="/image/bg_right_.png" alt="" className="h-100" />
+          <img
+            src="/image/bg_right_.png"
+            alt=""
+            className="px-auto w-[100%] md:w-[65%] lg:w-[50%]"
+          />
         </div>
       </div>
-      <div className="mx-25">
+      <div className="mx-6 md:mx-15 lg:mx-25">
         {/* ----------------Carosel start-------------- */}
         <div className="">
           <div className="mt-10 mb-5">
             <Swiper
               // install Swiper modules
               modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={20}
-              slidesPerView={5}
+              // spaceBetween={20}
+              breakpoints={{
+                320: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+                },
+                1280: {
+                  slidesPerView: 5,
+                  spaceBetween: 40,
+                },
+              }}
+              // className=""
               // navigation
               pagination={{ clickable: true }}
               // scrollbar={{ draggable: true }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
             >
-              <SwiperSlide>
-                <div className=" rounded py-2 mb-10 px-3">
-                  <img
-                    src="/image/book1.jpeg"
-                    alt=""
-                    className="h-65 rounded"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className=" rounded py-2 my-1 px-3">
-                  <img
-                    src="/image/book2.jpeg"
-                    alt=""
-                    className="h-65 rounded"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className=" rounded py-2 my-1 px-3">
-                  <img
-                    src="/image/book3.jpeg"
-                    alt=""
-                    className="h-65 rounded"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className=" rounded py-2 my-1 px-3">
-                  <img
-                    src="/image/book4.jpeg"
-                    alt=""
-                    className="h-65 rounded"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className=" rounded py-2 my-1 px-3">
-                  <img
-                    src="/image/book5.jpeg"
-                    alt=""
-                    className="h-65 rounded"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className=" rounded py-2 my-1 px-3">
-                  <img
-                    src="/image/book6.1.jpeg"
-                    alt=""
-                    className="h-65 rounded"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className=" rounded py-2 my-1 px-3">
-                  <img
-                    src="/image/book7.jpeg"
-                    alt=""
-                    className="h-65 rounded"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className=" rounded py-2 my-1 px-3">
-                  <img
-                    src="/image/book8.jpeg"
-                    alt=""
-                    className="h-65 rounded"
-                  />
-                </div>
-              </SwiperSlide>
+              <div className="rounded py-2 flex">
+                {data
+                  .filter((item) => item.id >= 1 && item.id <= 10)
+                  .map((item, index) => {
+                    return (
+                      <SwiperSlide>
+                        <div key={index} className="rounded mb-10">
+                          <div>
+                            <img
+                              src={item.main_url}
+                              alt={item.title}
+                              className="h-65 w-50 rounded-[15px] shadow-2xl"
+                            />
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })}
+              </div>
             </Swiper>
           </div>
         </div>
         {/* ----------------discount section-------------- */}
-        <div className="grid grid-cols-2 gap-5 px-3">
-          <div className="flex  bg-[#090979] rounded-[20px]" style={{ }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-3 my-5">
+          <div className="flex  bg-[#090979] rounded-[20px]">
             <div className="w-[70%] text-white py-5 px-5">
-              <li className="list-none text-base font-bold uppercase">Summer Sale</li>
-              <li className="list-none text-3xl font-bold py-1">
-                Sales 55% Off
+              <li className="list-none text-base font-bold uppercase">
+                Summer Sale
               </li>
-              <button className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-sm font-semibold cursor-pointer uppercase">
-                Shop Now <ArrowForwardIosIcon style={{ fontSize: "13px",fontWeight:"bold" ,marginBottom:"4px" }}/>
+              <li className="list-none text-3xl font-bold py-1">
+                Sales 20% Off
+              </li>
+              <button
+                className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-sm font-semibold cursor-pointer uppercase"
+                onClick={handleDiscounttwinty}   
+              >
+                Shop Now
+                <ArrowForwardIosIcon
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "bold",
+                    marginBottom: "4px",
+                  }}
+                />
               </button>
             </div>
-            <img src="image/discount455.png" alt="" className="w-[40%] p-5 rounded"/>
+            <img
+              src="image/discount455.png"
+              alt=""
+              className="w-[40%] p-5 rounded"
+            />
           </div>
-          <div className="flex bg-[#CCC] rounded-[20px] bg-gradient-to-tr" style={{ }}>
+          <div
+            className="flex bg-[#CCC] rounded-[20px] bg-gradient-to-tr"
+            style={{}}
+          >
             <div className="w-[70%] text-black py-5 px-5">
-              <li className="list-none text-base font-semibold uppercase">Novel every day!</li>
+              <li className="list-none text-base font-semibold uppercase">
+                Novel every day!
+              </li>
               <li className="list-none text-3xl font-bold py-1">
                 Sales 45% Off
               </li>
               <button className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-sm font-semibold cursor-pointer uppercase">
-                Shop Now <ArrowForwardIosIcon style={{ fontSize: "13px",fontWeight:"bold" ,marginBottom:"4px" }}/>
+                Shop Now
+                <ArrowForwardIosIcon
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "bold",
+                    marginBottom: "4px",
+                  }}
+                />
               </button>
             </div>
-            <img src="image/discount300.png" alt="" className="w-[40%] p-5 rounded"/>
+            <img
+              src="image/discount300.png"
+              alt=""
+              className="w-[40%] p-5 rounded"
+            />
           </div>
         </div>
         {/* ----------------Top vendor section-------------- */}
-        <div>
-          <div className="">
-            <h3>Top selling vendor</h3>
-            <a href="">view all products</a>
+        <div className="my-10">
+          <div className="flex justify-between w-full p-1">
+            <p className="text-lg font-semibold">Top selling vendor</p>
+            <a href="" className="text-base ">
+              view all products{" "}
+              <ArrowForwardIosIcon style={{ fontSize: "12px" }} />
+            </a>
           </div>
-       
-          <div className="grid grid-cols-4 gap-5">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div className="shdow-2xl border rounded p-2">
-              <div className="bg-red-100 grid grid-cols-2 gap-1">
-                <div className="bg-black rounded py-2 my-1 px-3">
+              <div className="">
+                <img
+                  src="/image/ai.jpg"
+                  alt=""
+                  className="rounded-[12px] p-2 my-1 h-10"
+                />
+
+
+              </div>
+              <h3 className="text-center font-mono font-bold">
+                Prabhat Prakasan
+              </h3>
+            </div>
+            <div className="shdow-2xl border rounded p-2">
+              <div className=" flex">
+                <img
+                  src="/image/book1.jpeg"
+                  alt=""
+                  className=" w-[65%] rounded-[12px] p-2 my-1"
+                />
+                <div className="flex w-[35%] flex-col">
                   <img
-                    src="/image/book1.jpeg"
+                    src="/image/book2.jpeg"
                     alt=""
-                    className="h-64 mx-auto rounded"
+                    className=" rounded-[12px] p-2 my-1"
                   />
-                </div>
-                <div>
-                  <div className="bg-black rounded py-2 my-1 px-3">
-                    <img
-                      src="/image/book2.jpeg"
-                      alt=""
-                      className="h-30 mx-auto rounded"
-                    />
-                  </div>
-                  <div className="bg-black rounded py-2 my-1 px-3">
-                    <img
-                      src="/image/book3.jpeg"
-                      alt=""
-                      className="h-30 mx-auto rounded"
-                    />
-                  </div>
+                  <img
+                    src="/image/book3.jpeg"
+                    alt=""
+                    className="rounded-[12px] p-2 my-1"
+                  />
                 </div>
               </div>
               <h3 className="text-center font-mono font-bold">
                 Prabhat Prakasan
               </h3>
             </div>
-
+            <div className="shdow-2xl border rounded p-2">
+              <div className=" flex">
+                <img
+                  src="/image/book1.jpeg"
+                  alt=""
+                  className=" w-[65%] rounded-[12px] p-2 my-1"
+                />
+                <div className="flex w-[35%] flex-col">
+                  <img
+                    src="/image/book2.jpeg"
+                    alt=""
+                    className=" rounded-[12px] p-2 my-1"
+                  />
+                  <img
+                    src="/image/book3.jpeg"
+                    alt=""
+                    className="rounded-[12px] p-2 my-1"
+                  />
+                </div>
+              </div>
+              <h3 className="text-center font-mono font-bold">
+                Prabhat Prakasan
+              </h3>
+            </div>
+            <div className="shdow-2xl border rounded p-2">
+              <div className=" flex">
+                <img
+                  src="/image/book1.jpeg"
+                  alt=""
+                  className=" w-[65%] rounded-[12px] p-2 my-1"
+                />
+                <div className="flex w-[35%] flex-col">
+                  <img
+                    src="/image/book2.jpeg"
+                    alt=""
+                    className=" rounded-[12px] p-2 my-1"
+                  />
+                  <img
+                    src="/image/book3.jpeg"
+                    alt=""
+                    className="rounded-[12px] p-2 my-1"
+                  />
+                </div>
+              </div>
+              <h3 className="text-center font-mono font-bold">
+                Prabhat Prakasan
+              </h3>
+            </div>
           </div>
-      
+        </div>
+
+        {/* ------------------section-5- discounted section---------------- */}
+
+        <div className="w-full my-10 bg-[#0b7c6b] grid grid-cols-1 md:grid-cols-2 gap-5 rounded-[20px]">
+          <img src="/image/discounted_background_1.png" alt="" className="" />
+          <div className="text-white py-10 my-auto mx-auto">
+            <li className="list-none text-sm md:font-medium uppercase font-mono">
+              Our Biggest Sale
+            </li>
+            <li className="list-none text-xl md:text-2xl lg:text-3xl font-bold font-sans">
+              Only in ₹200 Best Books
+            </li>
+            <li className="list-none text-sm font-mono">
+              Available only for this month
+            </li>
+            <button className="px-5 py-2 bg-white text-[#0b7c6b] rounded-full cursor-pointer mt-2 uppercase font-semibold">
+              Shop Now
+              <ArrowForwardIosIcon
+                style={{
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  marginBottom: "4px",
+                }}
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
