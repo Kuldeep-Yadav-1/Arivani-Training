@@ -35,13 +35,20 @@ function Page() {
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
               />
             </div>
+            <p className="text-right text-sm my-1">
+              <button
+                className="ms-2  text-violet-300 cursor-pointer font-semibold underline hover:text-blue-100"
+              >
+                Forgot Password ?
+              </button>
+            </p>
             <button
               type="submit"
-              className="w-full mt-4 cursor-pointer bg-white text-[#0b7c6b] font-semibold py-2 rounded hover:bg-gray-200 transition"
+              className="w-full my-3 cursor-pointer bg-white text-[#0b7c6b] font-semibold py-2 rounded hover:bg-gray-200 transition"
             >
               Sign In
             </button>
-            <p className="text-right text-sm mt-2">
+            <p className="text-right text-sm">
               New To Bookstore ?
               <button
                 className="ms-2 text-violet-300 cursor-pointer font-semibold underline hover:text-blue-100"
@@ -62,7 +69,7 @@ function Page() {
           />
           <div className="text-lg space-y-2">
             <p className="font-semibold leading-relaxed">
-                Ready to begin your reading journey?
+              Ready to begin your reading journey?
             </p>
             <p className="font-light leading-snug text-sm italic">
               “A room without books is like a body without a soul.” – Cicero

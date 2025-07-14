@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import React, { useState } from "react";
 import bookstoreData from "../utils/bookstoreData.js";
 
@@ -28,9 +27,8 @@ function HomeSection() {
     });
     setData(filtered);
     console.log(filtered);
-   
+
     // console.log(bookstoreData);
-    
   };
   return (
     <div>
@@ -139,7 +137,7 @@ function HomeSection() {
               </li>
               <button
                 className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-sm font-semibold cursor-pointer uppercase"
-                onClick={handleDiscounttwinty}   
+                onClick={handleDiscounttwinty}
               >
                 Shop Now
                 <ArrowForwardIosIcon
@@ -159,7 +157,6 @@ function HomeSection() {
           </div>
           <div
             className="flex bg-[#CCC] rounded-[20px] bg-gradient-to-tr"
-            style={{}}
           >
             <div className="w-[70%] text-black py-5 px-5">
               <li className="list-none text-base font-semibold uppercase">
@@ -191,98 +188,101 @@ function HomeSection() {
           <div className="flex justify-between w-full p-1">
             <p className="text-lg font-semibold">Top selling vendor</p>
             <a href="" className="text-base ">
-              view all products{" "}
+              view all products
               <ArrowForwardIosIcon style={{ fontSize: "12px" }} />
             </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div className="shdow-2xl border rounded p-2">
-              <div className="">
-                <img
-                  src="/image/ai.jpg"
-                  alt=""
-                  className="rounded-[12px] p-2 my-1 h-10"
-                />
+              <div className="rounded grid grid-cols-2 gap-2 p-1">
+                {data
+                  .filter((item) =>  item.publication == "Prabhat Prakashan")
+                  .map((item, index) => {
+                    return (
+                        <div key={index} className="rounded">
+                          <div>
+                            <img
+                              src={item.main_url}
+                              alt={item.title}
+                              className="h-35 w-50 rounded-[15px] shadow-2xl"
+                            />
+                          </div>
+                        </div>
+                    );
+                  })}
+              </div>
+              <h3 className="text-center font-mono font-bold">
+                Prabhat Prakasan
+              </h3>
+            </div>
+            <div className="shdow-2xl border rounded p-2">
+              <div className="rounded grid grid-cols-2 gap-2 p-1">
+                {data
+                  .filter((item) =>  item.publication == "Pratham Books")
+                  .map((item, index) => {
+                    return (
+                        <div key={index} className="rounded">
+                          <div>
+                            <img
+                              src={item.main_url}
+                              alt={item.title}
+                              className="h-35 w-50 rounded-[15px] shadow-2xl"
+                            />
+                          </div>
+                        </div>
+                    );
+                  })}
+              </div>
+              <h3 className="text-center font-mono font-bold">
+                Pratham Books
+              </h3>
+            </div>
+            <div className="shdow-2xl border rounded p-2">
+              <div className="rounded grid grid-cols-2 gap-2 p-1">
+                {data
+                  .filter((item) =>  item.publication == "Geeta Press Gorakhpur")
+                  .map((item, index) => {
+                    return (
+                        <div key={index} className="rounded">
+                          <div>
+                            <img
+                              src={item.main_url}
+                              alt={item.title}
+                              className="h-35 w-50 rounded-[15px] shadow-2xl"
+                            />
+                          </div>
+                        </div>
+                    );
+                  })}
+              </div>
+              <h3 className="text-center font-mono font-bold">
+                Geeta Press Gorakhpur
+              </h3>
+            </div>
+            <div className="shdow-2xl border rounded p-2">
+              <div className="rounded grid grid-cols-2 gap-2 p-1">
+                {data
+                  .filter((item) =>  item.publication == "Pustak Mahal")
+                  .map((item, index) => {
+                    return (
+                        <div key={index} className="rounded">
+                          <div>
+                            <img
+                              src={item.main_url}
+                              alt={item.title}
+                              className="h-35 w-50 rounded-[15px] shadow-2xl"
+                            />
+                          </div>
+                        </div>
+                    );
+                  })}
+              </div>
+              <h3 className="text-center font-mono font-bold">
+                Pustak Mahal
+              </h3>
+            </div>
 
-
-              </div>
-              <h3 className="text-center font-mono font-bold">
-                Prabhat Prakasan
-              </h3>
-            </div>
-            <div className="shdow-2xl border rounded p-2">
-              <div className=" flex">
-                <img
-                  src="/image/book1.jpeg"
-                  alt=""
-                  className=" w-[65%] rounded-[12px] p-2 my-1"
-                />
-                <div className="flex w-[35%] flex-col">
-                  <img
-                    src="/image/book2.jpeg"
-                    alt=""
-                    className=" rounded-[12px] p-2 my-1"
-                  />
-                  <img
-                    src="/image/book3.jpeg"
-                    alt=""
-                    className="rounded-[12px] p-2 my-1"
-                  />
-                </div>
-              </div>
-              <h3 className="text-center font-mono font-bold">
-                Prabhat Prakasan
-              </h3>
-            </div>
-            <div className="shdow-2xl border rounded p-2">
-              <div className=" flex">
-                <img
-                  src="/image/book1.jpeg"
-                  alt=""
-                  className=" w-[65%] rounded-[12px] p-2 my-1"
-                />
-                <div className="flex w-[35%] flex-col">
-                  <img
-                    src="/image/book2.jpeg"
-                    alt=""
-                    className=" rounded-[12px] p-2 my-1"
-                  />
-                  <img
-                    src="/image/book3.jpeg"
-                    alt=""
-                    className="rounded-[12px] p-2 my-1"
-                  />
-                </div>
-              </div>
-              <h3 className="text-center font-mono font-bold">
-                Prabhat Prakasan
-              </h3>
-            </div>
-            <div className="shdow-2xl border rounded p-2">
-              <div className=" flex">
-                <img
-                  src="/image/book1.jpeg"
-                  alt=""
-                  className=" w-[65%] rounded-[12px] p-2 my-1"
-                />
-                <div className="flex w-[35%] flex-col">
-                  <img
-                    src="/image/book2.jpeg"
-                    alt=""
-                    className=" rounded-[12px] p-2 my-1"
-                  />
-                  <img
-                    src="/image/book3.jpeg"
-                    alt=""
-                    className="rounded-[12px] p-2 my-1"
-                  />
-                </div>
-              </div>
-              <h3 className="text-center font-mono font-bold">
-                Prabhat Prakasan
-              </h3>
-            </div>
           </div>
         </div>
 

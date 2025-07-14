@@ -4,6 +4,13 @@ import { useRouter } from "next/navigation";
 
 function Page() {
   const router = useRouter();
+  const [name , setName] = ("");
+  const [email , setEmail] = ("");
+  const [password , setPassword] = ("");
+  const [confirmPassword , setConfirmPassword] = ("");
+  const handleSignIn=()=>{
+    router.push("/signin");
+  }
   return (
     <div className="relative min-h-screen bg-gray-100 flex items-center justify-center">
       {/* -----------------------Background Image------------------ */}
@@ -27,6 +34,7 @@ function Page() {
                 type="text"
                 placeholder="Enter Full Name"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                // onChange={handleName}
               />
             </div>
             <div>
@@ -35,6 +43,7 @@ function Page() {
                 type="email"
                 placeholder="Enter Email"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                // onChange={handleEmail}
               />
             </div>
             <div>
@@ -43,6 +52,7 @@ function Page() {
                 type="password"
                 placeholder="Enter Password"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                // onChange={handlePassword}
               />
             </div>
             <div>
@@ -51,19 +61,20 @@ function Page() {
                 type="password"
                 placeholder="Confirm Password"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                // onChange={handleConfirmPassword}
               />
             </div>
             <button
               type="submit"
-              className="w-full mt-5 cursor-pointer bg-white text-[#0b7c6b] font-semibold py-2 rounded hover:bg-gray-200 transition"
+              className="w-full my-3 cursor-pointer bg-white text-[#0b7c6b] font-semibold py-2 rounded hover:bg-gray-200 transition"
             >
               Sign Up
             </button>
-            <p className="text-right text-sm mt-2">
+            <p className="text-right text-sm ">
               Already have an account ?
               <button
                 className="ms-2 text-violet-300 cursor-pointer font-semibold underline hover:text-blue-100"
-                onClick={() => router.push("/signin")}
+                onClick={handleSignIn}
               >
                 Sign In
               </button>
