@@ -25,7 +25,7 @@ function Navbar() {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            className="px-5 py-1 text-white bg-black rounded cursor-pointer"
+            className="px-5 py-1 text-white bg-[#0b7c6b] hover:bg-white hover:text-[#0b7c6b] hover:border rounded cursor-pointer"
             onClick={()=>router.push("/signup")}
           >
             SignUp

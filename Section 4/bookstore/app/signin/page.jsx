@@ -5,7 +5,7 @@ import React from "react";
 function Page() {
   const router = useRouter();
   return (
-    <div className="relative min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="relative min-h-screen bg-black flex items-center justify-center">
       {/* -----------------------Background Image------------------ */}
       <img
         src="../image/dicount200.jpg"
@@ -14,7 +14,7 @@ function Page() {
       />
 
       {/*-----------------SignUp Container--------------------- */}
-      <div className="relative z-10 bg-[#0b7c6b] bg-opacity-90 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+      <div className="relative z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white" style={{background:"rgba(11, 124, 107, 0.92)"}}>
         {/* ---------------------Left Side SignUp Section-------------------*/}
         <div>
           <h2 className="text-3xl font-bold mb-6">Sign In to Bookstore</h2>

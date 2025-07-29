@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useRouter } from "next/navigation";
+import Footer from "./Footer.jsx";
 
 function HomeSection() {
   const router = useRouter();
@@ -126,7 +127,7 @@ function HomeSection() {
           </div>
         </div>
         {/* ----------------discount section-------------- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-3 my-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
           <div className="flex  bg-[#090979] rounded-[20px]">
             <div className="w-[70%] text-white py-5 px-5">
               <li className="list-none text-base font-bold uppercase">
@@ -185,7 +186,7 @@ function HomeSection() {
         </div>
         {/* ----------------Top vendor section-------------- */}
         <div className="my-10">
-          <div className="flex justify-between w-full p-1">
+          <div className="flex justify-between w-full py-1">
             <p className="text-lg font-semibold">Top selling vendor</p>
             <a href="" className="text-base ">
               view all products
@@ -194,8 +195,8 @@ function HomeSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="shdow-2xl border rounded p-2">
-              <div className="rounded grid grid-cols-2 gap-2 p-1">
+            <div className="shadow-2xl p-2 rounded-[15px]">
+              <div className="rounded grid grid-cols-2 gap-2">
                 {data
                   .filter((item) =>  item.publication == "Prabhat Prakashan")
                   .map((item, index) => {
@@ -212,12 +213,12 @@ function HomeSection() {
                     );
                   })}
               </div>
-              <h3 className="text-center font-mono font-bold">
+              <h3 className="text-center font-mono font-bold mt-2">
                 Prabhat Prakasan
               </h3>
             </div>
-            <div className="shdow-2xl border rounded p-2">
-              <div className="rounded grid grid-cols-2 gap-2 p-1">
+            <div className="shadow-2xl p-2 rounded-[15px]">
+              <div className="rounded grid grid-cols-2 gap-2">
                 {data
                   .filter((item) =>  item.publication == "Pratham Books")
                   .map((item, index) => {
@@ -234,12 +235,12 @@ function HomeSection() {
                     );
                   })}
               </div>
-              <h3 className="text-center font-mono font-bold">
+              <h3 className="text-center font-mono font-bold mt-2">
                 Pratham Books
               </h3>
             </div>
-            <div className="shdow-2xl border rounded p-2">
-              <div className="rounded grid grid-cols-2 gap-2 p-1">
+            <div className="shadow-2xl p-2 rounded-[15px]">
+              <div className="rounded grid grid-cols-2 gap-2">
                 {data
                   .filter((item) =>  item.publication == "Geeta Press Gorakhpur")
                   .map((item, index) => {
@@ -256,12 +257,12 @@ function HomeSection() {
                     );
                   })}
               </div>
-              <h3 className="text-center font-mono font-bold">
+              <h3 className="text-center font-mono font-bold mt-2">
                 Geeta Press Gorakhpur
               </h3>
             </div>
-            <div className="shdow-2xl border rounded p-2">
-              <div className="rounded grid grid-cols-2 gap-2 p-1">
+            <div className="shadow-2xl p-2 rounded-[15px]">
+              <div className="rounded grid grid-cols-2 gap-2">
                 {data
                   .filter((item) =>  item.publication == "Pustak Mahal")
                   .map((item, index) => {
@@ -278,7 +279,7 @@ function HomeSection() {
                     );
                   })}
               </div>
-              <h3 className="text-center font-mono font-bold">
+              <h3 className="text-center font-mono font-bold mt-2">
                 Pustak Mahal
               </h3>
             </div>
@@ -313,6 +314,7 @@ function HomeSection() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
