@@ -18,6 +18,7 @@ export const signup = async(req, res) => {
             name,
             email: email_lower,
             password,
+            user_type_id: 2, // for normal users
             created_at: DateTime.now().toISO(),
             updated_at: DateTime.now().toISO()
         })
@@ -25,4 +26,9 @@ export const signup = async(req, res) => {
     } catch (error) {
         res.status(500).json({message: `Something went wrong ${error}`})
     }
+}
+
+
+export const signin = async(req, res) => {
+    
 }

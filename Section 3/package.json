@@ -16,6 +16,7 @@
     "express": "^5.1.0",
     "luxon": "^3.6.1",
     "mongoose": "^8.16.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "sweetalert2": "^11.22.2"
   }
 }
