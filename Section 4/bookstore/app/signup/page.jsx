@@ -1,18 +1,79 @@
 "use client";
-import React from "react";
+import axios from "axios";
+// import { setLazyProp } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+
 
 function Page() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const [name , setName] = ("");
-  const [email , setEmail] = ("");
-  const [password , setPassword] = ("");
-  const [confirmPassword , setConfirmPassword] = ("");
-  const handleSignIn=()=>{
-    router.push("/signin");
-  }
+
+  const handleSignup = async () => {
+    if (
+      !name.trim() ||
+      !email.trim() ||
+      !password.trim() ||
+      !confirmPassword.trim()
+    ) {
+      // alert("All fields are required");
+      Swal.fire({
+        title: "Error!",
+        text: "All fields are required",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
+    if (password.trim() != confirmPassword.trim()) {
+      // alert("Password doesn't match");
+      Swal.fire({
+        title: "Error!",
+        text: "Password doesn't match",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+    try {
+      setLoading(true);
+      const res = await axios.post(`http://localhost:9000/api/signup`, {
+        name: name.trim(),
+        email: email.trim().toLowerCase(),
+        password: password,
+      });
+      // alert(res?.data?.message);
+      Swal.fire({
+        icon: "success",
+        title: "Signed Up",
+        text: res?.data?.message || "Signup successful!",
+      });
+
+      console.log(res?.data?.result);
+      setName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setLoading(false);
+    } catch (error) {
+      // alert(error?.response?.data?.message || error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: error?.response?.data?.message || "Something went wrong.",
+      });
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="relative min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="relative min-h-screen bg-black flex items-center justify-center">
       {/* -----------------------Background Image------------------ */}
       <img
         src="../image/dicount200.jpg"
@@ -21,7 +82,10 @@ function Page() {
       />
 
       {/*-----------------SignUp Container--------------------- */}
-      <div className="relative bg-[#0b7c6b] bg-opacity-90 p-8 rounded-2xl my-4 shadow-2xl w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+      <div
+        className="relative z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
+        style={{ background: "rgba(11, 124, 107, 0.92)" }}
+      >
         {/* ---------------------Left Side SignUp Section-------------------*/}
         <div>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
@@ -34,7 +98,8 @@ function Page() {
                 type="text"
                 placeholder="Enter Full Name"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
-                // onChange={handleName}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div>
@@ -43,7 +108,8 @@ function Page() {
                 type="email"
                 placeholder="Enter Email"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
-                // onChange={handleEmail}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
@@ -52,7 +118,8 @@ function Page() {
                 type="password"
                 placeholder="Enter Password"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
-                // onChange={handlePassword}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div>
@@ -61,20 +128,23 @@ function Page() {
                 type="password"
                 placeholder="Confirm Password"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
-                // onChange={handleConfirmPassword}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
             <button
               type="submit"
               className="w-full my-3 cursor-pointer bg-white text-[#0b7c6b] font-semibold py-2 rounded hover:bg-gray-200 transition"
+              onClick={handleSignup}
+              disabled={loading}
             >
-              Sign Up
+              {loading ? "Please wait..." : "Signup"}
             </button>
             <p className="text-right text-sm ">
               Already have an account ?
               <button
                 className="ms-2 text-violet-300 cursor-pointer font-semibold underline hover:text-blue-100"
-                onClick={handleSignIn}
+                onClick={() => router.push("/signin")}
               >
                 Sign In
               </button>

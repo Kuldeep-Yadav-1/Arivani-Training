@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <title>Kuldeep Projects</title>
+      <title>Bookstore App</title>
       
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -1,9 +1,67 @@
 "use client";
+import axios from "axios";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 function Page() {
   const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSignin = async () => {
+    if (!email.trim() || !password.trim()) {
+      Swal.fire({
+        title: "Error!",
+        text: "All fields are required",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const res = await axios.post(`http://localhost:9000/api/signup`, {
+        email: email.trim().toLowerCase(),
+        password: password,
+      });
+
+      if (email != res?.data?.email) {
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: res?.data?.message || "email not exist",
+        });
+        return;
+      }
+      if (password != res?.data?.password) {
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: res?.data?.message || "password not match",
+        });
+        return;
+      }
+      Swal.fire({
+        icon: "success",
+        title: "Signed In",
+        text: res?.data?.message || "Signin successful!",
+      });
+      setEmail("");
+      setPassword("")
+      setLoading(false);
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: error?.response?.data?.message || "Something went wrong.",
+      });
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-black flex items-center justify-center">
       {/* -----------------------Background Image------------------ */}
@@ -14,7 +72,10 @@ function Page() {
       />
 
       {/*-----------------SignUp Container--------------------- */}
-      <div className="relative z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white" style={{background:"rgba(11, 124, 107, 0.92)"}}>
+      <div
+        className="relative z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
+        style={{ background: "rgba(11, 124, 107, 0.92)" }}
+      >
         {/* ---------------------Left Side SignUp Section-------------------*/}
         <div>
           <h2 className="text-3xl font-bold mb-6">Sign In to Bookstore</h2>
@@ -25,6 +86,8 @@ function Page() {
                 type="email"
                 placeholder="Enter Email"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
@@ -33,18 +96,21 @@ function Page() {
                 type="password"
                 placeholder="Enter Password"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <p className="text-right text-sm my-1">
+            {/* <p className="text-right text-sm my-1">
               <button
                 className="ms-2  text-violet-300 cursor-pointer font-semibold underline hover:text-blue-100"
               >
                 Forgot Password ?
               </button>
-            </p>
+            </p> */}
             <button
               type="submit"
-              className="w-full my-3 cursor-pointer bg-white text-[#0b7c6b] font-semibold py-2 rounded hover:bg-gray-200 transition"
+              className="w-full my-4 cursor-pointer bg-white text-[#0b7c6b] font-semibold py-2 rounded hover:bg-gray-200 transition"
+              onClick={handleSignin}
             >
               Sign In
             </button>

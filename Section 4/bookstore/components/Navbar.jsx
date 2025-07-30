@@ -19,7 +19,7 @@ function Navbar() {
             alt="Bookstore Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            Bookstore
           </span>
         </button>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -77,7 +77,7 @@ function Navbar() {
                 Products
               </button>
             </li>
-            <li>
+            {/* <li>
               <button
                 onClick={() => router.push("/blog")}
                 className="block cursor-pointer py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -92,7 +92,7 @@ function Navbar() {
               >
                 Contact
               </button>
-            </li>
+            </li> */}
             <li>
               <button
                 onClick={() => router.push("/aboutus")}
