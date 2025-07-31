@@ -16,6 +16,7 @@ function Page() {
         title: "Error!",
         text: "All fields are required",
         icon: "error",
+
         confirmButtonText: "OK",
       });
       return;
@@ -23,35 +24,23 @@ function Page() {
 
     try {
       setLoading(true);
-      const res = await axios.post(`http://localhost:9000/api/signup`, {
+      const res = await axios.post(`http://localhost:9000/api/signin`, {
         email: email.trim().toLowerCase(),
         password: password,
       });
 
-      if (email != res?.data?.email) {
-        Swal.fire({
-          icon: "error",
-          title: "Error!",
-          text: res?.data?.message || "email not exist",
-        });
-        return;
-      }
-      if (password != res?.data?.password) {
-        Swal.fire({
-          icon: "error",
-          title: "Error!",
-          text: res?.data?.message || "password not match",
-        });
-        return;
-      }
       Swal.fire({
         icon: "success",
         title: "Signed In",
+        timer: 1000,
         text: res?.data?.message || "Signin successful!",
       });
       setEmail("");
-      setPassword("")
+      setPassword("");
       setLoading(false);
+      setTimeout(() => {
+        router.push("/");
+      }, 1000);
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -73,7 +62,7 @@ function Page() {
 
       {/*-----------------SignUp Container--------------------- */}
       <div
-        className="relative z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
+        className="relative my-5 z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
         style={{ background: "rgba(11, 124, 107, 0.92)" }}
       >
         {/* ---------------------Left Side SignUp Section-------------------*/}

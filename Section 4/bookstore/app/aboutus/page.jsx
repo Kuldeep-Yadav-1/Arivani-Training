@@ -27,7 +27,7 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="flex-1">
+          <div className="flex">
             <img
               src="./image/aboutUsR.jpg"
               alt="Bookstore"
@@ -54,13 +54,13 @@ const AboutUs = () => {
           ))}
         </div>
 
-        {/* Section 3: Author Cards */}
+        {/* Section 3: Author Cards, Quates,Icons */}
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
           {[
             {
               name: "A.P.J. Abdul Kalam",
               quote:
-                "Books are the mirrors of the soul. A book is the best friend, a mother, the purest and the most devoted one.",
+                "Books are the mirrors of the soul.A book is the best friend, a mother, the purest and the most devoted one.",
               image: "./image/kalam.jpeg",
             },
             {
@@ -71,7 +71,8 @@ const AboutUs = () => {
             },
             {
               name: "Ruskin Bond",
-              quote: "Books can be a means of escape, but they are also a way of better understanding our world.",
+              quote:
+                "Books can be a means of escape, but they are also a way of better understanding our world.",
               image: "./image/bond.jpeg",
             },
           ].map((author, index) => (
@@ -86,7 +87,9 @@ const AboutUs = () => {
               />
               <div className="p-4 flex-grow">
                 <p className="italic mb-3 leading-relaxed">“{author.quote}”</p>
-                <p className="text-sm font-semibold text-right">– {author.name}</p>
+                <p className="text-sm font-semibold text-right">
+                  – {author.name}
+                </p>
               </div>
               <div className="flex justify-center space-x-4 mb-4">
                 {["facebook-f", "twitter", "instagram"].map((icon, i) => (

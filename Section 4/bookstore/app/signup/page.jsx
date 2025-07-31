@@ -1,10 +1,11 @@
 "use client";
+
+import validateName from "../../utils/validateName";
 import axios from "axios";
-// import { setLazyProp } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-
+import { setTimeout } from "timers";
 
 function Page() {
   const [name, setName] = useState("");
@@ -31,8 +32,19 @@ function Page() {
       return;
     }
 
+    if (!validateName(name)) {
+      {
+        Swal.fire({
+          title: "Error!",
+          text: "name must be Alphabet & (2 < Character < 40).",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+    }
+
     if (password.trim() != confirmPassword.trim()) {
-      // alert("Password doesn't match");
       Swal.fire({
         title: "Error!",
         text: "Password doesn't match",
@@ -41,6 +53,7 @@ function Page() {
       });
       return;
     }
+
     try {
       setLoading(true);
       const res = await axios.post(`http://localhost:9000/api/signup`, {
@@ -48,10 +61,12 @@ function Page() {
         email: email.trim().toLowerCase(),
         password: password,
       });
+      // console.log(res,"user data");
       // alert(res?.data?.message);
       Swal.fire({
         icon: "success",
         title: "Signed Up",
+        timer: 1000,
         text: res?.data?.message || "Signup successful!",
       });
 
@@ -61,6 +76,9 @@ function Page() {
       setPassword("");
       setConfirmPassword("");
       setLoading(false);
+      setTimeout(() => {
+        router.push("/signin");
+      }, 1000);
     } catch (error) {
       // alert(error?.response?.data?.message || error);
       Swal.fire({
@@ -83,7 +101,7 @@ function Page() {
 
       {/*-----------------SignUp Container--------------------- */}
       <div
-        className="relative z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
+        className="relative my-5 z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
         style={{ background: "rgba(11, 124, 107, 0.92)" }}
       >
         {/* ---------------------Left Side SignUp Section-------------------*/}

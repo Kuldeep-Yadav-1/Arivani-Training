@@ -1,7 +1,6 @@
 "use client"
-import React from 'react'
 
-export const ValidatePassword = (password) => {
+export const validatePassword = (password) => {
     const re = {
         capital: /(?=.*[A-Z])/,
         small: /(?=.*[a-z])/,

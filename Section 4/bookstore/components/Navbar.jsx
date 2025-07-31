@@ -18,7 +18,7 @@ function Navbar() {
             className="h-12 rounded-full"
             alt="Bookstore Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white cursor-pointer"  onClick={() => router.push("/")}>
             Bookstore
           </span>
         </button>
