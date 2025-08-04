@@ -2,7 +2,7 @@ import React from 'react'
 import Product from "../../components/Product"
 function page() {
   return (
-    <div>
+    <div className='pt-2'>
       <Product/>
     </div>
   )

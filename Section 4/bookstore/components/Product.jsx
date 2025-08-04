@@ -7,9 +7,9 @@ function Product() {
   const [data, setData] = useState(bookstoreData);
   return (
     <div>
-      <div className="mx-10 p-5">
-        <p className="text-2xl font-bold">Product</p>
-        <div className="grid grid-cols-4 gap-5 my-5">
+      <div className="mx-6 md:mx-10 md:mx-12 ">
+        <p className="text-2xl font-semi-bold">Product</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-5">
           {data.map((item, index) => {
             return (
               <div key={index} className="p-5 rounded shadow-2xl">
@@ -18,10 +18,10 @@ function Product() {
                   <img
                     src={item.main_url}
                     alt={item.title}
-                    className="w-50 h-75 mx-auto rounded-[15px]"
+                    className="w-50 h-70 mx-auto rounded-[15px]"
                   />
                 </div>
-                <div className="text-lg font-sans font-medium mt-2">
+                <div className="font-sans font-medium mt-2 mb-1">
                   {item.title}
                 </div>
                 <div className="flex justify-between">
@@ -29,7 +29,7 @@ function Product() {
                     {"₹ "}
                     {item.price}
                   </div>
-                  <button className="px-5 rounded  py-1 bg-blue-500 text-white">
+                  <button className="px-5 rounded  py-1 bg-green-500 hover:bg-green-600 text-white cursor-pointer">
                     Add To Card
                   </button>
                 </div>

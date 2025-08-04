@@ -1,4 +1,5 @@
 "use client";
+import validateEmail from "../../utils/validateEmail";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -16,7 +17,16 @@ function Page() {
         title: "Error!",
         text: "All fields are required",
         icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
 
+    if (!validateEmail(email)) {
+      Swal.fire({
+        title: "Error!",
+        text: "invalid email",
+        icon: "error",
         confirmButtonText: "OK",
       });
       return;
@@ -60,14 +70,14 @@ function Page() {
         className="absolute w-full h-full object-cover opacity-85"
       />
 
-      {/*-----------------SignUp Container--------------------- */}
+      {/*-----------------SignIn Container--------------------- */}
       <div
-        className="relative my-5 z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
+        className="relative my-5 z-10 p-6 mx-6 md:mx-15 lg:mx-25 rounded-2xl shadow-lg w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
         style={{ background: "rgba(11, 124, 107, 0.92)" }}
       >
         {/* ---------------------Left Side SignUp Section-------------------*/}
         <div>
-          <h2 className="text-3xl font-bold mb-6">Sign In to Bookstore</h2>
+          <h2 className="text-3xl md:text-2xl lg:text-3xl font-bold mb-6">Sign In to Bookstore</h2>
           <div className="space-y-4">
             <div>
               <label className="block mb-1 text-sm">Email *</label>
@@ -116,7 +126,7 @@ function Page() {
         </div>
 
         {/* -----------------Right Side - Logo Section--------------*/}
-        <div className="flex flex-col items-center justify-center text-center">
+        <div className="hidden md:flex flex-col items-center justify-center text-center">
           <img
             src="../image/bookstore_logo1.png"
             alt="Bookstore Logo"

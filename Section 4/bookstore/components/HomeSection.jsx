@@ -34,7 +34,7 @@ function HomeSection() {
   return (
     <div>
       {/* ----------------hero section-------------- */}
-      <div className="px-10 md:px-20 lg:px-20 bg-[#0b7c6b]">
+      <div className="px-6 md:px-10 lg:px-12 bg-[#0b7c6b] ">
         <div className="w-full flex flex-col-reverse md:flex-row lg:flex-row justify-between items-center">
           <div className="text-center md:text-left  py-5   md:py-auto">
             <div className="text-white md:py-auto">
@@ -67,7 +67,7 @@ function HomeSection() {
           />
         </div>
       </div>
-      <div className="mx-6 md:mx-15 lg:mx-25">
+      <div className="mx-6 md:mx-10 lg:mx-12">
         {/* ----------------Carosel start-------------- */}
         <div className="">
           <div className="mt-10 mb-5">

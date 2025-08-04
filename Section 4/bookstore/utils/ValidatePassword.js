@@ -1,6 +1,6 @@
 "use client"
 
-export const validatePassword = (password) => {
+function ValidatePassword(password){
     const re = {
         capital: /(?=.*[A-Z])/,
         small: /(?=.*[a-z])/,
@@ -16,5 +16,6 @@ export const validatePassword = (password) => {
         re.digit.test(password)
     );
 }
+export default ValidatePassword;
 
 

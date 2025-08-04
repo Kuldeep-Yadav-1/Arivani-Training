@@ -1,11 +1,13 @@
 "use client";
 
 import validateName from "../../utils/validateName";
+import validateEmail from "../../utils/validateEmail";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { setTimeout } from "timers";
+import validatePassword from "../../utils/ValidatePassword";
 
 function Page() {
   const [name, setName] = useState("");
@@ -44,6 +46,25 @@ function Page() {
       }
     }
 
+    if (!validateEmail(email)) {
+      Swal.fire({
+        title: "Error!",
+        text: "invalid Email.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+    if (!validatePassword(password)) {
+      Swal.fire({
+        title: "Error!",
+        text: "password must be strong(Capital,Small,number,special character & (7 < character length < 40))",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
     if (password.trim() != confirmPassword.trim()) {
       Swal.fire({
         title: "Error!",
@@ -61,7 +82,10 @@ function Page() {
         email: email.trim().toLowerCase(),
         password: password,
       });
-      // console.log(res,"user data");
+      console.log(res, "user data");
+      console.log(res.data, "user data");
+      console.log(res.data.message, "user data");
+      console.log(res.data.result, "user data");
       // alert(res?.data?.message);
       Swal.fire({
         icon: "success",
@@ -101,12 +125,12 @@ function Page() {
 
       {/*-----------------SignUp Container--------------------- */}
       <div
-        className="relative my-5 z-10 p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-4 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
+        className="relative my-5 z-10 p-6 mx-6 md:mx-15 lg:mx-25 rounded-2xl shadow-lg w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
         style={{ background: "rgba(11, 124, 107, 0.92)" }}
       >
         {/* ---------------------Left Side SignUp Section-------------------*/}
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+          <h2 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-6">
             Sign Up to Bookstore
           </h2>
           <div className="space-y-4">
@@ -171,7 +195,7 @@ function Page() {
         </div>
 
         {/* -----------------Right Side - Logo Section--------------*/}
-        <div className="flex flex-col items-center justify-center text-center">
+        <div className="hidden md:flex flex-col items-center justify-center text-center">
           <img
             src="../image/bookstore_logo1.png"
             alt="Bookstore Logo"

@@ -27,7 +27,7 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="flex">
+          <div className="flex-1">
             <img
               src="./image/aboutUsR.jpg"
               alt="Bookstore"
@@ -37,7 +37,7 @@ const AboutUs = () => {
         </div>
 
         {/* Section 2: Statistics & data */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 text-center">
           {[
             { label: "Active Users", value: "150K+" },
             { label: "Monthly Products", value: "20K+" },
@@ -55,7 +55,7 @@ const AboutUs = () => {
         </div>
 
         {/* Section 3: Author Cards, Quates,Icons */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8 mb-10">
           {[
             {
               name: "A.P.J. Abdul Kalam",

@@ -1,5 +1,7 @@
 "use client"
-export const validateEmail = (email) => {
+function validateEmail(email){
   const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return pattern.test(email);
 };
+
+export default validateEmail;

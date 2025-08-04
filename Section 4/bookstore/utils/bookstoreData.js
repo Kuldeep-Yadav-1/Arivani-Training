@@ -295,7 +295,7 @@ const bookstoreData = [
   {
     id: 13,
     title: "Lost (Three Originals)",
-    price: 24.99,
+    price: 24,
     discounted_price: 20.0,
     author: "James Montgomery",
     pages: 370,
