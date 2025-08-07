@@ -4,8 +4,8 @@ import "../lib/fontawesome"; //path of lib
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 px-6 md:px-10 lg:px-12 shadow-2xl">
-      <div className="max-w-7xl  mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gray-900 text-gray-300 py-12 px-6 md:px-10 lg:px-10 shadow-2xl">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand Info */}
         <div>
           <h2 className="text-2xl font-bold text-white">BookStore</h2>

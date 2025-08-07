@@ -7,9 +7,9 @@ import Footer from "../../components/Footer.jsx";
 const AboutUs = () => {
   return (
     <div className="bg-white text-[#0b7c6b]">
-      <div className="px-4 md:px-16 py-10">
+      <div className="px-6 md:px-10 lg:px-12 py-10">
         {/* Section 1: history*/}
-        <div className="flex flex-col md:flex-row gap-10 mb-20 items-center">
+        <div className="flex flex-col-reverse md:flex-row gap-10 mb-20 items-center">
           <div className="flex-1 space-y-6">
             <div>
               <h2 className="text-4xl font-bold mb-2">Our Story</h2>

@@ -47,15 +47,15 @@ function AppNavbar() {
 
           <NavbarLink
             className="cursor-pointer"
-            onClick={() => router.push("/addBook")}
+            onClick={() => router.push("/addbook")}
           >
             Add Book
           </NavbarLink>
           <NavbarLink
             className="cursor-pointer"
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/cart")}
           >
-            Card
+            Cart
           </NavbarLink>
           <NavbarLink
             className="cursor-pointer"

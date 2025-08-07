@@ -137,7 +137,7 @@ function HomeSection() {
                 Sales 20% Off
               </li>
               <button
-                className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-sm font-semibold cursor-pointer uppercase"
+                className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-xs md:text-sm font-semibold cursor-pointer uppercase"
                 onClick={handleDiscounttwinty}
               >
                 Shop Now
@@ -166,7 +166,7 @@ function HomeSection() {
               <li className="list-none text-3xl font-bold py-1">
                 Sales 45% Off
               </li>
-              <button className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-sm font-semibold cursor-pointer uppercase">
+              <button className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-xs md:text-sm font-semibold cursor-pointer uppercase">
                 Shop Now
                 <ArrowForwardIosIcon
                   style={{
