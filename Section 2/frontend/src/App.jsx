@@ -9,6 +9,7 @@ import LaptopList from "./components/LaptopList";
 import Navbar from "./components/Navbar";
 import Todoapp from "./components/Todoapp";
 import Practiced from "./components/Practiced";
+import Navbar1 from "./components/Navbar1";
 // import Navbar1 from "./components/Navbar1";
 
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <Navbar1/>
       {/* <Navbar1/> */}
       <Routes>
         <Route path="/" element={<MyHome />} />
