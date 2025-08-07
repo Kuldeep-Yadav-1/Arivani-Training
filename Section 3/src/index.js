@@ -3,6 +3,7 @@ import { connectMongoDB } from "./connection.js";
 import Router from "./routers/routes.js";
 import cors from "cors";
 
+
 connectMongoDB();
 
 const app = express();
@@ -14,6 +15,11 @@ app.use(express.json());
 app.use(cors({
   origin: `http://localhost:3000`
 }))
+
+// app.use(express.json({ limit: '50mb' })); // for JSON bodies
+// app.use(express.urlencoded({ limit: '50mb', extended: true })); // for URL-encoded bodies
+
+
 app.use("/api", Router);
 
 app.get("/", (req, res) => {

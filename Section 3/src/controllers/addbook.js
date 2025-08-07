@@ -1,0 +1,63 @@
+import { DateTime } from "luxon";
+import addBookModel from "../models/addbookModel.js";
+
+export const addbook = async (req, res) => {
+  let {
+    serial_no,
+    title,
+    author_name,
+    total_pages,
+    publication,
+    date_of_published,
+    price,
+    discounted_price,
+    upload_image,
+    language,
+    availablility,
+    rating,
+    description,
+    summary,
+  } = req.body;
+  try {
+    if (
+      !serial_no.trim() ||
+      !title.trim() ||
+      !author_name.trim() ||
+      !total_pages.trim() ||
+      !publication.trim() ||
+      !date_of_published.trim() ||
+      !price.trim() ||
+      !discounted_price.trim() ||
+      !upload_image.trim() ||
+      !language.trim() ||
+      !availablility.trim() ||
+      !rating.trim() ||
+      !description.trim() ||
+      !summary.trim()
+    ) {
+      return res.status(400).json({ message: "all fields are required" });
+    }
+    const result = await addBookModel.create({
+      serial_no,
+      title,
+      author_name,
+      total_pages,
+      publication,
+      date_of_published,
+      price,
+      discounted_price,
+      upload_image,
+      language,
+      availablility,
+      rating,
+      description,
+      summary,
+      user_Type_Id: 2,
+      created_at: DateTime.now().toISO(),
+      updated_at: DateTime.now().toISO(),
+    });
+    res.status(200).json({ message: "add book Successfully", result });
+  } catch (error) {
+    res.status(500).json({ message: `something went wrong ${error}` });
+  }
+};
