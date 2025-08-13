@@ -1,17 +1,18 @@
 import express from "express";
 import { getAllUsers, signin, signup } from "../controllers/users.js";
-import { addbook } from "../controllers/addbook.js";
+import { addbook, getAllBookData } from "../controllers/addbook.js";
 
 const router = express.Router();
-// --------------------signup router-----------------
+// --------------------users router-----------------
 router.post("/signup", signup);
-
-// --------------------signin router-----------------
 router.post("/signin", signin);
+router.get("/get-all-users", getAllUsers);
+
+
 
 // --------------------addbook router-----------------
 router.post("/addbook", addbook);
-router.get("/get-all-users", getAllUsers);
+router.get("/get-all-book-data", getAllBookData);
 
 
 

@@ -1,4 +1,6 @@
 "use client";
+import UseAppContext from "../../components/useContext";
+import api from "../../api/apiUrl";
 import validateEmail from "../../utils/validateEmail";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -10,6 +12,8 @@ function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
+    const {loggedIn, setLoggedIn, logout, currentUser, setCurrentUser, loadingData, setLoadingData,} = UseAppContext();
 
   const handleSignin = async () => {
     if (!email.trim() || !password.trim()) {
@@ -34,7 +38,7 @@ function Page() {
 
     try {
       setLoading(true);
-      const res = await axios.post(`http://localhost:9000/api/signin`, {
+      const res = await api.post(`/api/signin`, {
         email: email.trim().toLowerCase(),
         password: password,
       });
@@ -45,6 +49,10 @@ function Page() {
         timer: 1000,
         text: res?.data?.message || "Signin successful!",
       });
+      sessionStorage.setItem('user', JSON.stringify(res?.data?.result));
+      setCurrentUser(res?.data?.result);
+      setLoggedIn(true);
+      setLoadingData(false);
       setEmail("");
       setPassword("");
       setLoading(false);

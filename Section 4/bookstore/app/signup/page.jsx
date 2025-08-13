@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { setTimeout } from "timers";
 import validatePassword from "../../utils/ValidatePassword";
+import api from "../../api/apiUrl";
 
 function Page() {
   const [name, setName] = useState("");
@@ -77,7 +78,7 @@ function Page() {
 
     try {
       setLoading(true);
-      const res = await axios.post(`http://localhost:9000/api/signup`, {
+      const res = await api.post(`/api/signup`, {
         name: name.trim(),
         email: email.trim().toLowerCase(),
         password: password,

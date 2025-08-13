@@ -2,6 +2,7 @@ import express from "express";
 import { connectMongoDB } from "./connection.js";
 import Router from "./routers/routes.js";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 
 connectMongoDB();
@@ -10,6 +11,9 @@ const app = express();
 
 const PORT = 9000;
 
+
+app.use(bodyParser.urlencoded({limit: '20mb', extended: true}));
+app.use(express.json({limit: '20mb'}));
 app.use(express.json());
 
 app.use(cors({

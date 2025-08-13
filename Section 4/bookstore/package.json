@@ -19,6 +19,7 @@
     "@mui/material": "^7.2.0",
     "axios": "^1.11.0",
     "flowbite-react": "^0.12.5",
+    "luxon": "^3.7.1",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

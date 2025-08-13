@@ -61,7 +61,7 @@ const AboutUs = () => {
               name: "A.P.J. Abdul Kalam",
               quote:
                 "Books are the mirrors of the soul.A book is the best friend, a mother, the purest and the most devoted one.",
-              image: "./image/kalam.jpeg",
+              image: "./image/drKalam1.png",
             },
             {
               name: "Rabindranath Tagore",
@@ -73,7 +73,7 @@ const AboutUs = () => {
               name: "Ruskin Bond",
               quote:
                 "Books can be a means of escape, but they are also a way of better understanding our world.",
-              image: "./image/bond.jpeg",
+              image: "./image/bond3.png",
             },
           ].map((author, index) => (
             <div

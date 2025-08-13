@@ -9,6 +9,7 @@ export const addbook = async (req, res) => {
     total_pages,
     publication,
     date_of_published,
+    quantity,
     price,
     discounted_price,
     upload_image,
@@ -26,6 +27,7 @@ export const addbook = async (req, res) => {
       !total_pages.trim() ||
       !publication.trim() ||
       !date_of_published.trim() ||
+      !quantity.trim() ||
       !price.trim() ||
       !discounted_price.trim() ||
       !upload_image.trim() ||
@@ -35,7 +37,7 @@ export const addbook = async (req, res) => {
       !description.trim() ||
       !summary.trim()
     ) {
-      return res.status(400).json({ message: "all fields are required" });
+      return res.status(400).json({ message: "all fields are required"});
     }
     const result = await addBookModel.create({
       serial_no,
@@ -44,6 +46,7 @@ export const addbook = async (req, res) => {
       total_pages,
       publication,
       date_of_published,
+      quantity,
       price,
       discounted_price,
       upload_image,
@@ -52,7 +55,6 @@ export const addbook = async (req, res) => {
       rating,
       description,
       summary,
-      user_Type_Id: 2,
       created_at: DateTime.now().toISO(),
       updated_at: DateTime.now().toISO(),
     });
@@ -61,3 +63,13 @@ export const addbook = async (req, res) => {
     res.status(500).json({ message: `something went wrong ${error}` });
   }
 };
+
+
+export const getAllBookData = async (req,res) =>{
+       try {
+        const result = await addBookModel.find({});
+        return res.status(200).json({message:"Fetched  All Data",result});
+       } catch (error) {
+        return res.status(500).json({message:`something went wrong ${error}`});
+       }
+}
