@@ -1,5 +1,10 @@
 "use client";
 
+import { Divider } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import KeyIcon from "@mui/icons-material/Key";
+import LogoutIcon from "@mui/icons-material/Logout";
+
 import {
   Navbar as FlowbiteNavbar,
   Button,
@@ -26,6 +31,12 @@ function AppNavbar() {
     setLoadingData,
   } = UseAppContext();
 
+  const [profileshow, setProfileShow] = useState(true);
+
+  const handleProfilePop = () => {
+    setProfileShow((show) => !show);
+  };
+
   return (
     <div className="px-2 md:px-6 lg:px-8 border-b-1">
       <FlowbiteNavbar fluid rounded>
@@ -42,12 +53,14 @@ function AppNavbar() {
         <div className="flex md:order-2">
           {currentUser ? (
             <>
-              <div className="text-black text-sm leading-none my-auto">
+              <div className="text-black text-sm leading-none my-auto relative">
                 <p className="font-semibold">{currentUser?.name}</p>
                 <p className="text-xs">{currentUser?.email}</p>
               </div>
               <button
-                onClick={() => logout()}
+                // onClick={() => logout()}
+                // onClick={()=>router.push("/profilepop")}
+                onClick={handleProfilePop}
                 className="ms-5 rounded cursor-pointer flex justify-center"
               >
                 <img
@@ -56,6 +69,36 @@ function AppNavbar() {
                   alt="Profile Logo"
                 />
               </button>
+
+              {profileshow ? (
+                <div></div>
+              ) : (
+                <div>
+                  <div className="absolute top-15 right-14 z-10">
+                    <div className="w-50 h-18 rounded border px-2 py-1 text-xs bg-white">
+                      <div className="p-1 cursor-pointer">
+                        <p>
+                          <AccountCircleIcon /> Profile
+                        </p>
+                       
+                      </div>
+                       <Divider />
+                      {/* <div className="pb-2 cursor-pointer">
+                        <p>
+                          <KeyIcon /> Change Password
+                        </p>
+                        <Divider />
+                      </div> */}
+                      <p
+                        className="p-1 cursor-pointer"
+                        onClick={() => logout()}
+                      >
+                        <LogoutIcon /> Logout
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </>
           ) : (
             <>

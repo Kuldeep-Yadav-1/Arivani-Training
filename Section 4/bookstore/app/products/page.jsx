@@ -1,7 +1,8 @@
 "use client";
-
+import css from "styled-jsx/css";
 import React, { useState, useEffect } from "react";
 import api from "../../api/apiUrl";
+
 import { ArrowForwardIos } from "@mui/icons-material";
 import Footer from "../../components/Footer";
 
@@ -56,7 +57,14 @@ function Page() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {loading ? (
-            <p>Loading books...</p>
+            <div className="flex flex-col items-center justify-center col-span-full py-12">
+              <div className="relative w-16 h-16">
+                <div className="book-flip-box absolute w-full h-full bg-[#0b7c6b] rounded-sm shadow-lg origin-left"></div>
+              </div>
+              <p className="mt-4 text-[#0b7c6b] font-semibold">
+                Loading your books...
+              </p>
+            </div>
           ) : bookData.length > 0 ? (
             bookData.map((book, index) => (
               <div
@@ -71,14 +79,8 @@ function Page() {
                 />
                 <h2 className="font-semibold">{book.title}</h2>
                 <p className="text-sm">{book.author_name}</p>
-                <p>
-                  <span>{book.rating}⭐</span>
-                  <span className="font-semibold text-sm mx-2">
-                    {book.language}
-                  </span>
-                </p>
 
-                <div className="flex justify-between items-center mt-2">
+                <div className="flex justify-between items-center">
                   <span>
                     <span className="font-bold">
                       ₹{book.discounted_price * book.quantity}
@@ -88,16 +90,16 @@ function Page() {
                     </del>
                   </span>
 
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-1">
                     <button
-                      className="font-bold text-xl bg-green-500 hover:bg-green-400 text-white px-3 py-1 rounded"
+                      className="font-bold text-xl px-3 cursor-pointer"
                       onClick={() => handleDecrement(index)}
                     >
                       -
                     </button>
-                    <span className="px-3">{book.quantity}</span>
+                    <span className="px-3 font-semibold">{book.quantity}</span>
                     <button
-                      className="font-bold text-xl bg-green-500 hover:bg-green-400 text-white px-3 py-1 rounded"
+                      className="font-bold text-xl px-3 cursor-pointer"
                       onClick={() => handleIncrement(index)}
                     >
                       +
@@ -105,11 +107,22 @@ function Page() {
                   </div>
                 </div>
 
-                <p className="text-sm py-2">{book.description}</p>
+                <div className="flex justify-between mb-2">
+                  <div>
+                    <span>{"⭐".repeat(book.rating)}</span>
+                    <span className="font-semibold text-sm mx-2">
+                      {book.language}
+                    </span>
+                  </div>
+                  <button className=" bg-green-500 hover:bg-green-400 text-white px-3 py-1 rounded cursor-pointer">
+                    Add To Cart
+                  </button>
+                </div>
+                {/* <p className="text-sm py-2">{book.description}</p> */}
               </div>
             ))
           ) : (
-            <p>No books found.</p>
+            <p className="mt-4 text-[#0b7c6b] font-semibold">No Book Found</p>
           )}
         </div>
       </div>

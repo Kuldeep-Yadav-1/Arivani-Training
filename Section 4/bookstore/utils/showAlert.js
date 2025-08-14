@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect } from "react";
 import Swal from "sweetalert2";
@@ -10,8 +10,10 @@ const ShowAlert = ({ success, error, setError, setSuccess }) => {
         icon: success ? "success" : "error",
         title: success ? "Congratulations!" : "Caution!",
         text: success ? success : error,
-        showConfirmButton: true,
         timer: 3000,
+        showConfirmButton: false, 
+        timerProgressBar: true, 
+        toast: false,
       });
     }
     setError("");

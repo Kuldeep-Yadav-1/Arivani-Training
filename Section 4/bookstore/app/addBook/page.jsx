@@ -390,7 +390,7 @@ function Page() {
             />
           </div> */}
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="quantity"
                 className="block text-[#0b7c6b] font-semibold mb-1"
@@ -406,7 +406,7 @@ function Page() {
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
               />
-            </div>
+            </div> */}
 
             <div>
               <label
@@ -426,7 +426,7 @@ function Page() {
               />
             </div>
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="discounted_price"
                 className="block text-[#0b7c6b] font-semibold mb-1"
@@ -442,7 +442,7 @@ function Page() {
                 value={discountedPrice}
                 onChange={(e) => setDiscountedPrice(e.target.value)}
               />
-            </div>
+            </div> */}
 
             <div>
               <label
@@ -534,7 +534,7 @@ function Page() {
               />
             </div>
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="description"
                 className="block text-[#0b7c6b] font-semibold mb-1"
@@ -549,9 +549,9 @@ function Page() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="summary"
                 className="block text-[#0b7c6b] font-semibold mb-1"
@@ -566,7 +566,7 @@ function Page() {
                 value={summary}
                 onChange={(e) => setSummary(e.target.value)}
               ></textarea>
-            </div>
+            </div> */}
 
             <div className="col-span-full text-center mt-4">
               <button
