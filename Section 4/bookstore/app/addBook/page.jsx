@@ -7,7 +7,7 @@ import React, { useState, useRef, useEffect } from "react";
 import ShowAlert from "../../utils/showAlert";
 import { DateTime } from "luxon";
 import api from "../../api/apiUrl";
-import UseAppContext from "../../components/useContext"; 
+import UseAppContext from "../../components/useContext";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 
@@ -70,11 +70,11 @@ function Page() {
   const router = useRouter();
 
   useEffect(() => {
-    if(currentUser == null){
+    if (currentUser == null) {
       setError("Please login to continue");
       router.push("/signin");
     }
-  }, [currentUser])
+  }, [currentUser]);
 
   const handleBookData = async () => {
     if (
@@ -102,10 +102,10 @@ function Page() {
       return setError("Serial No must be non zero number.");
     }
 
-    if (!validateName(title)) {
-      // return alert("title must be character");
-      return setError("Title must be character");
-    }
+    // if (!validateName(title)) {
+    //   // return alert("title must be character");
+    //   return setError("Title must be character");
+    // }
 
     if (!validateName(author)) {
       // return alert("author name must be character");
@@ -285,23 +285,23 @@ function Page() {
               Add New Book
             </h2>
 
-            {/* <div>
-            <label
-              htmlFor="sn"
-              className="block text-[#0b7c6b] font-semibold mb-1"
-            >
-              Serial Number:
-            </label>
-            <input
-              type="number"
-              id="sn"
-              min="1"
-              placeholder="Enter Serial No"
-              className="w-full px-3 py-2 border border-[#0b7c6b] rounded focus:outline-none"
-              value={sn}
-              onChange={(e) => setSn(e.target.value)}
-            />
-          </div> */}
+            <div>
+              <label
+                htmlFor="sn"
+                className="block text-[#0b7c6b] font-semibold mb-1"
+              >
+                Serial Number:
+              </label>
+              <input
+                type="number"
+                id="sn"
+                min="1"
+                placeholder="Enter Serial No"
+                className="w-full px-3 py-2 border border-[#0b7c6b] rounded focus:outline-none"
+                value={sn}
+                onChange={(e) => setSn(e.target.value)}
+              />
+            </div>
 
             <div>
               <label
@@ -337,7 +337,7 @@ function Page() {
               />
             </div>
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="totalPages"
                 className="block text-[#0b7c6b] font-semibold mb-1"
@@ -353,7 +353,7 @@ function Page() {
                 value={pages}
                 onChange={(e) => setPages(e.target.value)}
               />
-            </div>
+            </div> */}
 
             <div>
               <label
@@ -373,24 +373,24 @@ function Page() {
             </div>
 
             {/* <div>
-            <label
-              htmlFor="publicationDate"
-              className="block text-[#0b7c6b] font-semibold mb-1"
-            >
-              Date of Publication:
-            </label>
-            <input
-              type="date"
-              id="publicationDate"
-              className="w-full px-3 py-2 border border-[#0b7c6b] rounded"
-              value={dateOfPublished}
-              onChange={(e) => {
-                setDateOfPublished(e.target.value);
-              }}
-            />
-          </div> */}
+              <label
+                htmlFor="publicationDate"
+                className="block text-[#0b7c6b] font-semibold mb-1"
+              >
+                Date of Publication:
+              </label>
+              <input
+                type="date"
+                id="publicationDate"
+                className="w-full px-3 py-2 border border-[#0b7c6b] rounded"
+                value={dateOfPublished}
+                onChange={(e) => {
+                  setDateOfPublished(e.target.value);
+                }}
+              />
+            </div> */}
 
-            {/* <div>
+       {/*      <div>
               <label
                 htmlFor="quantity"
                 className="block text-[#0b7c6b] font-semibold mb-1"
@@ -488,31 +488,28 @@ function Page() {
             </div>
 
             {/* <div>
-            <label
-              htmlFor="Availability"
-              className="block text-[#0b7c6b] font-semibold mb-1"
-            >
-              Availability:
-            </label>
-            <select
-              id="Availability"
-              className="w-full px-3 py-2 border border-[#0b7c6b] rounded text-[#0b7c6b]"
-              value={available}
-              onChange={(e) => setAvailable(e.target.value)}
-            >
-              <option value="">select availability</option>
-              {availabilityList.map((item, index) => {
-                return (
-                  <option
-                    key={index}
-                    value={item.value}
-                  >
-                    {item.label}
-                  </option>
-                );
-              })}
-            </select>
-          </div> */}
+              <label
+                htmlFor="Availability"
+                className="block text-[#0b7c6b] font-semibold mb-1"
+              >
+                Availability:
+              </label>
+              <select
+                id="Availability"
+                className="w-full px-3 py-2 border border-[#0b7c6b] rounded text-[#0b7c6b]"
+                value={available}
+                onChange={(e) => setAvailable(e.target.value)}
+              >
+                <option value="">select availability</option>
+                {availabilityList.map((item, index) => {
+                  return (
+                    <option key={index} value={item.value}>
+                      {item.label}
+                    </option>
+                  );
+                })}
+              </select>
+            </div> */}
 
             <div>
               <label
@@ -549,9 +546,9 @@ function Page() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
-            </div> */}
+            </div>
 
-            {/* <div>
+            <div>
               <label
                 htmlFor="summary"
                 className="block text-[#0b7c6b] font-semibold mb-1"

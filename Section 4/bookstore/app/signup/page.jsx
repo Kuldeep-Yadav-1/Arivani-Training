@@ -127,7 +127,7 @@ function Page() {
 
             <button
               type="submit"
-              className="w-full mt-4 bg-[#0b7c6b] text-white font-semibold py-2 rounded hover:bg-[#096e60] transition"
+              className="w-full mt-4 bg-[#0b7c6b] text-white font-semibold py-2 rounded hover:bg-[#096e60] transition cursor-pointer"
               onClick={handleSignup}
               disabled={loading}
             >
@@ -137,7 +137,7 @@ function Page() {
             <p className="text-sm text-[#0b7c6b] text-right">
               Already have an account?{" "}
               <button
-                className="ml-1 underline hover:text-[#064f44] font-semibold"
+                className="ml-1 underline hover:text-[#064f44] font-semibold cursor-pointer"
                 onClick={() => router.push("/signin")}
               >
                 Sign In

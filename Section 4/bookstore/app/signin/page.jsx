@@ -104,16 +104,17 @@ function Page() {
 
             <button
               type="submit"
-              className="w-full mt-4 bg-[#0b7c6b] text-white font-semibold py-2 rounded hover:bg-[#096e60] transition"
+              className="w-full mt-4 bg-[#0b7c6b] text-white font-semibold py-2 rounded hover:bg-[#096e60] transition cursor-pointer"
               onClick={handleSignin}
+              disabled={loading}
             >
               {loading ? "Please wait..." : "Sign In"}
             </button>
 
             <p className="text-sm text-[#0b7c6b] text-right">
-              New to Bookstore?{" "}
+              New to Bookstore?
               <button
-                className="ml-1 underline hover:text-[#064f44] font-semibold"
+                className="ml-1 underline hover:text-[#064f44] font-semibold cursor-pointer"
                 onClick={() => router.push("/signup")}
               >
                 Create an Account
