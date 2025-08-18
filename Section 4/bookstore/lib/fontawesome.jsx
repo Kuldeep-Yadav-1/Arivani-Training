@@ -1,4 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+
 import {
   faCcVisa,
   faCcMastercard,
@@ -14,5 +17,7 @@ library.add(
   faCcPaypal,
   faFacebookF,
   faTwitter,
-  faInstagram
+  faInstagram,
+  faEnvelope,
+  faLinkedinIn
 );

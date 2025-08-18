@@ -2,77 +2,41 @@
 
 import validateName from "../../utils/validateName";
 import validateEmail from "../../utils/validateEmail";
-import axios from "axios";
+import validatePassword from "../../utils/ValidatePassword";
+import ShowAlert from "../../utils/showAlert";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import { setTimeout } from "timers";
-import validatePassword from "../../utils/ValidatePassword";
 import api from "../../api/apiUrl";
 
 function Page() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleSignup = async () => {
-    if (
-      !name.trim() ||
-      !email.trim() ||
-      !password.trim() ||
-      !confirmPassword.trim()
-    ) {
-      // alert("All fields are required");
-      Swal.fire({
-        title: "Error!",
-        text: "All fields are required",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+    if (!name.trim() || !email.trim() || !password.trim() || !confirmPassword.trim()) {
+      setError("All fields are required");
       return;
     }
 
     if (!validateName(name)) {
-      {
-        Swal.fire({
-          title: "Error!",
-          text: "name must be Alphabet & (2 < Character < 40).",
-          icon: "error",
-          confirmButtonText: "OK",
-        });
-        return;
-      }
+      setError("Name must be alphabetic & 2–40 characters.");
+      return;
     }
 
     if (!validateEmail(email)) {
-      Swal.fire({
-        title: "Error!",
-        text: "invalid Email.",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-      return;
-    }
-    if (!validatePassword(password)) {
-      Swal.fire({
-        title: "Error!",
-        text: "password must be strong(Capital,Small,number,special character & (7 < character length < 40))",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      setError("Invalid email address.");
       return;
     }
 
-    if (password.trim() != confirmPassword.trim()) {
-      Swal.fire({
-        title: "Error!",
-        text: "Password doesn't match",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+    if (password.trim() !== confirmPassword.trim()) {
+      setError("Passwords do not match.");
       return;
     }
 
@@ -83,110 +47,97 @@ function Page() {
         email: email.trim().toLowerCase(),
         password: password,
       });
-      console.log(res, "user data");
-      console.log(res.data, "user data");
-      console.log(res.data.message, "user data");
-      console.log(res.data.result, "user data");
-      // alert(res?.data?.message);
-      Swal.fire({
-        icon: "success",
-        title: "Signed Up",
-        timer: 1000,
-        text: res?.data?.message || "Signup successful!",
-      });
 
-      console.log(res?.data?.result);
+      setSuccess(res?.data?.message || "Signup successful!");
       setName("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-      setLoading(false);
       setTimeout(() => {
         router.push("/signin");
-      }, 1000);
+      }, 1500);
     } catch (error) {
-      // alert(error?.response?.data?.message || error);
       Swal.fire({
         icon: "error",
         title: "Oops!",
         text: error?.response?.data?.message || "Something went wrong.",
       });
+    } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="relative min-h-screen bg-black flex items-center justify-center">
-      {/* -----------------------Background Image------------------ */}
-      <img
-        src="../image/dicount200.jpg"
-        alt="Background"
-        className="absolute w-full h-full object-cover opacity-85"
-      />
-
-      {/*-----------------SignUp Container--------------------- */}
-      <div
-        className="relative my-5 z-10 p-6 mx-6 md:mx-15 lg:mx-25 rounded-2xl shadow-lg w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 text-white"
-        style={{ background: "rgba(11, 124, 107, 0.92)" }}
-      >
-        {/* ---------------------Left Side SignUp Section-------------------*/}
+    <div
+      className="min-h-screen flex items-center justify-center bg-[#0b7c6b] bg-cover bg-center px-4 py-10"
+      style={{
+        backgroundImage: "url('/image/dicount200.jpg')",
+        backgroundBlendMode: "overlay",
+        backgroundColor: "#0b7c6b",
+      }}
+    >
+      {/* -----------------SignUp Container--------------------- */}
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 p-8 gap-8 z-10">
+        {/* Left Side Form */}
         <div>
-          <h2 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-6">
+          <h2 className="text-3xl font-bold text-[#0b7c6b] mb-6">
             Sign Up to Bookstore
           </h2>
           <div className="space-y-4">
             <div>
-              <label className="block mb-1 text-sm">Full Name *</label>
+              <label className="block mb-1 text-sm text-[#0b7c6b]">Full Name *</label>
               <input
                 type="text"
                 placeholder="Enter Full Name"
-                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0b7c6b]"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm">Email *</label>
+              <label className="block mb-1 text-sm text-[#0b7c6b]">Email *</label>
               <input
                 type="email"
                 placeholder="Enter Email"
-                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0b7c6b]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm">Password *</label>
+              <label className="block mb-1 text-sm text-[#0b7c6b]">Password *</label>
               <input
                 type="password"
                 placeholder="Enter Password"
-                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0b7c6b]"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm">Confirm Password *</label>
+              <label className="block mb-1 text-sm text-[#0b7c6b]">Confirm Password *</label>
               <input
                 type="password"
                 placeholder="Confirm Password"
-                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] focus:outline-none"
+                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0b7c6b]"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
+
             <button
               type="submit"
-              className="w-full my-3 cursor-pointer bg-white text-[#0b7c6b] font-semibold py-2 rounded hover:bg-gray-200 transition"
+              className="w-full mt-4 bg-[#0b7c6b] text-white font-semibold py-2 rounded hover:bg-[#096e60] transition"
               onClick={handleSignup}
               disabled={loading}
             >
-              {loading ? "Please wait..." : "Signup"}
+              {loading ? "Please wait..." : "Sign Up"}
             </button>
-            <p className="text-right text-sm ">
-              Already have an account ?
+
+            <p className="text-sm text-[#0b7c6b] text-right">
+              Already have an account?{" "}
               <button
-                className="ms-2 text-violet-300 cursor-pointer font-semibold underline hover:text-blue-100"
+                className="ml-1 underline hover:text-[#064f44] font-semibold"
                 onClick={() => router.push("/signin")}
               >
                 Sign In
@@ -195,33 +146,38 @@ function Page() {
           </div>
         </div>
 
-        {/* -----------------Right Side - Logo Section--------------*/}
-        <div className="hidden md:flex flex-col items-center justify-center text-center">
+        {/* Right Side */}
+        <div className="hidden md:flex flex-col items-center justify-center text-center px-4">
           <img
-            src="../image/bookstore_logo1.png"
+            src="/image/bookstore_logo1.png"
             alt="Bookstore Logo"
-            className="h-24 w-24 rounded-full mb-4"
+            className="h-24 w-24 rounded-full mb-4 border-2 border-[#0b7c6b]"
           />
-          <div className="text-lg space-y-3">
-            <p className="font-semibold leading-relaxed">
-              Welcome to Bookstore!
-            </p>
-            <p className="text-sm italic font-light leading-snug">
-              “Books are a uniquely portable magic.” – Stephen King
-            </p>
-            <p className="text-sm font-medium leading-snug">
-              Create an account to explore a world of books, deals, and
-              exclusive content tailored just for you.
-            </p>
-            <p className="text-sm font-medium leading-snug">
-              Join our community to discover books you'll love, get exclusive
-              offers, and never miss a story.
-            </p>
-          </div>
+          <p className="text-[#0b7c6b] font-semibold text-lg mb-2">
+            Welcome to Bookstore!
+          </p>
+          <p className="text-sm italic text-gray-600">
+            “Books are a uniquely portable magic.” – Stephen King
+          </p>
+          <p className="text-sm mt-2 text-gray-700 font-medium">
+            Create an account to explore a world of books, deals, and exclusive content tailored just for you.
+          </p>
+          <p className="text-sm mt-1 text-gray-700 font-medium">
+            Join our community and never miss a story again.
+          </p>
         </div>
       </div>
+
+      {/* Alert Messages */}
+      <ShowAlert
+        error={error}
+        setError={setError}
+        success={success}
+        setSuccess={setSuccess}
+      />
     </div>
   );
 }
 
 export default Page;
+

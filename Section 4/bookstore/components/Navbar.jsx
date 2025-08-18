@@ -4,8 +4,15 @@ import { Divider } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyIcon from "@mui/icons-material/Key";
 import LogoutIcon from "@mui/icons-material/Logout";
+import MailIcon from "@mui/icons-material/Mail";
+import LoginIcon from "@mui/icons-material/Login";
 
 import {
+  Avatar,
+  Dropdown,
+  DropdownDivider,
+  DropdownHeader,
+  DropdownItem,
   Navbar as FlowbiteNavbar,
   Button,
   NavbarBrand,
@@ -31,7 +38,7 @@ function AppNavbar() {
     setLoadingData,
   } = UseAppContext();
 
-  const [profileshow, setProfileShow] = useState(true);
+  const [profileshow, setProfileShow] = useState(false);
 
   const handleProfilePop = () => {
     setProfileShow((show) => !show);
@@ -50,68 +57,59 @@ function AppNavbar() {
             Bookstore
           </span>
         </NavbarBrand>
-        <div className="flex md:order-2">
-          {currentUser ? (
-            <>
-              <div className="text-black text-sm leading-none my-auto relative">
-                <p className="font-semibold">{currentUser?.name}</p>
-                <p className="text-xs">{currentUser?.email}</p>
-              </div>
-              <button
-                // onClick={() => logout()}
-                // onClick={()=>router.push("/profilepop")}
-                onClick={handleProfilePop}
-                className="ms-5 rounded cursor-pointer flex justify-center"
-              >
-                <img
-                  src="/image/profile.jpeg"
-                  className=" h-12 rounded-full cursor-pointer"
-                  alt="Profile Logo"
-                />
-              </button>
-
-              {profileshow ? (
-                <div></div>
-              ) : (
-                <div>
-                  <div className="absolute top-15 right-14 z-10">
-                    <div className="w-50 h-18 rounded border px-2 py-1 text-xs bg-white">
-                      <div className="p-1 cursor-pointer">
-                        <p>
-                          <AccountCircleIcon /> Profile
-                        </p>
-                       
-                      </div>
-                       <Divider />
-                      {/* <div className="pb-2 cursor-pointer">
-                        <p>
-                          <KeyIcon /> Change Password
-                        </p>
-                        <Divider />
-                      </div> */}
-                      <p
-                        className="p-1 cursor-pointer"
-                        onClick={() => logout()}
-                      >
-                        <LogoutIcon /> Logout
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </>
+        <div className="flex md:order-2 cursor-pointer items-center gap-2">
+          {!currentUser ? (
+            <button
+              className="px-2 py-1 border me-1 cursor-pointer rounded bg-[#0b7c6b] text-white hover:bg-white hover:text-[#0b7c6b] flex items-center"
+              onClick={() => router.push("/signin")}
+            >
+              <LoginIcon className="mr-1" /> Sign In
+            </button>
           ) : (
-            <>
-              <Button
-                className="bg-green-600 cursor-pointer hover:bg-white hover:text-green-600 text-white border"
-                onClick={() => router.push("/signin")}
+            <div className="flex justify-between">
+              <div className="me-1">
+                <p className="text-xs font-semibold">{currentUser?.name}</p>
+                <p className="text-xs ">{currentUser?.email}</p>
+              </div>
+              <Dropdown
+                arrowIcon={false}
+                inline
+                label={
+                  <Avatar
+                    alt="User settings"
+                    img="/image/profile.jpeg"
+                    className="h-2 cursor-pointer"
+                    rounded
+                  />
+                }
               >
-                Signin
-              </Button>
-            </>
+                <DropdownHeader className="w-35">
+                  <span className="block truncate text-sm font-medium  text-[#0b7c6b]" onClick={()=>router.push("/profile")}>
+                    <AccountCircleIcon className="mr-1" /> Profile
+                  </span>
+                  <DropdownDivider />
+                  {/* <span className="block truncate text-sm font-medium  text-[#0b7c6b]">
+                    <MailIcon className="mr-1" /> {currentUser.email}
+                  </span>
+                  <DropdownDivider /> */}
+                  <span
+                    className="block truncate text-sm font-medium cursor-pointer text-[#0b7c6b]"
+                    onClick={() => {
+                      logout();
+                      setLoggedIn(false);
+                      setCurrentUser(null);
+                      router.push("/");
+                    }}
+                  >
+                    <LogoutIcon className="mr-1" /> Log Out
+                  </span>
+                </DropdownHeader>
+              </Dropdown>
+            </div>
           )}
           <NavbarToggle />
         </div>
+
         <NavbarCollapse>
           <NavbarLink
             className="cursor-pointer"
@@ -132,12 +130,12 @@ function AppNavbar() {
           >
             Add Book
           </NavbarLink>
-          <NavbarLink
+          {/* <NavbarLink
             className="cursor-pointer"
             onClick={() => router.push("/cart")}
           >
             Cart
-          </NavbarLink>
+          </NavbarLink> */}
           <NavbarLink
             className="cursor-pointer"
             onClick={() => router.push("/aboutus")}

@@ -58,7 +58,7 @@ function Page() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {loading ? (
             <div className="flex flex-col items-center justify-center col-span-full py-12">
-              <div className="relative w-16 h-16">
+              <div className="relative w-30 h-30">
                 <div className="book-flip-box absolute w-full h-full bg-[#0b7c6b] rounded-sm shadow-lg origin-left"></div>
               </div>
               <p className="mt-4 text-[#0b7c6b] font-semibold">

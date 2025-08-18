@@ -31,6 +31,25 @@ function HomeSection() {
 
     // console.log(bookstoreData);
   };
+
+  const handleFourtyFive = () => {
+    router.push("/products");
+    const filtered = bookstoreData.filter((item) => {
+      return item.discounted_price <= item.price * 0.55;
+    });
+    setData(filtered);
+    console.log(filtered);
+    // console.log(bookstoreData);
+  };
+  const handleShopTwoHundred = () => {
+    router.push("/products");
+    const filtered = bookstoreData.filter((item) => {
+      return item.discounted_price <= item.price * 0.55;
+    });
+    setData(filtered);
+    console.log(filtered);
+    // console.log(bookstoreData);
+  };
   return (
     <div>
       {/* ----------------hero section-------------- */}
@@ -156,9 +175,7 @@ function HomeSection() {
               className="w-[40%] p-5 rounded"
             />
           </div>
-          <div
-            className="flex bg-[#CCC] rounded-[20px] bg-gradient-to-tr"
-          >
+          <div className="flex bg-[#CCC] rounded-[20px] bg-gradient-to-tr">
             <div className="w-[70%] text-black py-5 px-5">
               <li className="list-none text-base font-semibold uppercase">
                 Novel every day!
@@ -166,7 +183,10 @@ function HomeSection() {
               <li className="list-none text-3xl font-bold py-1">
                 Sales 45% Off
               </li>
-              <button className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-xs md:text-sm font-semibold cursor-pointer uppercase">
+              <button
+                className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-xs md:text-sm font-semibold cursor-pointer uppercase"
+                onClick={handleFourtyFive}
+              >
                 Shop Now
                 <ArrowForwardIosIcon
                   style={{
@@ -198,18 +218,18 @@ function HomeSection() {
             <div className="shadow-2xl p-2 rounded-[15px]">
               <div className="rounded grid grid-cols-2 gap-2">
                 {data
-                  .filter((item) =>  item.publication == "Prabhat Prakashan")
+                  .filter((item) => item.publication == "Prabhat Prakashan")
                   .map((item, index) => {
                     return (
-                        <div key={index} className="rounded">
-                          <div>
-                            <img
-                              src={item.main_url}
-                              alt={item.title}
-                              className="h-35 w-50 rounded-[15px] shadow-2xl"
-                            />
-                          </div>
+                      <div key={index} className="rounded">
+                        <div>
+                          <img
+                            src={item.main_url}
+                            alt={item.title}
+                            className="h-35 w-50 rounded-[15px] shadow-2xl"
+                          />
                         </div>
+                      </div>
                     );
                   })}
               </div>
@@ -220,18 +240,18 @@ function HomeSection() {
             <div className="shadow-2xl p-2 rounded-[15px]">
               <div className="rounded grid grid-cols-2 gap-2">
                 {data
-                  .filter((item) =>  item.publication == "Pratham Books")
+                  .filter((item) => item.publication == "Pratham Books")
                   .map((item, index) => {
                     return (
-                        <div key={index} className="rounded">
-                          <div>
-                            <img
-                              src={item.main_url}
-                              alt={item.title}
-                              className="h-35 w-50 rounded-[15px] shadow-2xl"
-                            />
-                          </div>
+                      <div key={index} className="rounded">
+                        <div>
+                          <img
+                            src={item.main_url}
+                            alt={item.title}
+                            className="h-35 w-50 rounded-[15px] shadow-2xl"
+                          />
                         </div>
+                      </div>
                     );
                   })}
               </div>
@@ -242,18 +262,18 @@ function HomeSection() {
             <div className="shadow-2xl p-2 rounded-[15px]">
               <div className="rounded grid grid-cols-2 gap-2">
                 {data
-                  .filter((item) =>  item.publication == "Geeta Press Gorakhpur")
+                  .filter((item) => item.publication == "Geeta Press Gorakhpur")
                   .map((item, index) => {
                     return (
-                        <div key={index} className="rounded">
-                          <div>
-                            <img
-                              src={item.main_url}
-                              alt={item.title}
-                              className="h-35 w-50 rounded-[15px] shadow-2xl"
-                            />
-                          </div>
+                      <div key={index} className="rounded">
+                        <div>
+                          <img
+                            src={item.main_url}
+                            alt={item.title}
+                            className="h-35 w-50 rounded-[15px] shadow-2xl"
+                          />
                         </div>
+                      </div>
                     );
                   })}
               </div>
@@ -264,18 +284,18 @@ function HomeSection() {
             <div className="shadow-2xl p-2 rounded-[15px]">
               <div className="rounded grid grid-cols-2 gap-2">
                 {data
-                  .filter((item) =>  item.publication == "Pustak Mahal")
+                  .filter((item) => item.publication == "Pustak Mahal")
                   .map((item, index) => {
                     return (
-                        <div key={index} className="rounded">
-                          <div>
-                            <img
-                              src={item.main_url}
-                              alt={item.title}
-                              className="h-35 w-50 rounded-[15px] shadow-2xl"
-                            />
-                          </div>
+                      <div key={index} className="rounded">
+                        <div>
+                          <img
+                            src={item.main_url}
+                            alt={item.title}
+                            className="h-35 w-50 rounded-[15px] shadow-2xl"
+                          />
                         </div>
+                      </div>
                     );
                   })}
               </div>
@@ -283,7 +303,6 @@ function HomeSection() {
                 Pustak Mahal
               </h3>
             </div>
-
           </div>
         </div>
 
@@ -301,7 +320,10 @@ function HomeSection() {
             <li className="list-none text-sm font-mono">
               Available only for this month
             </li>
-            <button className="px-5 py-2 bg-white text-[#0b7c6b] rounded-full cursor-pointer mt-2 uppercase font-semibold">
+            <button
+              className="px-5 py-2 bg-white text-[#0b7c6b] rounded-full cursor-pointer mt-2 uppercase font-semibold"
+              onClick={handleShopTwoHundred}
+            >
               Shop Now
               <ArrowForwardIosIcon
                 style={{
@@ -314,7 +336,7 @@ function HomeSection() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
