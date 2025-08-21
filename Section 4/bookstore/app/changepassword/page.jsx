@@ -3,6 +3,11 @@ import React, { useState } from "react";
 
 function ChangePasswordPage() {
   const [loading, setLoading] = useState(false);
+  
+
+  const handleChangePasswoord = () =>{
+
+  }
 
   return (
     <div className="min-h-screen bg-[#0b7c6b] flex items-center justify-center px-4 py-10">
@@ -57,7 +62,9 @@ function ChangePasswordPage() {
             />
           </div>
 
-          <button className="w-full py-2 text-center bg-[#0b7c6b] text-white rounded mt-4 cursor-pointer">
+          <button className="w-full py-2 text-center bg-[#0b7c6b] text-white rounded mt-4 cursor-pointer"
+           onClick={handleChangePasswoord}
+          >
             {loading ? "Changing..." : "Change Password"}
           </button>
         </div>

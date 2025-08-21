@@ -91,14 +91,17 @@ function AppNavbar() {
                 <DropdownItem>
                   <span
                     className="block truncate text-sm font-medium  text-[#0b7c6b]"
-                    onClick={() => router.push("/profile")}
+                    // onClick={() => router.push("/profile")}
+                      onClick={() => router.push(`/profile?id=${currentUser?._id}`)}
                   >
                     <AccountCircleIcon className="mr-1" />
                     Profile
                   </span>
                 </DropdownItem>
                 <DropdownItem>
-                  <span className="block truncate text-sm font-medium  text-[#0b7c6b]">
+                  <span className="block truncate text-sm font-medium  text-[#0b7c6b]"
+                    onClick={() => router.push("/changepassword")}
+                  >
                     <KeyIcon className="mr-1" />
                     Change Password
                   </span>
