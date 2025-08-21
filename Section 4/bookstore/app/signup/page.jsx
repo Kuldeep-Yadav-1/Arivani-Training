@@ -5,9 +5,11 @@ import validateEmail from "../../utils/validateEmail";
 import validatePassword from "../../utils/ValidatePassword";
 import ShowAlert from "../../utils/showAlert";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Swal from "sweetalert2";
 import api from "../../api/apiUrl";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 function Page() {
   const router = useRouter();
@@ -18,9 +20,19 @@ function Page() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [selFile, setSelFile] = useState("");
+  const [validFile, setValidFile] = useState(false);
+  const inputFile = useRef(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleSignup = async () => {
-    if (!name.trim() || !email.trim() || !password.trim() || !confirmPassword.trim()) {
+    if (
+      !name.trim() ||
+      !email.trim() ||
+      !password.trim() ||
+      !confirmPassword.trim()
+    ) {
       setError("All fields are required");
       return;
     }
@@ -45,6 +57,7 @@ function Page() {
       const res = await api.post(`/api/signup`, {
         name: name.trim(),
         email: email.trim().toLowerCase(),
+        avtar: selFile,
         password: password,
       });
 
@@ -53,18 +66,82 @@ function Page() {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+      setSelFile("");
+
+      if (inputFile.current) {
+        inputFile.current.value = null;
+      }
+
       setTimeout(() => {
         router.push("/signin");
       }, 1500);
+      return;
     } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops!",
-        text: error?.response?.data?.message || "Something went wrong.",
-      });
+      setError(error?.response?.data?.message || "Something went wrong.");
     } finally {
       setLoading(false);
     }
+  };
+
+  const handlePassword = () =>{
+    setShowPassword((show) => !show)
+  }
+
+  const handleConfirmPassword = () =>{
+    setShowConfirmPassword((show) => !show)
+  }
+
+  const validateImage = (filename) => {
+    console.log(filename, "file name in validate");
+    const allowedExt = ["png", "jpeg", "jpg", "gif", "webp"];
+
+    // Get the extension of the uploaded file
+    const ext = filename.split(".");
+    const extension = ext[1];
+
+    //Check if the uploaded file is allowed
+    return allowedExt.includes(extension);
+  };
+
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const uploadFile = async (e) => {
+    if (!e.target.files) return;
+
+    let file = e.target.files[0];
+    console.log(file?.name, "file.name ?");
+    if (!file?.name) {
+      setSelFile(null);
+      return;
+    }
+
+    console.log(file.name, " user file");
+    const isFileValid = validateImage(file.name);
+    console.log(isFileValid, "validation result");
+
+    if (isFileValid) {
+      let converted = await convertToBase64(file);
+      if (typeof converted === "string") {
+        console.log(converted, "base 64 string");
+        setSelFile(converted); // Set the base64 string
+      }
+    } else {
+      setSelFile("none");
+    }
+
+    setValidFile(isFileValid);
+    console.log(isFileValid, "final validation result");
   };
 
   return (
@@ -85,7 +162,9 @@ function Page() {
           </h2>
           <div className="space-y-4">
             <div>
-              <label className="block mb-1 text-sm text-[#0b7c6b]">Full Name *</label>
+              <label className="block mb-1 text-sm text-[#0b7c6b]">
+                Full Name *
+              </label>
               <input
                 type="text"
                 placeholder="Enter Full Name"
@@ -95,7 +174,9 @@ function Page() {
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm text-[#0b7c6b]">Email *</label>
+              <label className="block mb-1 text-sm text-[#0b7c6b]">
+                Email *
+              </label>
               <input
                 type="email"
                 placeholder="Enter Email"
@@ -105,24 +186,57 @@ function Page() {
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm text-[#0b7c6b]">Password *</label>
+              <label
+                htmlFor="Avtar"
+                className="block mb-1 text-sm text-[#0b7c6b]"
+              >
+                Upload Avtar
+              </label>
               <input
-                type="password"
-                placeholder="Enter Password"
+                type="file"
+                // accept="image/*"
+                ref={inputFile}
+                id="Avtar"
+                placeholder="Upload Avtar"
                 className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0b7c6b]"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                // value={selFile}
+                onChange={(e) => uploadFile(e)}
               />
             </div>
-            <div>
-              <label className="block mb-1 text-sm text-[#0b7c6b]">Confirm Password *</label>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0b7c6b]"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
+            <div className="relative">
+              <div>
+                <label className="block mb-1 text-sm text-[#0b7c6b]">
+                  Password *
+                </label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter Password"
+                  className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0b7c6b]"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="absolute top-8 right-3 cursor-pointer text-[#0b7c6b]" onClick={handlePassword}>
+                {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+              </div>
+            </div>
+
+            <div className="relative">
+              <div>
+                <label className="block mb-1 text-sm text-[#0b7c6b]">
+                  Confirm Password *
+                </label>
+                <input
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Confirm Password"
+                  className="w-full px-4 py-2 rounded bg-gray-100 text-[#0b7c6b] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0b7c6b]"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
+              <div className="absolute top-8 right-3 cursor-pointer text-[#0b7c6b]" onClick={handleConfirmPassword}>
+                {showConfirmPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+              </div>
             </div>
 
             <button
@@ -160,7 +274,8 @@ function Page() {
             “Books are a uniquely portable magic.” – Stephen King
           </p>
           <p className="text-sm mt-2 text-gray-700 font-medium">
-            Create an account to explore a world of books, deals, and exclusive content tailored just for you.
+            Create an account to explore a world of books, deals, and exclusive
+            content tailored just for you.
           </p>
           <p className="text-sm mt-1 text-gray-700 font-medium">
             Join our community and never miss a story again.
@@ -180,4 +295,3 @@ function Page() {
 }
 
 export default Page;
-

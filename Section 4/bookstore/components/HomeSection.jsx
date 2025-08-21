@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import bookstoreData from "../utils/bookstoreData.js";
 
 // import React from "react";
@@ -21,6 +21,22 @@ import Footer from "./Footer.jsx";
 function HomeSection() {
   const router = useRouter();
   const [data, setData] = useState(bookstoreData);
+  // const [bookData,setBookData] = useState([]);
+  // useEffect(()=>{
+  //   const fetchFourtyFiveDiscount = async () =>{
+  //     try {
+  //       const res = await api.get("/api/get-all-book-data");
+  //       const updatedData = res.data.result.filter((item)=> {
+  //         item.discounted_price <= item.price * 0.55;
+  //         setBookData(updatedData)
+  //       })
+  //     } catch (error) {
+  //        console.log("error :",error);    
+  //     }
+  //     fetchFourtyFiveDiscount()
+  //   }
+
+  // },[])
   const handleDiscounttwinty = () => {
     router.push("/products");
     const filtered = bookstoreData.filter((item) => {
@@ -39,8 +55,8 @@ function HomeSection() {
     });
     setData(filtered);
     console.log(filtered);
-    // console.log(bookstoreData);
   };
+  
   const handleShopTwoHundred = () => {
     router.push("/products");
     const filtered = bookstoreData.filter((item) => {

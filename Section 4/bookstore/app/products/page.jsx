@@ -5,10 +5,13 @@ import api from "../../api/apiUrl";
 
 import { ArrowForwardIos } from "@mui/icons-material";
 import Footer from "../../components/Footer";
+import { useRouter } from "next/navigation";
 
 function Page() {
   const [bookData, setBookData] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchBookData = async () => {
@@ -70,6 +73,7 @@ function Page() {
               <div
                 key={index}
                 className="px-5 pt-5 pb-2 shadow-2xl rounded-[10px]"
+                onClick={() => router.push(`/single-product?id=${book?._id}`)}
               >
                 <img
                   src={book.upload_image}

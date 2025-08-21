@@ -24,10 +24,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
 import UseAppContext from "./useContext";
+import api from "../api/apiUrl";
 
 function AppNavbar() {
   const router = useRouter();
-  const [userData, setUserData] = useState(null);
+  // const [userData, setUserData] = useState(null);
+  // const [loadind, setLoading] = useState(false);
+  // const [source, setSource] = useState(false);
+  const [dropdown, setDropDown] = useState(false);
   const {
     loggedIn,
     setLoggedIn,
@@ -37,12 +41,6 @@ function AppNavbar() {
     loadingData,
     setLoadingData,
   } = UseAppContext();
-
-  const [profileshow, setProfileShow] = useState(false);
-
-  const handleProfilePop = () => {
-    setProfileShow((show) => !show);
-  };
 
   return (
     <div className="px-2 md:px-6 lg:px-8 border-b-1">
@@ -77,21 +75,35 @@ function AppNavbar() {
                 label={
                   <Avatar
                     alt="User settings"
-                    img="/image/profile.jpeg"
+                    img={
+                      currentUser?.avtar
+                        ? currentUser?.avtar
+                        : "/image/profile2.png"
+                    }
                     className="h-2 cursor-pointer"
                     rounded
                   />
                 }
               >
-                <DropdownHeader className="w-35">
-                  <span className="block truncate text-sm font-medium  text-[#0b7c6b]" onClick={()=>router.push("/profile")}>
-                    <AccountCircleIcon className="mr-1" /> Profile
+                {/* <DropdownHeader className="w-45">
+                  
+                </DropdownHeader> */}
+                <DropdownItem>
+                  <span
+                    className="block truncate text-sm font-medium  text-[#0b7c6b]"
+                    onClick={() => router.push("/profile")}
+                  >
+                    <AccountCircleIcon className="mr-1" />
+                    Profile
                   </span>
-                  <DropdownDivider />
-                  {/* <span className="block truncate text-sm font-medium  text-[#0b7c6b]">
-                    <MailIcon className="mr-1" /> {currentUser.email}
+                </DropdownItem>
+                <DropdownItem>
+                  <span className="block truncate text-sm font-medium  text-[#0b7c6b]">
+                    <KeyIcon className="mr-1" />
+                    Change Password
                   </span>
-                  <DropdownDivider /> */}
+                </DropdownItem>
+                <DropdownItem>
                   <span
                     className="block truncate text-sm font-medium cursor-pointer text-[#0b7c6b]"
                     onClick={() => {
@@ -103,7 +115,7 @@ function AppNavbar() {
                   >
                     <LogoutIcon className="mr-1" /> Log Out
                   </span>
-                </DropdownHeader>
+                </DropdownItem>
               </Dropdown>
             </div>
           )}
