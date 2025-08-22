@@ -37,7 +37,7 @@ export const addbook = async (req, res) => {
       !description.trim() ||
       !summary.trim()
     ) {
-      return res.status(400).json({ message: "all fields are required"});
+      return res.status(400).json({ message: "all fields are required" });
     }
     const result = await addBookModel.create({
       serial_no,
@@ -64,12 +64,29 @@ export const addbook = async (req, res) => {
   }
 };
 
+export const getAllBookData = async (req, res) => {
+  try {
+    const result = await addBookModel.find({});
+    return res.status(200).json({ message: "Fetched  All Data", result });
+  } catch (error) {
+    return res.status(500).json({ message: `something went wrong ${error}` });
+  }
+};
 
-export const getAllBookData = async (req,res) =>{
-       try {
-        const result = await addBookModel.find({});
-        return res.status(200).json({message:"Fetched  All Data",result});
-       } catch (error) {
-        return res.status(500).json({message:`something went wrong ${error}`});
-       }
-}
+export const getParamBookdata = async (req, res) => {
+  const { book_id } = req.params;
+  // console.log(req.params);
+  
+  try {
+    const bookDatails = await addBookModel.findById(book_id);
+    if (!book_id) {
+      return res.status(400).json({ message: "Book id is required"});
+    }
+    if (!bookDatails) {
+      return res.status(400).json({ message: "Book not exist in Database" });
+    }
+    return res.status(200).json(bookDatails);
+  } catch (error) {
+    return res.status(500).json({ message: `something went wrong ${error}` });
+  }
+};
