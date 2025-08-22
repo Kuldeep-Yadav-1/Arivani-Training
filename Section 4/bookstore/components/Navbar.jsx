@@ -67,7 +67,7 @@ function AppNavbar() {
             <div className="flex justify-between">
               <div className="me-1">
                 <p className="text-xs font-semibold">{currentUser?.name}</p>
-                <p className="text-xs ">{currentUser?.email}</p>
+                <p className="text-xs ">{currentUser?.email.substring(0,10)}{"....."}</p>
               </div>
               <Dropdown
                 arrowIcon={false}
@@ -100,10 +100,10 @@ function AppNavbar() {
                 </DropdownItem>
                 <DropdownItem>
                   <span className="block truncate text-sm font-medium  text-[#0b7c6b]"
-                    onClick={() => router.push("/changepassword")}
+                    onClick={() => router.push(`/updatepassword?id=${currentUser?._id}`)}
                   >
                     <KeyIcon className="mr-1" />
-                    Change Password
+                    Update Password
                   </span>
                 </DropdownItem>
                 <DropdownItem>
