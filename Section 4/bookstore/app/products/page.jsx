@@ -73,13 +73,13 @@ function Page() {
               <div
                 key={index}
                 className="px-5 pt-5 pb-2 shadow-2xl rounded-[10px]"
-                onClick={() => router.push(`/single-product?id=${book?._id}`)}
               >
                 <img
                   src={book.upload_image}
                   alt={book.title}
                   style={{ width: 225, height: 325 }}
-                  className="mx-auto rounded mb-2"
+                  className="mx-auto rounded mb-2 cursor-pointer"
+                  onClick={() => router.push(`/single-product?id=${book?._id}`)}
                 />
                 <h2 className="font-semibold">{book.title}</h2>
                 <p className="text-sm">{book.author_name}</p>

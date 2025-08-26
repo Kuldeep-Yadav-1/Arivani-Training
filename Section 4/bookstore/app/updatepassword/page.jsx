@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { RemoveRedEye, VisibilityOff } from "@mui/icons-material";
+import { Password, RemoveRedEye, VisibilityOff } from "@mui/icons-material";
 import UseAppContext from "../../components/useContext";
 import { useSearchParams } from "next/navigation";
 import api from "../../api/apiUrl";
@@ -39,41 +39,28 @@ function ChangePasswordPage() {
       return;
     }
 
-    if (!oldPassword.trim() || !newPassword.trim() || !confirmPassword.trim()) {
-      // alert("All field are required");
-      setError("All field are required.");
-      return;
-    }
 
-    if (!(oldPassword === currentUser?.password)) {
-      // alert("Old password is incorrect.");
-      setError("Old Password is Incorrect.");
-      return;
-    }
-
-    if (oldPassword === newPassword) {
-      // alert("Old Password and new Password must be different.");
-      setError("Old Password and New Password must be Different.");
-      return;
-    }
 
     if (!(newPassword === confirmPassword)) {
       // alert("new password and confirm password is incorrect.");
-      setError("New Password and Confirm New Password not Matched.");
+      setError("New Password's Don't match.");
       return;
     }
 
     try {
       setLoading(true);
       const res = await api.post(`/api/update-user-password`, {
-        user_id: user_id,
-        password: newPassword,
+        user_id,
+        oldPassword,
+        newPassword,
       });
-      // alert(res?.data?.message || "Password Updated successfully");
+
+      setOldPassword("");
+      setNewPassword("");
+      setConfirmPassword("");
       setSuccess(res?.data?.message || "Password Updated Successfully");
     } catch (error) {
-      // console.log("error", error);
-      setError("Something error occured..");
+      setError(error?.response?.data?.message || "Something error occured..");
     } finally {
       setLoading(false);
     }

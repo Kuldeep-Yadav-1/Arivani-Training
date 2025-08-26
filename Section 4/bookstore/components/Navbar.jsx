@@ -67,7 +67,10 @@ function AppNavbar() {
             <div className="flex justify-between">
               <div className="me-1">
                 <p className="text-xs font-semibold">{currentUser?.name}</p>
-                <p className="text-xs ">{currentUser?.email.substring(0,10)}{"....."}</p>
+                <p className="text-xs ">
+                  {currentUser?.email.substring(0, 10)}
+                  {"....."}
+                </p>
               </div>
               <Dropdown
                 arrowIcon={false}
@@ -88,34 +91,36 @@ function AppNavbar() {
                 {/* <DropdownHeader className="w-45">
                   
                 </DropdownHeader> */}
-                <DropdownItem>
+                <DropdownItem
+                  onClick={() => router.push(`/profile?id=${currentUser?._id}`)}
+                >
                   <span
                     className="block truncate text-sm font-medium  text-[#0b7c6b]"
                     // onClick={() => router.push("/profile")}
-                      onClick={() => router.push(`/profile?id=${currentUser?._id}`)}
                   >
                     <AccountCircleIcon className="mr-1" />
                     Profile
                   </span>
                 </DropdownItem>
-                <DropdownItem>
-                  <span className="block truncate text-sm font-medium  text-[#0b7c6b]"
-                    onClick={() => router.push(`/updatepassword?id=${currentUser?._id}`)}
-                  >
+                <DropdownItem
+                  onClick={() =>
+                    router.push(`/updatepassword?id=${currentUser?._id}`)
+                  }
+                >
+                  <span className="block truncate text-sm font-medium  text-[#0b7c6b]">
                     <KeyIcon className="mr-1" />
                     Update Password
                   </span>
                 </DropdownItem>
-                <DropdownItem>
-                  <span
-                    className="block truncate text-sm font-medium cursor-pointer text-[#0b7c6b]"
-                    onClick={() => {
-                      logout();
-                      setLoggedIn(false);
-                      setCurrentUser(null);
-                      router.push("/");
-                    }}
-                  >
+                <DropdownItem
+                  onClick={() => {
+                    logout();
+                    setLoggedIn(false);
+                    setCurrentUser(null);
+                    router.push("/");
+                  }}
+                >
+                  <span className="block truncate text-sm font-medium cursor-pointer text-[#0b7c6b]">
                     <LogoutIcon className="mr-1" /> Log Out
                   </span>
                 </DropdownItem>

@@ -57,6 +57,11 @@ function Page() {
         if(selFile){avtar: selFile},
       });
       // alert(res?.data?.message || "name change successfully");
+      setCurrentUser({
+        ...currentUser,
+        name :name,
+        avtar : selFile
+      })
       setSuccess(res?.data?.message || "name change successfully");
     } catch (error) {
       // console.log("error occured", error);
