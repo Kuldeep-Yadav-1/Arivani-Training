@@ -34,7 +34,7 @@ function Page() {
 
   const param = useSearchParams();
   const user_id = param.get("id");
-  console.log("id ", user_id);
+  console.log("id", user_id);
 
   const handleChangeData = async () => {
     if (!name.trim()) {
@@ -57,11 +57,11 @@ function Page() {
         if(selFile){avtar: selFile},
       });
       // alert(res?.data?.message || "name change successfully");
-      setCurrentUser({
-        ...currentUser,
-        name :name,
-        avtar : selFile
-      })
+      // setCurrentUser({
+      //   ...currentUser,
+      //   name :name,
+      //   avtar : selFile
+      // })
       setSuccess(res?.data?.message || "name change successfully");
     } catch (error) {
       // console.log("error occured", error);
