@@ -5,11 +5,12 @@ import validateEmail from "../../utils/validateEmail";
 import validatePassword from "../../utils/ValidatePassword";
 import ShowAlert from "../../utils/showAlert";
 import { useRouter } from "next/navigation";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import api from "../../api/apiUrl";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import UseAppContext from "../../components/useContext";
 
 function Page() {
   const router = useRouter();
@@ -25,6 +26,14 @@ function Page() {
   const inputFile = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const {currentUser,setCurrentUser} = UseAppContext()
+
+  useEffect(()=>{
+    if(currentUser){
+      setError("Log Out to contiue...")
+      router.push("/")
+    }
+  },[currentUser])
 
   const handleSignup = async () => {
     if (
@@ -154,7 +163,7 @@ function Page() {
       }}
     >
       {/* -----------------SignUp Container--------------------- */}
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 p-8 gap-8 z-10">
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 p-8 gap-8">
         {/* Left Side Form */}
         <div>
           <h2 className="text-3xl font-bold text-[#0b7c6b] mb-6">

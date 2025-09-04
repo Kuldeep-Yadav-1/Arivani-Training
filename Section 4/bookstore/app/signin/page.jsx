@@ -4,7 +4,7 @@ import api from "../../api/apiUrl";
 import validateEmail from "../../utils/validateEmail";
 import ShowAlert from "../../utils/showAlert";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RemoveRedEye, VisibilityOff } from "@mui/icons-material";
 
 function Page() {
@@ -15,8 +15,14 @@ function Page() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const { loggedIn, currentUser,   setLoggedIn, setCurrentUser, setLoadingData } = UseAppContext();
 
-  const { setLoggedIn, setCurrentUser, setLoadingData } = UseAppContext();
+  useEffect(()=>{
+    if(currentUser){
+      setError("Please Log Out to continue...");
+      router.push("/");
+    }
+  },[currentUser])
 
   const handleSignin = async () => {
     if (!email.trim() || !password.trim()) {
@@ -67,7 +73,7 @@ function Page() {
       }}
     >
       {/* SignIn Container */}
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 p-8 gap-8 z-10">
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 p-8 gap-8">
         {/* Left Side */}
         <div>
           <h2 className="text-3xl font-bold text-[#0b7c6b] mb-6">

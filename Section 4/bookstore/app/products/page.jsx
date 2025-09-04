@@ -126,10 +126,6 @@ function Page() {
     setPage(page);
   };
 
-  // useEffect(()=>{
-  //   setBookData(bookData)
-  // },[bookData])
-
   const router = useRouter();
 
   const handleBookData = (e) => {
@@ -241,8 +237,6 @@ function Page() {
     <div>
       <div className="mx-6 md:mx-10 lg:mx-12 py-4">
         <div className="flex justify-between text-[#0b7c6b]">
-          {/* <p className="text-2xl font-semibold">Product</p> */}
-
           <div className="relative">
             <input
               type="text"
@@ -258,12 +252,8 @@ function Page() {
             />
             <SearchIcon className="absolute top-2.5 left-2" />
           </div>
-
-          <button
-            onClick={handleOpen}
-            className="bg-green-500 text-white px-5 py-1 border rounded cursor-pointer"
-          >
-            <FilterAltIcon /> Filter By
+          <button className="text-bold rounded px-4 py-1 bg-[#0b7c6b] text-white">
+            Total Books :<span className=""> {totalCount}</span>
           </button>
         </div>
 
@@ -281,14 +271,14 @@ function Page() {
             bookData.map((book, index) => (
               <div
                 key={index}
-                className="px-5 pt-5 pb-2 shadow-2xl rounded-[10px]"
+                className="px-5 pt-5 pb-2 shadow-2xl rounded-[10px] cursor-pointer"
+                onClick={() => router.push(`/single-product?id=${book?._id}`)}
               >
                 <img
                   src={book.upload_image}
                   alt={book.title}
                   style={{ width: 225, height: 325 }}
                   className="mx-auto rounded mb-2 cursor-pointer"
-                  onClick={() => router.push(`/single-product?id=${book?._id}`)}
                 />
                 <h2 className="font-semibold">{book.title}</h2>
                 <p className="text-sm">{book.author_name}</p>
@@ -339,8 +329,9 @@ function Page() {
           )}
         </div>
 
+        <div></div>
+
         <div>
-          {/* <Button onClick={handleOpen}>Open modal</Button> */}
           <Modal
             open={open}
             onClose={handleClose}

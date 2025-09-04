@@ -3,9 +3,8 @@ import { UploadFile } from "@mui/icons-material";
 import api from "../../api/apiUrl";
 import UseAppContext from "../../components/useContext";
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import ShowAlert from "../../utils/showAlert";
-
 
 function Page() {
   const {
@@ -17,13 +16,22 @@ function Page() {
     loadingData,
     setLoadingData,
   } = UseAppContext();
-  const [success ,setSuccess] = useState("")
-  const [error ,setError] = useState("")
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
   const [name, setName] = useState("");
   const [avtar, setAvtar] = useState("");
   const [selFile, setSelFile] = useState("");
   const [validFile, setValidFile] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (currentUser == null) {
+      setError("Please signin to continue...");
+      router.push("/signin");
+    }
+  }, [currentUser]);
 
   useEffect(() => {
     if (currentUser) {
@@ -39,13 +47,13 @@ function Page() {
   const handleChangeData = async () => {
     if (!name.trim()) {
       // alert("name is empty");
-      setError("Name is empty")
+      setError("Name is empty");
       return;
     }
 
     if (!user_id) {
       // alert("user_id is missing in URL");
-      setError("user_id is missing in URL")
+      setError("user_id is missing in URL");
       return;
     }
 
@@ -53,8 +61,12 @@ function Page() {
       setLoading(true);
       const res = await api.post(`/api/update-user-data`, {
         user_id: user_id,
-        if(name){name: name},
-        if(selFile){avtar: selFile},
+        if(name) {
+          name: name;
+        },
+        if(selFile) {
+          avtar: selFile;
+        },
       });
       // alert(res?.data?.message || "name change successfully");
       // setCurrentUser({

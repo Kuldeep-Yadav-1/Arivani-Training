@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Password, RemoveRedEye, VisibilityOff } from "@mui/icons-material";
 import UseAppContext from "../../components/useContext";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import api from "../../api/apiUrl";
 import ShowAlert from "../../utils/showAlert";
 
@@ -28,9 +28,18 @@ function ChangePasswordPage() {
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  const router = useRouter();
+
   const param = useSearchParams();
   const user_id = param.get("id");
   console.log("id :", user_id);
+
+  useEffect(()=>{
+    if(currentUser == null){
+      setError("Please signin to continue...");
+      router.push("/signin");
+    }
+  },[currentUser])
 
   const handleChangePassword = async () => {
     if (!user_id) {

@@ -92,7 +92,7 @@ function HomeSection() {
               className="px-5 py-2 rounded-full bg-white text-[#0b7c6b] font-bold m-2 cursor-pointer"
               onClick={() => router.push("/products")}
             >
-              Shop Now <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
+              Explore Books <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
             </button>
           </div>
           <img
@@ -175,7 +175,7 @@ function HomeSection() {
                 className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-xs md:text-sm font-semibold cursor-pointer uppercase"
                 onClick={handleDiscounttwinty}
               >
-                Shop Now
+                Explore
                 <ArrowForwardIosIcon
                   style={{
                     fontSize: "13px",
@@ -203,7 +203,7 @@ function HomeSection() {
                 className="px-5 py-2 rounded-full bg-white my-2 py-1 text-black text-xs md:text-sm font-semibold cursor-pointer uppercase"
                 onClick={handleFourtyFive}
               >
-                Shop Now
+                Explore
                 <ArrowForwardIosIcon
                   style={{
                     fontSize: "13px",
@@ -340,7 +340,7 @@ function HomeSection() {
               className="px-5 py-2 bg-white text-[#0b7c6b] rounded-full cursor-pointer mt-2 uppercase font-semibold"
               onClick={handleShopTwoHundred}
             >
-              Shop Now
+              Explore
               <ArrowForwardIosIcon
                 style={{
                   fontSize: "14px",

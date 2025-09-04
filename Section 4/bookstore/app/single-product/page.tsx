@@ -1,17 +1,61 @@
 "use client";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { Suspense, useEffect, useState } from "react";
 import api from "../../api/apiUrl";
-
+import Swal from "sweetalert2";
 function SingleProduct() {
+  const router = useRouter();
   const [singleBookData, setSingleBookData] = useState(null);
-  // const [singleBooksData, setSingleBooksData] = useState(singleBookData);
-
+  // const [delete, setDelete] = useState(null);
+  const [update, setUpdate] = useState("");
+  const [deleted, setDeleted] = useState("");
   const [loading, setLoading] = useState(true);
-
   const params = useSearchParams();
   const product_id = params.get("id");
   console.log(product_id, "productID");
+
+  // const [singleBooksData, setSingleBooksData] = useState(singleBookData);
+
+  const confirmationAlert = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleDelete();
+      }
+    });
+  };
+
+  const handleDelete = async () => {
+    try {
+      const res = await api.post(`/api/delete-book`, {
+        book_id: product_id,
+      });
+      if (res.status == 200) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your book has been deleted.",
+          icon: "success",
+          timer: 1000,
+          showConfirmButton:false ,
+        });
+        setTimeout(() => {
+          router.push("/products");
+        }, 2000);
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Error!",
+        text: "error occured .",
+        icon: "error",
+      });
+    }
+  };
 
   useEffect(() => {
     if (product_id) {
@@ -54,7 +98,10 @@ function SingleProduct() {
                 />
 
                 <div className="flex justify-center gap-4">
-                  <button className="px-5 cursor-pointer py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-all duration-200">
+                  <button
+                    onClick={confirmationAlert}
+                    className="px-5 cursor-pointer py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-all duration-200"
+                  >
                     Delete Book
                   </button>
                   <button className="px-5 py-2 cursor-pointer bg-yellow-400 text-white rounded-md hover:bg-yellow-600 transition-all duration-200">
@@ -67,8 +114,8 @@ function SingleProduct() {
                     {singleBookData?.author_name}
                   </div>
                   <div>
-                    <span className="font-semibold">Rating:</span> {"⭐".repeat(singleBookData?.rating)}
-                   
+                    <span className="font-semibold">Rating:</span>{" "}
+                    {"⭐".repeat(singleBookData?.rating)}
                   </div>
                   <div>
                     <span className="font-semibold">Price:</span>

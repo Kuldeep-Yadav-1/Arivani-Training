@@ -84,6 +84,7 @@ function AppNavbar() {
                         : "/image/profile2.png"
                     }
                     className="h-2 cursor-pointer"
+                    style={{}}
                     rounded
                   />
                 }
@@ -121,7 +122,7 @@ function AppNavbar() {
                   }}
                 >
                   <span className="block truncate text-sm font-medium cursor-pointer text-[#0b7c6b]">
-                    <LogoutIcon className="mr-1" /> Log Out
+                    <LogoutIcon className="mr-1"/> Log Out
                   </span>
                 </DropdownItem>
               </Dropdown>
