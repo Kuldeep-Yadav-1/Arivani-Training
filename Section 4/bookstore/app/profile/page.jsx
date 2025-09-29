@@ -19,6 +19,7 @@ function Page() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [name, setName] = useState("");
+  // const [userId, setUserId] = useState("");
   const [avtar, setAvtar] = useState("");
   const [selFile, setSelFile] = useState("");
   const [validFile, setValidFile] = useState(true);
@@ -27,22 +28,26 @@ function Page() {
   const router = useRouter();
 
   useEffect(() => {
-    if (currentUser == null) {
+    if (!currentUser && !loadingData) {
       setError("Please signin to continue...");
       router.push("/signin");
     }
-  }, [currentUser]);
+  }, [currentUser, loadingData]);
 
   useEffect(() => {
     if (currentUser) {
       setName(currentUser?.name);
       setAvtar(currentUser?.avtar);
+
+      console.log(currentUser?.name, "name");
+      // console.log(currentUser, "current user");
+      // console.log(currentUser?._id, "current user id");
     }
   }, [currentUser]);
 
-  const param = useSearchParams();
-  const user_id = param.get("id");
-  console.log("id", user_id);
+  // const param = useSearchParams();
+  // const user_id = param.get("id");
+  // console.log("id", user_id);
 
   const handleChangeData = async () => {
     if (!name.trim()) {
@@ -51,33 +56,20 @@ function Page() {
       return;
     }
 
-    if (!user_id) {
-      // alert("user_id is missing in URL");
-      setError("user_id is missing in URL");
-      return;
-    }
-
     try {
       setLoading(true);
       const res = await api.post(`/api/update-user-data`, {
-        user_id: user_id,
-        if(name) {
-          name: name;
-        },
-        if(selFile) {
-          avtar: selFile;
-        },
+        user_id: currentUser?._id,
+        name: name,
+        avtar: selFile,
       });
-      // alert(res?.data?.message || "name change successfully");
-      // setCurrentUser({
-      //   ...currentUser,
-      //   name :name,
-      //   avtar : selFile
-      // })
+      setCurrentUser(res?.data?.result);
+      sessionStorage.setItem("user", JSON.stringify(res?.data?.result));
+      //setItem set data after refress also in the field
       setSuccess(res?.data?.message || "name change successfully");
     } catch (error) {
       // console.log("error occured", error);
-      setError("error occured");
+      setError(error?.response?.data?.message || "error occured");
     } finally {
       setLoading(false);
     }

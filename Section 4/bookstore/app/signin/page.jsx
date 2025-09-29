@@ -15,14 +15,23 @@ function Page() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const { loggedIn, currentUser,   setLoggedIn, setCurrentUser, setLoadingData } = UseAppContext();
+  const {
+    loggedIn,
+    loadingData,
+    currentUser,
+    setLoggedIn,
+    setCurrentUser,
+    setLoadingData,
+  } = UseAppContext();
 
-  useEffect(()=>{
-    if(currentUser){
-      setError("Please Log Out to continue...");
+  useEffect(() => {
+    if (currentUser && loadingData ) {
+      setError("You are already logged in...");
       router.push("/");
     }
-  },[currentUser])
+  }, [currentUser,loadingData]);
+
+
 
   const handleSignin = async () => {
     if (!email.trim() || !password.trim()) {
@@ -81,7 +90,9 @@ function Page() {
           </h2>
           <div className="space-y-4">
             <div>
-              <label className="block mb-1 text-sm text-[#0b7c6b]">Email *</label>
+              <label className="block mb-1 text-sm text-[#0b7c6b]">
+                Email *
+              </label>
               <input
                 type="email"
                 placeholder="Enter Email"
@@ -92,7 +103,9 @@ function Page() {
             </div>
 
             <div className="relative">
-              <label className="block mb-1 text-sm text-[#0b7c6b]">Password *</label>
+              <label className="block mb-1 text-sm text-[#0b7c6b]">
+                Password *
+              </label>
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter Password"
@@ -143,7 +156,8 @@ function Page() {
             “A room without books is like a body without a soul.” – Cicero
           </p>
           <p className="text-sm mt-2 text-gray-700 font-medium">
-            Sign in to continue your journey through stories, knowledge, and imagination.
+            Sign in to continue your journey through stories, knowledge, and
+            imagination.
           </p>
         </div>
       </div>
@@ -160,4 +174,3 @@ function Page() {
 }
 
 export default Page;
-

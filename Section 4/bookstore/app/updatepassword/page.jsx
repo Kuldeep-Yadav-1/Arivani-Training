@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Password, RemoveRedEye, VisibilityOff } from "@mui/icons-material";
+import { RemoveRedEye, VisibilityOff } from "@mui/icons-material";
 import UseAppContext from "../../components/useContext";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter} from "next/navigation";
 import api from "../../api/apiUrl";
 import ShowAlert from "../../utils/showAlert";
 
@@ -27,26 +27,30 @@ function ChangePasswordPage() {
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [passwordUpdate, setUpdatePassword] = useState(false);
+
 
   const router = useRouter();
 
-  const param = useSearchParams();
-  const user_id = param.get("id");
-  console.log("id :", user_id);
+  // const param = useSearchParams();
+  // const user_id = param.get("id");
+  // console.log("id :", user_id);
 
   useEffect(()=>{
-    if(currentUser == null){
+    if(!currentUser &&  !loadingData && !passwordUpdate){
       setError("Please signin to continue...");
       router.push("/signin");
     }
-  },[currentUser])
+  },[currentUser, loadingData ,passwordUpdate])
+
+
 
   const handleChangePassword = async () => {
-    if (!user_id) {
-      // alert("User id is missing..");
-      setError("User id is missing..");
-      return;
-    }
+    // if (!user_id) {
+    //   // alert("User id is missing..");
+    //   setError("User id is missing..");
+    //   return;
+    // }
 
 
 
@@ -59,15 +63,19 @@ function ChangePasswordPage() {
     try {
       setLoading(true);
       const res = await api.post(`/api/update-user-password`, {
-        user_id,
+        user_id : currentUser?._id,
         oldPassword,
         newPassword,
       });
 
+
+      setCurrentUser(res?.data?.result);
+      sessionStorage.setItem("user",JSON.stringify(res?.data?.result));
       setOldPassword("");
       setNewPassword("");
       setConfirmPassword("");
       setSuccess(res?.data?.message || "Password Updated Successfully");
+      setUpdatePassword(true);
     } catch (error) {
       setError(error?.response?.data?.message || "Something error occured..");
     } finally {

@@ -26,11 +26,11 @@ function Page() {
   const inputFile = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const {currentUser,setCurrentUser} = UseAppContext()
+  const {currentUser,loadingData,setCurrentUser} = UseAppContext()
 
   useEffect(()=>{
     if(currentUser){
-      setError("Log Out to contiue...")
+      setError("You are already sign in...")
       router.push("/")
     }
   },[currentUser])

@@ -3,6 +3,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import React, { Suspense, useEffect, useState } from "react";
 import api from "../../api/apiUrl";
 import Swal from "sweetalert2";
+import UseAppContext from "../../components/useContext";
+
 function SingleProduct() {
   const router = useRouter();
   const [singleBookData, setSingleBookData] = useState(null);
@@ -13,6 +15,21 @@ function SingleProduct() {
   const params = useSearchParams();
   const product_id = params.get("id");
   console.log(product_id, "productID");
+  const { currentUser } = UseAppContext();
+
+  useEffect(() => {
+    if (currentUser == null) {
+      Swal.fire({
+        title: "Error!",
+        text: "login to continue...",
+        icon: "error",
+        timer: 2000 ,
+        showConfirmButton : false
+      });
+       router.push("/")
+    }
+   
+  }, [currentUser]);
 
   // const [singleBooksData, setSingleBooksData] = useState(singleBookData);
 
@@ -42,7 +59,7 @@ function SingleProduct() {
           text: "Your book has been deleted.",
           icon: "success",
           timer: 1000,
-          showConfirmButton:false ,
+          showConfirmButton: false,
         });
         setTimeout(() => {
           router.push("/products");
@@ -104,8 +121,8 @@ function SingleProduct() {
                   >
                     Delete Book
                   </button>
-                  <button className="px-5 py-2 cursor-pointer bg-yellow-400 text-white rounded-md hover:bg-yellow-600 transition-all duration-200">
-                    Update Book
+                  <button onClick={()=>router.push(`updatebook?id=${product_id}`)} className="px-5 py-2 cursor-pointer bg-yellow-400 text-white rounded-md hover:bg-yellow-600 transition-all duration-200">
+                    Update Book  
                   </button>
                 </div>
                 <div className="text-left">

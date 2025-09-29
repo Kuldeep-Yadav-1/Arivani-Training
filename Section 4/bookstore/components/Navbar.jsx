@@ -93,7 +93,7 @@ function AppNavbar() {
                   
                 </DropdownHeader> */}
                 <DropdownItem
-                  onClick={() => router.push(`/profile?id=${currentUser?._id}`)}
+                  onClick={() => router.push(`/profile`)}
                 >
                   <span
                     className="block truncate text-sm font-medium  text-[#0b7c6b]"
@@ -105,7 +105,7 @@ function AppNavbar() {
                 </DropdownItem>
                 <DropdownItem
                   onClick={() =>
-                    router.push(`/updatepassword?id=${currentUser?._id}`)
+                    router.push(`/updatepassword`)
                   }
                 >
                   <span className="block truncate text-sm font-medium  text-[#0b7c6b]">
@@ -116,9 +116,9 @@ function AppNavbar() {
                 <DropdownItem
                   onClick={() => {
                     logout();
-                    setLoggedIn(false);
-                    setCurrentUser(null);
-                    router.push("/");
+                    // setLoggedIn(false);
+                    // setCurrentUser(null);
+                    // router.push("/");
                   }}
                 >
                   <span className="block truncate text-sm font-medium cursor-pointer text-[#0b7c6b]">
